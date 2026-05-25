@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>trdi: Weekly Autopilot for Local Lead Discovery</title>
+  <meta name="description" content="trdi prepares weekly call-ready account briefs for local service businesses. Every Monday, ranked accounts with a reason to call and a prepared opener — delivered to your inbox.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="trdi: Weekly Autopilot for Winning New Local Accounts">
+  <meta property="og:description" content="Every Monday, a ranked list of local leads showing real buying signals — each with a reason to call, a prepared opener, and a clear next step.">
+  <meta property="og:site_name" content="trdi">
+  <meta property="og:image" content="/static/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="/static/og.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="trdi: Weekly Autopilot for Winning New Local Accounts">
+  <meta name="twitter:description" content="Every Monday, a ranked list of local leads showing real buying signals — each with a reason to call, a prepared opener, and a clear next step.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231E1E1F'/><path d='M12 32h18' fill='none' stroke='%238A7E72' stroke-width='4' stroke-linecap='round'/><path d='M20 24h12' fill='none' stroke='%238A7E72' stroke-width='4' stroke-linecap='round' opacity='.7'/><path d='M20 40h12' fill='none' stroke='%238A7E72' stroke-width='4' stroke-linecap='round' opacity='.7'/><path d='M32 14h18L34 21c-4 1-5 5-1 7l8 3c5 2 4 7-1 7H16l20-6c4-1 5-5 1-7l-9-3c-5-2-4-7 4-8Z' fill='%23F4F1EA'/><path d='M33 14h17L35 21c-5 2-6 6-1 8l-9-3c-8-3-7-12 8-12Z' fill='%23C87A53'/></svg>">
+
+  <link rel="stylesheet" href="./styles.css?v=65">
+</head>
+<body>
+
+<!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+<header class="site-header">
+  <div class="nav-pill motion-fade-down">
+    <a class="brand-lockup" href="#top" aria-label="trdi home">
+      <div class="brand-text">
+        <div class="brand-name-sm brand-word">trdi</div>
+        <div class="brand-pronoun">pron. "tradie"</div>
+      </div>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <button type="button" aria-label="How it works" onclick="document.getElementById('artifact').scrollIntoView({behavior:'smooth'})">How it works</button>
+      <button type="button" aria-label="Example brief" onclick="document.getElementById('example').scrollIntoView({behavior:'smooth'})">Example brief</button>
+      <button type="button" aria-label="Join beta" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">Join beta</button>
+    </nav>
+    <button type="button" class="nav-cta-btn interactive" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">
+      <span class="cta-long">GET BRIEF</span><span class="cta-short">GET BRIEF</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<section class="hero-section" aria-labelledby="hero-title">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-center">
+
+      <div class="brand-text hero-brand">
+        <div class="brand-name-sm brand-word">trdi</div>
+        <div class="brand-pronoun">pron. "tradie"</div>
+      </div>
+      <h1 id="hero-title" class="hero-h1 font-serif motion-fade-up delay-2">Your autopilot for winning new local accounts.</h1>
+      <div class="hero-sub motion-fade-up delay-3">
+        <p>Get a curated list of local businesses and properties worth calling now — complete with the reason, proof, opener, and next step.</p>
+      </div>
+      <div class="hero-callout motion-fade-up delay-4" aria-label="Early access for trade and field-service contractors and service categories">
+        <div class="hero-callout-track">
+          <span><strong>EARLY ACCESS FOR TRADE AND FIELD-SERVICE CONTRACTORS</strong></span>
+          <span>pest control, cleaning, HVAC, fire safety, property maintenance, and more.</span>
+          <span aria-hidden="true"><strong>EARLY ACCESS FOR TRADE AND FIELD-SERVICE CONTRACTORS</strong></span>
+          <span aria-hidden="true">pest control, cleaning, HVAC, fire safety, property maintenance, and more.</span>
+        </div>
+      </div>
+      <div class="hero-actions motion-fade-up delay-4">
+        <button type="button" class="btn-primary interactive" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">
+          Request sample brief
+        </button>
+        <button type="button" class="btn-text-link interactive" onclick="document.getElementById('example').scrollIntoView({behavior:'smooth'})">
+          See example brief <span class="btn-text-link-arrow" aria-hidden="true">↓</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Monday Brief Card -->
+    <div class="brief-outer motion-scale delay-4">
+      <div class="brief-card" role="region" aria-label="Monday brief preview">
+
+        <!-- Email window chrome -->
+        <div class="email-chrome" aria-hidden="true">
+          <div class="email-chrome-dots">
+            <span class="ec-dot ec-dot-red"></span>
+            <span class="ec-dot ec-dot-yellow"></span>
+            <span class="ec-dot ec-dot-green"></span>
+          </div>
+          <div class="email-chrome-title">Monday Brief &middot; trdi</div>
+          <div class="email-chrome-actions">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4z"/><path d="M2 4l6 5 6-5"/></svg>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="1.2"/><circle cx="13" cy="8" r="1.2"/><circle cx="3" cy="8" r="1.2"/></svg>
+          </div>
+        </div>
+
+        <!-- Email sender -->
+        <div class="email-sender-row">
+          <div class="email-avatar" aria-hidden="true">T</div>
+          <div class="email-sender-info">
+            <div class="email-from-line">
+              <span class="email-from-name"><span class="brand-word">trdi</span> Briefs</span>
+              <span class="email-from-addr">&lt;briefs@gettrdi.com&gt;</span>
+            </div>
+            <div class="email-to-line">To: Local Service Owner</div>
+          </div>
+          <div class="email-timestamp">Mon &middot; 7:07&hairsp;AM</div>
+        </div>
+
+        <!-- Subject line -->
+        <div class="email-subject-row">
+          <span class="email-subject-text">11 accounts prepared for you</span>
+        </div>
+
+        <!-- Email body -->
+        <div class="email-body-wrap">
+          <p class="email-greeting font-serif">Your Monday brief is ready.</p>
+          <p class="email-sub-line">AI-scored by reason to call, source strength, and predicted response likelihood.</p>
+
+          <div class="email-stats-row" aria-label="Brief statistics">
+            <span class="email-stat-pill">
+              <span class="email-stat-num metric">312</span>
+              <span class="email-stat-lbl">signals checked</span>
+            </span>
+            <span class="email-stat-sep" aria-hidden="true">&middot;</span>
+            <span class="email-stat-pill">
+              <span class="email-stat-num metric">42</span>
+              <span class="email-stat-lbl">accounts matched</span>
+            </span>
+            <span class="email-stat-sep" aria-hidden="true">&middot;</span>
+            <span class="email-stat-pill email-stat-pill--hot">
+              <span class="email-stat-num">11</span>
+              <span class="email-stat-lbl">ready to call</span>
+            </span>
+          </div>
+
+          <!-- Interactive lead card -->
+          <div class="lead-detail-card">
+            <div class="swipe-hint" aria-hidden="true">
+              <svg class="swipe-hint-arrow swipe-hint-left" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+              <span class="swipe-hint-label">swipe</span>
+              <svg class="swipe-hint-arrow swipe-hint-right" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"/></svg>
+            </div>
+            <div class="lead-top-row">
+              <div style="max-width:40rem">
+                <h4 class="lead-name font-sans-heading" id="lead-account">East Village Thai Kitchen</h4>
+                <p class="lead-context" id="lead-context">A recent pest-related inspection flag creates an immediate outreach window — the owner is aware of the issue and likely receptive to a fast, proactive service offer before the next cycle.</p>
+              </div>
+              <div class="lead-nav">
+                <button type="button" id="lead-prev" class="lead-nav-btn interactive" aria-label="Previous lead">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                </button>
+                <div class="rank-badge">
+                  <div class="rank-badge-label"><span class="rank-pulse motion-dot" aria-hidden="true"></span>Prepared</div>
+                  <div class="rank-num" id="lead-rank">#1</div>
+                </div>
+                <button type="button" id="lead-next" class="lead-nav-btn interactive" aria-label="Next lead">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="opener-box">
+              <div class="opener-label">Use this opener</div>
+              <p class="opener-text" id="lead-opener">"Hey Daniel — East Village Thai Kitchen came up in a recent NYC DOHMH cycle with a note around pest evidence in the kitchen and dry storage. We do a same-week pest assessment for restaurants — entry points, drains, storage, prep surfaces. Takes about 30 minutes and gets you ahead of any follow-up visit. Worth booking before the weekend rush?"</p>
+            </div>
+            <div class="mini-grid">
+              <div class="mini-card"><div class="mini-label">Signal</div><p class="mini-text" id="lead-signal">NYC DOHMH inspection flag — pest evidence in kitchen and dry storage, filed 3 days ago.</p></div>
+              <div class="mini-card"><div class="mini-label">Angle</div><p class="mini-text" id="lead-angle">Lead with the DOHMH cycle, not a complaint — keeps the tone consultative.</p></div>
+              <div class="mini-card wide"><div class="mini-label">Next step</div><p class="mini-text" id="lead-next-step">Lead with the DOHMH cycle. If no answer, follow with SMS linking your pest assessment page.</p></div>
+            </div>
+          </div>
+
+          <!-- Lead dots -->
+          <div class="lead-dots" id="lead-dots" role="tablist" aria-label="Lead navigation">
+            <button class="lead-dot lead-dot--active" data-lead="0" role="tab" aria-label="Lead 1" aria-selected="true"></button>
+            <button class="lead-dot" data-lead="1" role="tab" aria-label="Lead 2" aria-selected="false"></button>
+            <button class="lead-dot" data-lead="2" role="tab" aria-label="Lead 3" aria-selected="false"></button>
+          </div>
+          <span id="mobile-lead-current" class="sr-only">Lead 1</span><span id="mobile-lead-total" class="sr-only">3</span>
+
+          <!-- Hidden tabs (JS state only, not displayed) -->
+          <div class="lead-tabs lead-tabs--hidden" role="tablist" aria-label="Prepared leads" aria-hidden="true">
+            <button type="button" class="lead-tab-btn active" data-lead="0" role="tab" aria-selected="true" tabindex="-1"><span class="lead-num">1</span><div style="min-width:0"><div class="lead-tab-name">East Village Thai Kitchen</div><div class="lead-tab-reason">NYC DOHMH pest flag · 3d ago</div></div></button>
+            <button type="button" class="lead-tab-btn" data-lead="1" role="tab" aria-selected="false" tabindex="-1"><span class="lead-num">2</span><div style="min-width:0"><div class="lead-tab-name">Brooklyn Mini Market</div><div class="lead-tab-reason">Yelp odor pattern · 3 reviews</div></div></button>
+            <button type="button" class="lead-tab-btn" data-lead="2" role="tab" aria-selected="false" tabindex="-1"><span class="lead-num">3</span><div style="min-width:0"><div class="lead-tab-name">Bronx Multifamily</div><div class="lead-tab-reason">Repeat tenant complaints · building-level</div></div></button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section-divider" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════ EXAMPLE ACCOUNT ═══════════════════════════════ -->
+<section id="example" class="example-section" aria-labelledby="example-title">
+  <div class="example-intro">
+    <div class="eyebrow-label">Example brief</div>
+    <h2 id="example-title" class="example-title font-serif">A lead you can actually work.</h2>
+    <p class="example-desc">One prepared account brief with business context, reason to call, owner details, local proof, and the next step.</p>
+  </div>
+
+  <div class="account-note" aria-label="Prepared account cards for East Village Thai Kitchen">
+    <div class="account-carousel-wrap">
+      <button class="account-arrow account-arrow-prev" id="account-prev" aria-label="Previous card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="account-track-clip">
+    <div class="account-cards-carousel" id="account-cards-track">
+
+      <!-- Card 1: Account & Owner -->
+      <article class="account-card">
+        <div class="card-label">
+          <span class="card-label-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+          <span class="card-label-text">Account &amp; Owner</span>
+        </div>
+        <div class="yelp-listing">
+          <div class="biz-logo biz-logo-monogram" aria-label="East Village Thai Kitchen">
+            <span class="biz-logo-initials">EV</span>
+            <span class="biz-logo-sub">THAI</span>
+          </div>
+          <div class="biz-info">
+            <h3 class="profile-name font-serif">East Village Thai Kitchen</h3>
+            <div class="biz-rating" aria-label="4.2 stars">
+              <span class="star-fill">★★★★</span><span class="star-empty">☆</span>
+              <span class="biz-review-count">4.2 &nbsp;(238)</span>
+            </div>
+            <div class="type-pill">Thai restaurant</div>
+            <div class="profile-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Manhattan, NY
+            </div>
+          </div>
+        </div>
+        <div class="profile-links">
+
+          <a href="javascript:void(0)" class="profile-link-btn" aria-label="Google Maps" title="Google">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </a>
+          <a href="javascript:void(0)" class="profile-link-btn" aria-label="Website" title="Website">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </a>
+          <a href="javascript:void(0)" class="profile-link-btn" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="javascript:void(0)" class="profile-link-btn" aria-label="Facebook" title="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+        <div class="owners-section">
+          <div class="owners-eyebrow">Owners</div>
+          <div class="owner-row-item">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=180&q=70" alt="Owner Daniel K." class="owner-img">
+            <div class="owner-text">
+              <span class="owner-name">Daniel K.</span>
+              <span class="profile-owner-meta">Owner &bull; Since 2014</span>
+            </div>
+            <div class="owner-actions">
+              <button type="button" class="owner-btn interactive" aria-label="Call Daniel" title="Call Daniel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 15 19.79 19.79 0 0 1 1.93 6.27a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 11a16 16 0 0 0 5.82 5.82l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </button>
+              <button type="button" class="owner-btn interactive" aria-label="Message Daniel" title="Send SMS to Daniel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </button>
+              <button type="button" class="owner-btn interactive" aria-label="Email Daniel" title="Email Daniel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="owner-row-item">
+            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=180&q=70" alt="Co-owner Nana T." class="owner-img">
+            <div class="owner-text">
+              <span class="owner-name">Nana T.</span>
+              <span class="profile-owner-meta">Co-owner &bull; Since 2018</span>
+            </div>
+            <div class="owner-actions">
+              <button type="button" class="owner-btn interactive" aria-label="Call Nana" title="Call Nana">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 15 19.79 19.79 0 0 1 1.93 6.27a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 11a16 16 0 0 0 5.82 5.82l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </button>
+              <button type="button" class="owner-btn interactive" aria-label="Message Nana" title="Send SMS to Nana">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </button>
+              <button type="button" class="owner-btn interactive" aria-label="Email Nana" title="Email Nana">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="reachout-card">
+          <div class="reachout-head">
+            <div>
+              <div class="reachout-eyebrow">Ready to reach out</div>
+              <div class="reachout-title">Call before lunch</div>
+            </div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="motion-ring" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 15 19.79 19.79 0 0 1 1.93 6.27a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 11a16 16 0 0 0 5.82 5.82l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <p class="reachout-desc">Highest answer-rate window is 10AM&ndash;1PM.</p>
+          <div class="reachout-btns">
+            <button type="button" class="btn-call preview-only" disabled>Call now</button>
+            <button type="button" class="btn-sms preview-only" disabled>Send SMS</button>
+          </div>
+          <p class="preview-note">Preview only &mdash; actions live in your account</p>
+        </div>
+      </article>
+
+      <!-- Card 2: Brief -->
+      <article class="account-card">
+        <div class="card-label">
+          <span class="card-label-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg></span>
+          <span class="card-label-text">Brief</span>
+        </div>
+        <div class="dash-head">
+          <div class="dash-title" id="prepared-title">East Village Thai Kitchen</div>
+        </div>
+        <div class="brief-meta-chips">
+          <span class="brief-chip brief-chip--signal">NYC DOHMH</span>
+          <span class="brief-chip">3d ago</span>
+          <span class="brief-chip">18 signals</span>
+          <span class="brief-chip brief-chip--confidence">High confidence</span>
+        </div>
+        <p class="brief-context">A recent pest-related inspection flag creates an immediate outreach window &mdash; the owner is aware of the issue and likely receptive to a fast, proactive service offer before the next cycle.</p>
+        <div class="opener-panel">
+          <div class="opener-head">
+            <div class="opener-panel-label">Suggested opener</div>
+            <div class="opener-head-right">
+              <span class="opener-dur">28 sec</span>
+              <button type="button" id="copy-opener-btn" class="copy-opener-btn" title="Copy opener to clipboard">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                <span class="copy-label">Copy</span>
+              </button>
+            </div>
+          </div>
+          <p class="opener-quote" id="dashboard-opener-quote">&ldquo;Hey Daniel &mdash; East Village Thai Kitchen came up in a recent NYC DOHMH cycle with a note around pest evidence in the kitchen and dry storage. We do a same-week pest assessment for restaurants &mdash; entry points, drains, storage, prep surfaces. Takes about 30 minutes and gets you ahead of any follow-up visit. Worth booking before the weekend rush?&rdquo;</p>
+          <button type="button" class="opener-expand-btn" id="opener-expand-btn" aria-expanded="false">Read full opener</button>
+
+          <div class="opener-next-step">
+            <div class="opener-next-label">Next step</div>
+            <p class="opener-next-text">Lead with the DOHMH cycle, not a complaint &mdash; keeps the tone consultative. If no answer, follow with SMS linking your pest assessment page.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Sources & Proof -->
+      <article class="account-card">
+        <div class="card-label">
+          <span class="card-label-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+          <span class="card-label-text">Sources &amp; Proof</span>
+        </div>
+
+        <!-- Primary trigger -->
+        <div class="primary-trigger">
+          <div class="primary-trigger-head">
+            <div class="primary-trigger-eye">Primary trigger</div>
+            <span class="source-badge source-badge--primary">NYC DOHMH</span>
+          </div>
+          <div class="primary-trigger-title">Pest &amp; rodent activity inspection flag</div>
+          <p class="primary-trigger-desc">Pest evidence noted in kitchen and dry storage during routine DOHMH cycle filed 3 days ago. Owner is aware and likely receptive to a same-week proactive service offer.</p>
+          <div class="primary-trigger-weight">
+            <span class="weight-bar"><span class="weight-fill" style="width:88%"></span></span>
+            <span class="weight-label">High signal weight</span>
+          </div>
+        </div>
+
+        <!-- Corroborating signals — feed style -->
+        <div class="sig-feed">
+          <div class="sig-feed-eyebrow">Corroborating signals</div>
+
+          <div class="sig-feed-item">
+            <span class="sig-source sig-source--maps">Google Maps</span>
+            <div class="sig-feed-body">
+              <div class="sig-feed-title">Pest sighting in recent review</div>
+              <div class="sig-feed-sub">Multiple review mentions · recent repeated pattern</div>
+            </div>
+            <span class="sig-feed-age">7d ago</span>
+          </div>
+
+          <div class="sig-feed-item sig-feed-item--collapsible">
+            <span class="sig-source sig-source--biz">NYC Business</span>
+            <div class="sig-feed-body">
+              <div class="sig-feed-title">Active listing confirmed</div>
+              <div class="sig-feed-sub">Currently operating · owner on record</div>
+            </div>
+            <span class="sig-feed-age">12d ago</span>
+          </div>
+
+          <div class="sig-feed-item sig-feed-item--warn">
+            <span class="sig-source sig-source--yelp">Yelp</span>
+            <div class="sig-feed-body">
+              <div class="sig-feed-title">Rodent complaint</div>
+              <div class="sig-feed-sub">Recent customer review flag · pest category</div>
+            </div>
+            <span class="sig-feed-age">15d ago</span>
+          </div>
+
+          <div class="sig-feed-item sig-feed-item--collapsible">
+            <span class="sig-source sig-source--dob">NYC DOB</span>
+            <div class="sig-feed-body">
+              <div class="sig-feed-title">Kitchen equipment permit filed</div>
+              <div class="sig-feed-sub">Active renovation · contractor window open</div>
+            </div>
+            <span class="sig-feed-age">18d ago</span>
+          </div>
+
+          <div class="sig-feed-item sig-feed-item--confirmed">
+            <span class="sig-source sig-source--registry">State Registry</span>
+            <div class="sig-feed-body">
+              <div class="sig-feed-title">Owner identity confirmed</div>
+              <div class="sig-feed-sub">Decision-maker ID · direct contact match</div>
+            </div>
+            <span class="sig-feed-age">just now</span>
+          </div>
+          <button type="button" class="sig-show-all-btn" id="sig-show-all-btn" aria-expanded="false">See all 5 signals</button>
+        </div>
+
+      </article>
+
+
+    </div>
+      </div><!-- /.account-track-clip -->
+      <button class="account-arrow account-arrow-next" id="account-next" aria-label="Next card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div><!-- /.account-carousel-wrap -->
+    <div class="account-dots" id="account-dots" role="tablist" aria-label="Account card navigation">
+      <button class="account-dot account-dot--active" data-index="0" role="tab" aria-label="Card 1: Account &amp; Owner" aria-selected="true"></button>
+      <button class="account-dot" data-index="1" role="tab" aria-label="Card 2: Brief" aria-selected="false"></button>
+      <button class="account-dot" data-index="2" role="tab" aria-label="Card 3: Sources &amp; Proof" aria-selected="false"></button>
+    </div>
+
+    <div class="dash-footer">
+      <div class="dash-footer-item"><span>Account added</span><span class="dash-footer-val">4d ago</span></div>
+      <div class="dash-footer-item"><span>Last activity</span><span class="dash-footer-val">4d ago</span></div>
+      <div class="dash-footer-item"><span>Signals found</span><span class="dash-footer-val">24</span></div>
+      <div class="dash-footer-item"><span>Research confidence</span><span class="dash-footer-val">High</span></div>
+      <div class="dash-footer-item"><span>Owner-led business</span><span class="dash-footer-val">Yes</span></div>
+    </div>
+  </div>
+</section>
+<div class="section-divider" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════ HOW IT WORKS ═══════════════════════════════ -->
+<section id="artifact" class="how-section" aria-labelledby="how-title">
+  <div class="how-section-eyebrow eyebrow-label">How it works</div>
+  <div class="how-grid">
+
+    <!-- Left: Timeline -->
+    <div class="motion-fade-up how-left-col">
+      <h2 id="how-title" class="how-title font-serif">From market signals to call-ready briefs.</h2>
+      <p class="how-desc"><span class="brand-word">trdi</span> handles the research in the background, finding the accounts, explaining why now, preparing the opener, and learning from what your team does next.</p>
+      <ol class="timeline">
+        <li class="timeline-item">
+          <span class="timeline-num">1</span>
+          <span class="timeline-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </span>
+          <div>
+            <div class="timeline-step-title">Tell us your market</div>
+            <p class="timeline-step-copy">Pick your industry, territory, and target account mix.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-num">2</span>
+          <span class="timeline-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18"/></svg>
+          </span>
+          <div>
+            <div class="timeline-step-title">We prepare the call list</div>
+            <p class="timeline-step-copy">Our models score and rank the accounts, attach proof, and prepare the opener.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-num">3</span>
+          <span class="timeline-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <div>
+            <div class="timeline-step-title">Your team works the brief</div>
+            <p class="timeline-step-copy">Work the list, note outcomes, and the next brief improves.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Right: Deliverables -->
+    <div class="motion-fade-up delay-1">
+      <div class="eyebrow-label">What you get</div>
+      <h2 class="deliv-title font-serif">A prepared work packet, not a database.</h2>
+      <p class="deliv-desc">A brief that gives callers the reason, the opener, and the next step.</p>
+      <div class="deliv-wrap">
+        <div class="deliv-grid">
+          <div class="deliv-card">
+            <div class="deliv-card-head">
+              <div class="deliv-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <span class="deliv-index metric">01</span>
+            </div>
+            <div class="deliv-name">Inbox brief</div>
+            <p class="deliv-copy">A short ranked email with the accounts worth calling, why now, and the best first move.</p>
+          </div>
+          <div class="deliv-card">
+            <div class="deliv-card-head">
+              <div class="deliv-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18"/></svg>
+              </div>
+              <span class="deliv-index metric">02</span>
+            </div>
+            <div class="deliv-name">Caller worklist</div>
+            <p class="deliv-copy">Every account comes with the owner, trigger, proof, prepared opener, next step, and call status.</p>
+          </div>
+          <div class="deliv-card">
+            <div class="deliv-card-head">
+              <div class="deliv-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+              </div>
+              <span class="deliv-index metric">03</span>
+            </div>
+            <div class="deliv-name">Learning loop</div>
+            <p class="deliv-copy">Call outcomes train <span class="brand-word">trdi</span>'s model to separate noise from the signals that actually create jobs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="section-divider" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════ DATA SOURCES ═══════════════════════════════ -->
+<section class="signals-section">
+  <div class="signals-inner">
+    <div class="signals-head motion-fade-up">
+      <div class="eyebrow-label">The research engine</div>
+      <h2 class="signals-title font-serif">We handle the research. You make the calls.</h2>
+      <p class="signals-desc">This data is public — but scattered across hundreds of government portals, review platforms, and filing systems. Most contractors never see it. Those who do rarely act fast enough. <span class="brand-word">trdi</span> aggregates it, uses ML to score for buying intent, and turns it into a call-ready brief.</p>
+    </div>
+    <div class="signals-carousel-wrap motion-fade-up delay-1">
+      <button class="signals-arrow signals-arrow-prev" id="signals-prev" aria-label="Previous source">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="signals-track-clip">
+      <div class="signals-track" id="signals-track">
+
+        <div class="signal-tile">
+          <div class="signal-tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div class="signal-tile-name">Health &amp; safety inspections</div>
+          <p class="signal-tile-copy">Violations at food facilities and commercial properties create an immediate window for pest, cleaning, HVAC, and fire services.</p>
+        </div>
+
+        <div class="signal-tile">
+          <div class="signal-tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+          </div>
+          <div class="signal-tile-name">Building permits</div>
+          <p class="signal-tile-copy">Active renovation permits mean spend is in motion and no contractor is locked in yet. The window is open.</p>
+        </div>
+
+        <div class="signal-tile">
+          <div class="signal-tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg>
+          </div>
+          <div class="signal-tile-name">Code violations &amp; notices</div>
+          <p class="signal-tile-copy">A cited property needs fast remediation. The owner is already looking — your call lands when it matters most.</p>
+        </div>
+
+        <div class="signal-tile">
+          <div class="signal-tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div class="signal-tile-name">Business filings &amp; changes</div>
+          <p class="signal-tile-copy">New registrations and ownership transfers mean fresh decision-makers with no existing vendor — and an open door.</p>
+        </div>
+
+        <div class="signal-tile">
+          <div class="signal-tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="signal-tile-name">Licensing &amp; compliance gaps</div>
+          <p class="signal-tile-copy">Expiring certifications and upcoming deadlines create urgency. Your call arrives with a ready reason to act.</p>
+        </div>
+
+        <div class="signal-tile">
+          <div class="signal-tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+          <div class="signal-tile-name">Google Business Profile</div>
+          <p class="signal-tile-copy">Rating drops, repeated service complaints, and flagged Q&amp;A reveal accounts with active pain your service can solve.</p>
+        </div>
+
+        <div class="signal-tile">
+          <div class="signal-tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="signal-tile-name">Yelp &amp; review platforms</div>
+          <p class="signal-tile-copy">Health badge changes, star dips, and recurring complaint patterns surface businesses that need help and know it.</p>
+        </div>
+
+        <div class="signal-tile">
+          <div class="signal-tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="signal-tile-name">Nextdoor &amp; local forums</div>
+          <p class="signal-tile-copy">Neighborhood complaints and service callouts identify local businesses with reputation problems you can directly fix.</p>
+        </div>
+
+        <div class="signal-tile">
+          <div class="signal-tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></svg>
+          </div>
+          <div class="signal-tile-name">Property records</div>
+          <p class="signal-tile-copy">Assessor data, recent sales, and ownership changes flag properties likely to be under-serviced and actively managed.</p>
+        </div>
+
+      </div>
+      </div>
+      <button class="signals-arrow signals-arrow-next" id="signals-next" aria-label="Next source">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+<div class="section-divider" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════ WAITLIST ═══════════════════════════════ -->
+<section id="waitlist" class="waitlist-section" aria-labelledby="waitlist-title">
+  <div class="waitlist-inner">
+    <div class="waitlist-grid">
+
+      <div class="waitlist-left motion-fade-up">
+        <div class="eyebrow-label">Request early access</div>
+        <h2 id="waitlist-title" class="waitlist-title font-sans-heading">Get your first market brief.</h2>
+        <p class="waitlist-desc">We are selecting the first trades and territories to onboard. Share where you operate and we will check whether the market data is strong enough to prepare a sample brief for you.</p>
+        <div class="beta-reward">
+          <span class="beta-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect width="20" height="5" x="2" y="7"/><line x1="12" x2="12" y1="22" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+          </span>
+          <span class="beta-reward-text"><span class="beta-word">Beta reward</span> · Join the beta and get your first 2 weeks free</span>
+        </div>
+      </div>
+
+      <div class="motion-scale delay-1" style="min-width:0">
+        <div class="request-card">
+          <div class="request-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            Get first brief
+          </div>
+          <h3 class="request-title">Tell us your market.</h3>
+          <p class="request-desc">If there is a fit, we will reach out with a sample brief and invite you to the first beta cohort.</p>
+
+          <div class="form-grid">
+            <div id="form-wrap">
+              <form class="form-fields" id="waitlist-form" onsubmit="return false" novalidate>
+                <div class="form-field">
+                  <label class="form-label" for="form-name">Name</label>
+                  <input class="form-input" id="form-name" placeholder="Your name" aria-label="Name" autocomplete="name">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="form-email">Work email</label>
+                  <input class="form-input" id="form-email" placeholder="you@company.com" aria-label="Work email" type="email" autocomplete="email" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="form-trade">Trade / service category</label>
+                  <select class="form-input form-select" id="form-trade" aria-label="Trade or service category">
+                    <option value="" disabled selected>Select your service type</option>
+                    <option value="Pest Control">Pest Control</option>
+                    <option value="Commercial Cleaning">Commercial Cleaning</option>
+                    <option value="Fire Safety">Fire Safety</option>
+                    <option value="Property Maintenance">Property Maintenance</option>
+                    <option value="HVAC / Plumbing / Electrical">HVAC / Plumbing / Electrical</option>
+                    <option value="Roofing">Roofing</option>
+                    <option value="Janitorial">Janitorial</option>
+                    <option value="Restoration / Water Damage">Restoration / Water Damage</option>
+                    <option value="Other local service trade">Other local service trade</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="form-city">City / territory</label>
+                  <input class="form-input" id="form-city" placeholder="e.g. New York, NY" aria-label="City or territory" autocomplete="address-level2">
+                </div>
+                <button type="submit" class="form-submit interactive" id="form-submit-btn">Get first brief</button>
+              </form>
+
+              <div class="form-success" id="form-success" hidden>
+                <div class="form-success-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <h3 class="form-success-title">You're on the list.</h3>
+                <p class="form-success-body">We'll check signal quality in your market and reach out to <strong id="form-success-email"></strong> with a sample brief if there's a fit.</p>
+                <p class="form-success-note">Most responses go out within a few business days.</p>
+              </div>
+            </div>
+
+            <div class="feedback-card">
+              <div class="feedback-head">
+                <div class="feedback-label">Beta feedback</div>
+                <div class="feedback-count metric" id="testimonial-count">1/3</div>
+              </div>
+              <p class="feedback-quote" id="testimonial-quote">"If the account comes with the reason to call and the opening line, I would test this before giving another rep a random lead list."</p>
+              <div class="feedback-footer">
+                <div>
+                  <div class="feedback-name" id="testimonial-name">Pest control operator</div>
+                  <div class="feedback-role" id="testimonial-role">Beta discovery call, NYC</div>
+                </div>
+                <div class="feedback-btns">
+                  <button type="button" id="testimonial-prev" class="feedback-btn feedback-btn-prev" aria-label="Previous testimonial">←</button>
+                  <button type="button" id="testimonial-next" class="feedback-btn feedback-btn-next" aria-label="Next testimonial">→</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col-brand">
+      <div class="footer-brand">
+        <div>
+          <span class="footer-brand-name brand-word">trdi</span>
+          <div class="brand-pronoun">pron. "tradie"</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-col-links">
+      <a href="mailto:hi@gettrdi.com" class="footer-link">hi@gettrdi.com</a>
+      <a href="#" class="footer-link">Privacy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 <span class="brand-word">trdi</span>. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="./script.js" defer></script>
+</body>
+</html>
