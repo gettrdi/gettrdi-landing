@@ -76,6 +76,17 @@
       font-family: 'Syne', sans-serif;
     }
 
+    /* ── Collapsible cards ── */
+    details.card > summary { cursor: pointer; list-style: none; position: relative; }
+    details.card > summary::-webkit-details-marker { display: none; }
+    details.card > summary::after {
+      content: '›';
+      position: absolute; right: 20px; top: 50%; transform: translateY(-50%) rotate(90deg);
+      font-size: 18px; color: var(--taupe); transition: transform .18s; line-height: 1;
+    }
+    details.card[open] > summary::after { transform: translateY(-50%) rotate(270deg); }
+    details.card > summary:hover::after { color: var(--rust); }
+
     /* ── Lead cards ── */
     .card {
       background: var(--card);
@@ -359,8 +370,8 @@
 <div class="section-label">Restaurant Accounts — NYC Department of Health</div>
 
 <!-- ① Golden Bun Bakery -->
-<div class="card u-red">
-  <div class="card-head">
+<details class="card u-red">
+  <summary class="card-head">
     <span class="badge badge-red">27d overdue</span>
     <div style="flex:1; min-width:0;">
       <div class="lead-meta">
@@ -374,7 +385,7 @@
       <a href="tel:7183732866" class="phone-link">📞 (718) 373-2866</a>
     </div>
     <div class="dist"><div class="dist-num">1.21 mi</div><div class="dist-lbl">from your office</div></div>
-  </div>
+  </summary>
   <div class="card-body">
     <div class="grid2">
 
@@ -506,11 +517,11 @@
     </div>
 
   </div>
-</div>
+</details>
 
 <!-- ② Living Room Sushi & Steak House -->
-<div class="card u-red">
-  <div class="card-head">
+<details class="card u-red">
+  <summary class="card-head">
     <span class="badge badge-red">59d overdue</span>
     <div style="flex:1; min-width:0;">
       <div class="lead-meta">
@@ -524,7 +535,7 @@
       <a href="tel:7189968900" class="phone-link">📞 (718) 996-8900</a>
     </div>
     <div class="dist"><div class="dist-num">0.24 mi</div><div class="dist-lbl">from your office</div></div>
-  </div>
+  </summary>
   <div class="card-body">
     <div class="grid2">
 
@@ -666,11 +677,11 @@
     </div>
 
   </div>
-</div>
+</details>
 
 <!-- ③ Dragon Garden -->
-<div class="card u-amber">
-  <div class="card-head">
+<details class="card u-amber">
+  <summary class="card-head">
     <span class="badge badge-amber">22d window</span>
     <div style="flex:1; min-width:0;">
       <div class="lead-meta">
@@ -684,7 +695,7 @@
       <a href="tel:7182348288" class="phone-link">📞 (718) 234-8288</a>
     </div>
     <div class="dist"><div class="dist-num">1.69 mi</div><div class="dist-lbl">from your office</div></div>
-  </div>
+  </summary>
   <div class="card-body">
     <div class="grid2">
 
@@ -795,11 +806,11 @@
     </div>
 
   </div>
-</div>
+</details>
 
 <!-- ④ Saamo Cafe -->
-<div class="card u-red">
-  <div class="card-head">
+<details class="card u-red">
+  <summary class="card-head">
     <span class="badge badge-red">Cannot open</span>
     <div style="flex:1; min-width:0;">
       <div class="lead-meta">
@@ -813,7 +824,7 @@
       <a href="tel:7186761266" class="phone-link">📞 (718) 676-1266</a>
     </div>
     <div class="dist"><div class="dist-num">0.69 mi</div><div class="dist-lbl">from your office</div></div>
-  </div>
+  </summary>
   <div class="card-body">
     <div class="grid2">
 
@@ -901,13 +912,13 @@
     </div>
 
   </div>
-</div>
+</details>
 
 <!-- BUILDING -->
 <div class="section-label" style="margin-top:32px;">Residential Building — HPD / NYC PLUTO</div>
 
-<div class="card u-purple">
-  <div class="card-head">
+<details class="card u-purple">
+  <summary class="card-head">
     <span class="badge badge-purple">Building Play</span>
     <div style="flex:1; min-width:0;">
       <div class="lead-meta">
@@ -919,7 +930,7 @@
       <div style="margin-top:6px; font-size:11px; color:var(--muted);">Agent: <strong style="color:var(--linen);">Leo Louie</strong> &nbsp;·&nbsp; Owner: <strong style="color:var(--linen);">Zailan Xu</strong> &nbsp;·&nbsp; No phone on HPD record</div>
     </div>
     <div class="dist"><div class="dist-num" style="color:#f87171;">22</div><div class="dist-lbl">pest complaints filed</div></div>
-  </div>
+  </summary>
   <div class="card-body">
 
     <div class="stat-row">
@@ -1136,13 +1147,6 @@
   </div>
 </div>
 
-<!-- CTA -->
-<div class="cta">
-  <div class="cta-title">Ready to move on any of these?</div>
-  <div class="cta-sub">Reply with the number of the account you want first.<br>We&rsquo;ll send you everything — DOH contact, violation details, suggested opener.<br><span>First month is free.</span></div>
-  <a href="mailto:hi@gettrdi.com?subject=Evergreen - send the file&body=Hi Prateek,%0A%0AI want the full details on account #" class="cta-btn">Reply: Send me account details →</a>
-  <div class="cta-footer">Or email: <a href="mailto:hi@gettrdi.com">hi@gettrdi.com</a> · Prateek @ trdi</div>
-</div>
 
 <!-- FOOTER -->
 <div class="footer">
