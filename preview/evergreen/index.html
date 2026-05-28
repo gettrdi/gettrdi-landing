@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your TRDI Lead Brief — Evergreen Eco Pest Control</title>
+  <meta name="description" content="5 matched commercial accounts in Brooklyn — live DOH, HPD, and 311 data.">
+  <meta name="robots" content="noindex">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 14px; -webkit-font-smoothing: antialiased; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Helvetica, Arial, sans-serif; background: #f1f5f9; color: #0f172a; line-height: 1.5; }
+    a { color: inherit; }
+
+    .wrap { max-width: 740px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    .hd { background: #0f172a; }
+    .hd-inner { padding: 32px 20px 24px; max-width: 740px; margin: 0 auto; }
+    .hd-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #475569; margin-bottom: 10px; }
+    .hd-name { font-size: 22px; font-weight: 800; color: #f8fafc; line-height: 1.15; }
+    .hd-sub { font-size: 12px; color: #64748b; margin-top: 6px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .hd-sub a { color: #64748b; text-decoration: none; }
+    .hd-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .pill { font-size: 10px; background: #1e293b; color: #94a3b8; border-radius: 4px; padding: 3px 9px; font-weight: 500; }
+    .hd-bar { border-top: 1px solid #1e293b; }
+    .hd-bar-inner { max-width: 740px; margin: 0 auto; padding: 10px 20px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .src-label { font-size: 11px; color: #475569; }
+    .src-tag { font-size: 11px; color: #64748b; background: #1e293b; border-radius: 3px; padding: 2px 7px; }
+
+    /* Lead cards */
+    .section-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #64748b; margin-bottom: 12px; margin-top: 28px; }
+    .card { background: #fff; border-radius: 10px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .card-head { padding: 14px 20px; display: flex; gap: 12px; align-items: flex-start; }
+    .card-body { padding: 18px 20px; }
+
+    /* urgency variants */
+    .u-red  { background: #fef2f2; border: 1px solid #fca5a5; }
+    .u-amber{ background: #fffbeb; border: 1px solid #fcd34d; }
+    .u-green{ background: #f0fdf4; border: 1px solid #86efac; }
+    .u-purple { background: #faf5ff; border: 1px solid #c4b5fd; }
+    .u-red   .card-head { background: #fef2f2; border-bottom: 1px solid #fca5a5; }
+    .u-amber .card-head { background: #fffbeb; border-bottom: 1px solid #fcd34d; }
+    .u-green .card-head { background: #f0fdf4; border-bottom: 1px solid #86efac; }
+    .u-purple .card-head { background: #faf5ff; border-bottom: 1px solid #c4b5fd; }
+
+    .badge { display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; border-radius: 4px; padding: 3px 8px; color: #fff; flex-shrink: 0; margin-top: 3px; }
+    .badge-red    { background: #dc2626; }
+    .badge-amber  { background: #d97706; }
+    .badge-green  { background: #16a34a; }
+    .badge-purple { background: #7c3aed; }
+
+    .lead-name { font-size: 16px; font-weight: 700; color: #0f172a; }
+    .lead-meta { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+    .grade { font-size: 11px; font-weight: 800; border-radius: 4px; padding: 2px 8px; }
+    .grade-a { background: #dcfce7; color: #15803d; }
+    .grade-b { background: #fef9c3; color: #a16207; }
+    .grade-c { background: #fee2e2; color: #b91c1c; }
+    .grade-z { background: #fee2e2; color: #b91c1c; }
+    .grade-n { background: #fee2e2; color: #b91c1c; }
+    .cuisine { font-size: 12px; color: #64748b; }
+    .address { font-size: 12px; color: #475569; display: flex; gap: 10px; flex-wrap: wrap; }
+    .address a { color: #475569; }
+    .dist { text-align: right; flex-shrink: 0; }
+    .dist-num { font-size: 14px; font-weight: 700; color: #334155; }
+    .dist-lbl { font-size: 10px; color: #94a3b8; }
+
+    /* Grid */
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 28px; }
+    @media (max-width: 560px) { .grid2 { grid-template-columns: 1fr; } }
+    .span2 { grid-column: 1 / -1; }
+
+    .sec-label { font-size: 10px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 7px; }
+    .row2 { display: flex; gap: 8px; margin-bottom: 4px; align-items: baseline; }
+    .row2-lbl { font-size: 11px; color: #94a3b8; flex-shrink: 0; min-width: 110px; }
+    .row2-val { font-size: 12px; color: #374151; font-weight: 500; }
+    .row2-val.bold { font-weight: 700; }
+    .row2-val.red { color: #dc2626; }
+    .row2-val.amber { color: #d97706; }
+    .row2-val.green { color: #16a34a; }
+
+    .vcode { display: inline-block; background: #fee2e2; color: #dc2626; font-size: 10px; font-weight: 800; border-radius: 3px; padding: 2px 6px; flex-shrink: 0; margin-top: 1px; }
+    .vrow { display: flex; gap: 7px; align-items: flex-start; margin-bottom: 5px; }
+    .vdesc { font-size: 12px; color: #374151; line-height: 1.4; }
+    .vdate { font-size: 11px; color: #94a3b8; margin-left: 4px; }
+
+    /* Violation log table */
+    .vtable { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .vtable th { text-align: left; padding: 4px 10px 4px 0; font-size: 10px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: .06em; border-bottom: 1px solid #e2e8f0; }
+    .vtable td { padding: 5px 10px 5px 0; border-bottom: 1px solid #f1f5f9; color: #374151; vertical-align: top; }
+    .vtable td.muted { color: #64748b; white-space: nowrap; }
+
+    /* Inspection history */
+    .ih-row { display: flex; gap: 8px; align-items: center; font-size: 12px; padding: 4px 0; border-bottom: 1px solid #f1f5f9; }
+    .ih-date { color: #94a3b8; flex-shrink: 0; min-width: 90px; }
+    .ih-score { color: #475569; }
+    .ih-action { color: #94a3b8; font-size: 11px; }
+
+    /* 311 */
+    .complaints-list { margin-top: 8px; }
+    .complaint-row { font-size: 11px; color: #475569; margin-bottom: 3px; display: flex; gap: 6px; }
+    .complaint-date { color: #94a3b8; flex-shrink: 0; }
+
+    /* Signal summary box */
+    .summary-box { font-size: 12px; color: #475569; line-height: 1.7; background: #f8fafc; border-radius: 6px; padding: 10px 14px; border-left: 3px solid #cbd5e1; }
+
+    /* Building stats */
+    .stat-row { display: flex; flex-wrap: wrap; background: #f8fafc; border-radius: 8px; overflow: hidden; border: 1px solid #e2e8f0; margin-bottom: 20px; }
+    .stat-cell { flex: 1; min-width: 80px; padding: 12px 14px; text-align: center; border-right: 1px solid #e2e8f0; }
+    .stat-cell:last-child { border-right: none; }
+    .stat-num { font-size: 16px; font-weight: 700; color: #0f172a; }
+    .stat-lbl { font-size: 10px; color: #94a3b8; text-transform: uppercase; letter-spacing: .06em; margin-top: 2px; }
+
+    /* HPD table */
+    .hpd-open { font-size: 10px; font-weight: 700; border-radius: 3px; padding: 2px 6px; background: #fee2e2; color: #991b1b; }
+    .hpd-closed { font-size: 10px; font-weight: 700; border-radius: 3px; padding: 2px 6px; background: #f3f4f6; color: #6b7280; }
+    .class-c { font-size: 10px; font-weight: 700; border-radius: 3px; padding: 2px 5px; background: #fee2e2; color: #991b1b; }
+    .class-b { font-size: 10px; font-weight: 700; border-radius: 3px; padding: 2px 5px; background: #fef3c7; color: #92400e; }
+    .class-a { font-size: 10px; font-weight: 700; border-radius: 3px; padding: 2px 5px; background: #f3f4f6; color: #374151; }
+
+    /* Building pitch box */
+    .pitch-box { background: #faf5ff; border-radius: 6px; padding: 12px 14px; border-left: 3px solid #c4b5fd; font-size: 12px; color: #4c1d95; line-height: 1.7; }
+
+    /* Legend */
+    .legend { background: #e2e8f0; border-radius: 8px; padding: 16px 20px; margin: 8px 0 24px; }
+    .legend-title { font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 8px; }
+    .legend-text { font-size: 12px; color: #475569; line-height: 1.8; margin-bottom: 12px; }
+    .legend-codes { display: flex; gap: 16px; flex-wrap: wrap; }
+    .legend-item { display: flex; gap: 7px; align-items: center; }
+    .legend-lbl { font-size: 11px; color: #64748b; }
+
+    /* CTA */
+    .cta { background: #0f172a; border-radius: 12px; padding: 28px; text-align: center; margin-bottom: 32px; }
+    .cta-title { font-size: 15px; font-weight: 700; color: #f8fafc; margin-bottom: 8px; }
+    .cta-sub { font-size: 13px; color: #94a3b8; margin-bottom: 22px; line-height: 1.8; }
+    .cta-sub span { color: #34d399; font-weight: 600; }
+    .cta-btn { display: inline-block; background: #2563eb; color: #fff; font-weight: 700; font-size: 13px; border-radius: 8px; padding: 12px 32px; text-decoration: none; }
+    .cta-footer { margin-top: 14px; font-size: 12px; color: #475569; }
+    .cta-footer a { color: #64748b; }
+
+    /* Footer */
+    .footer { text-align: center; font-size: 11px; color: #94a3b8; padding-bottom: 40px; line-height: 1.9; }
+    .footer strong { color: #64748b; }
+
+    /* Tenants */
+    .tenant-row { font-size: 12px; display: flex; gap: 10px; align-items: center; padding: 5px 0; border-bottom: 1px solid #f1f5f9; }
+    .tenant-name { font-weight: 600; color: #334155; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hd">
+  <div class="hd-inner">
+    <div class="hd-eyebrow">trdi · lead intelligence brief</div>
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="hd-name">Evergreen Eco Pest Control Inc</div>
+        <div class="hd-sub">
+          <span>194 Quentin Rd, Brooklyn, NY 11223</span>
+          <a href="tel:7187621820">(718) 762-1820</a>
+        </div>
+      </div>
+      <div style="font-size:12px; color:#475569; text-align:right; flex-shrink:0;">
+        <div>Prepared May 28, 2026</div>
+        <div style="margin-top:4px; color:#334155;">5 matched accounts</div>
+      </div>
+    </div>
+    <div class="hd-meta">
+      <span class="pill">DEC #16909</span>
+      <span class="pill">Structural &amp; Rodent Control</span>
+      <span class="pill">Expires Feb 2029</span>
+      <span class="pill">10 years in business</span>
+      <span class="pill">All 5 boroughs</span>
+    </div>
+  </div>
+  <div class="hd-bar">
+    <div class="hd-bar-inner">
+      <span class="src-label">Sources:</span>
+      <span class="src-tag">NYC DOH Inspection Records</span>
+      <span class="src-tag">HPD Violation Database</span>
+      <span class="src-tag">311 Complaint Feed</span>
+      <span class="src-tag">NYC PLUTO 24v1</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- RESTAURANT LEADS -->
+<div class="section-label">Restaurant Accounts — NYC Department of Health</div>
+
+<!-- ① Golden Bun Bakery -->
+<div class="card u-red">
+  <div class="card-head">
+    <span class="badge badge-red">27d overdue</span>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">1. Golden Bun Bakery</span>
+        <span class="grade grade-z">Grade Z</span>
+        <span class="cuisine">Bakery</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=2180+86th+Street+Brooklyn+NY+11214" target="_blank" rel="noopener">2180 86th Street, Brooklyn 11214</a>
+      </div>
+    </div>
+    <div class="dist"><div class="dist-num">1.21 mi</div><div class="dist-lbl">from your office</div></div>
+  </div>
+  <div class="card-body">
+    <div class="grid2">
+
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Mar 17, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Reinspection</span><span class="row2-val bold red">27 days overdue</span></div>
+        <div class="row2"><span class="row2-lbl">Current grade</span><span class="row2-val bold red">Grade Z (was C)</span></div>
+      </div>
+
+      <div>
+        <div class="sec-label">Pest Violations Cited (90 days)</div>
+        <div class="vrow"><span class="vcode">04M</span><span class="vdesc">Mouse droppings present<span class="vdate">Mar 17, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">04K</span><span class="vdesc">Evidence of cockroaches<span class="vdate">Mar 17, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">06C</span><span class="vdesc">Harborage conditions (physical pest shelter)<span class="vdate">Mar 17, 2026</span></span></div>
+      </div>
+
+      <div>
+        <div class="sec-label">311 Rodent Complaints (200m radius)</div>
+        <div class="row2"><span class="row2-lbl">Last 90 days</span><span class="row2-val bold red">13 complaints</span></div>
+        <div class="row2"><span class="row2-lbl">Area pressure</span><span class="row2-val red">96/100 density — hot zone</span></div>
+        <div class="row2"><span class="row2-lbl">Trend</span><span class="row2-val red">↑ Rising (30d vs 90d)</span></div>
+        <div class="row2"><span class="row2-lbl">Most recent</span><span class="row2-val">May 22, 2026</span></div>
+        <div class="complaints-list">
+          <div class="sec-label" style="margin-top:8px;">Recent 311 calls nearby</div>
+          <div class="complaint-row"><span class="complaint-date">May 22</span><span>Rat Sighting — 69 Bay 29 Street (In Progress)</span></div>
+          <div class="complaint-row"><span class="complaint-date">May 15</span><span>Rat Sighting — 8678 Bay Pkwy</span></div>
+          <div class="complaint-row"><span class="complaint-date">Apr 28</span><span>Rat Sighting — 2109 85 Street</span></div>
+          <div class="complaint-row"><span class="complaint-date">Apr 15</span><span>Rat Sighting — 8678 Bay Pkwy</span></div>
+          <div class="complaint-row"><span class="complaint-date">Apr 9</span><span>Rat Sighting — 8650 Bay Pkwy</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sec-label">Inspection History</div>
+        <div class="ih-row"><span class="ih-date">Mar 17, 2026</span><span class="grade grade-z" style="font-size:11px;">Z</span><span class="ih-score">Score —</span><span class="ih-action">Reinspection pending</span></div>
+      </div>
+
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">Two critical pest categories at the same March inspection — live cockroaches and mouse droppings together — means multiple active infestation vectors running in parallel. This is not a spray-and-leave job. Full IPM: harborage sealing, food storage audit, recurring treatment across roach and rodent pressure simultaneously. The 27-day overdue follow-up tells us they haven&rsquo;t found that solution yet. The block is running 96th percentile for 311 rat activity, with complaints still coming in as of last week.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ② Living Room Sushi & Steak House -->
+<div class="card u-red">
+  <div class="card-head">
+    <span class="badge badge-red">59d overdue</span>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">2. Living Room Sushi &amp; Steak House</span>
+        <span class="grade grade-c">Grade C</span>
+        <span class="cuisine">Japanese / Sushi</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=192+Avenue+U+Brooklyn+NY+11223" target="_blank" rel="noopener">192 Avenue U, Brooklyn 11223</a>
+      </div>
+    </div>
+    <div class="dist"><div class="dist-num">0.24 mi</div><div class="dist-lbl">from your office</div></div>
+  </div>
+  <div class="card-body">
+    <div class="grid2">
+
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Dec 30, 2025</span></div>
+        <div class="row2"><span class="row2-lbl">Reinspection</span><span class="row2-val bold red">59 days overdue — most overdue in this set</span></div>
+        <div class="row2"><span class="row2-lbl">Current grade</span><span class="row2-val bold red">Grade C</span></div>
+      </div>
+
+      <div>
+        <div class="sec-label">Pest Violations Cited</div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Live mice on premises<span class="vdate">Dec 30, 2025</span></span></div>
+      </div>
+
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">Active mice since December, follow-up nearly two months overdue. This isn&rsquo;t a vendor underperforming — it&rsquo;s a void. Either they have nobody, or whoever they have isn&rsquo;t showing up. 59 days is a long time to let a mice problem sit on file with an open C grade posted in the window. Given your expert witness background, you literally sell the documentation side of pest control better than most PCOs in the area. Specific angle: &ldquo;your current vendor isn&rsquo;t documenting this properly — we do that for a living.&rdquo;</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ③ Dragon Garden -->
+<div class="card u-amber">
+  <div class="card-head">
+    <span class="badge badge-amber">22d window</span>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">3. Dragon Garden</span>
+        <span class="grade grade-z">Grade Z</span>
+        <span class="cuisine">Chinese / Part of a chain</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=8024+18th+Avenue+Brooklyn+NY+11214" target="_blank" rel="noopener">8024 18th Avenue, Brooklyn 11214</a>
+      </div>
+    </div>
+    <div class="dist"><div class="dist-num">1.69 mi</div><div class="dist-lbl">from your office</div></div>
+  </div>
+  <div class="card-body">
+    <div class="grid2">
+
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">May 5, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Reinspection</span><span class="row2-val bold amber">in 22 days — window closing</span></div>
+        <div class="row2"><span class="row2-lbl">Current grade</span><span class="row2-val bold red">Grade Z</span></div>
+      </div>
+
+      <div>
+        <div class="sec-label">Pest Violations Cited (90 days)</div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Live mice on premises<span class="vdate">May 5, 2026</span></span></div>
+      </div>
+
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">Pitch this as a chain, not a single account. There&rsquo;s an operator behind this managing at least 2 other NYC locations, and the inspection hit their 18th Ave location. Chains don&rsquo;t want three separate vendors — they want one contact, one programme, one invoice. Win the 18th Ave account on the 22-day urgency, resolve it properly, then use it as the opening: &ldquo;I just sorted your 18th Ave location — want me to run the same programme at your other two?&rdquo;</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ④ Saamo Cafe -->
+<div class="card u-red">
+  <div class="card-head">
+    <span class="badge badge-red">Cannot open</span>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">4. Saamo Cafe</span>
+        <span class="grade grade-n">Grade N</span>
+        <span class="cuisine">Cafe — Pre-opening inspection</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=2568+86th+Street+Brooklyn+NY+11214" target="_blank" rel="noopener">2568 86th Street, Brooklyn 11214</a>
+      </div>
+    </div>
+    <div class="dist"><div class="dist-num">0.69 mi</div><div class="dist-lbl">from your office</div></div>
+  </div>
+  <div class="card-body">
+    <div class="grid2">
+
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Inspection date</span><span class="row2-val">May 4, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Type</span><span class="row2-val bold red">Pre-permit opening inspection — failed</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold red">53 (7 violations, 3 critical)</span></div>
+        <div class="row2"><span class="row2-lbl">Status</span><span class="row2-val bold red">Cannot open to public until resolved</span></div>
+      </div>
+
+      <div>
+        <div class="sec-label">Pest Violations Cited</div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Live mice on premises<span class="vdate">May 4, 2026</span></span></div>
+      </div>
+
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">Grade N doesn&rsquo;t mean not-yet-graded in the usual sense. It means this was their pre-permit opening inspection, and they failed it. Hard. Score 53, live mice, 7 violations before they&rsquo;ve served a single customer. They cannot open to the public until this is resolved — not &ldquo;worried about a grade&rdquo;, not &ldquo;panicking about a C&rdquo;, but literally cannot operate. An owner who built out a cafe, invested everything, and found mice on opening day is a highly motivated buyer. And a brand-new cafe in 2026 self-selects for the eco-conscious crowd from day one — if you&rsquo;re the vendor who gets them open, you set the standard for how the whole operation runs going forward.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- BUILDING -->
+<div class="section-label" style="margin-top:32px;">Residential Building — HPD / NYC PLUTO</div>
+
+<div class="card u-purple">
+  <div class="card-head">
+    <span class="badge badge-purple">Building Play</span>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">5. 6623 Fort Hamilton Parkway</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=6623+Fort+Hamilton+Pkwy+Brooklyn+NY" target="_blank" rel="noopener">Brooklyn, NY &nbsp;·&nbsp; BIN 3142359 &nbsp;·&nbsp; BBL 3033600048</a>
+      </div>
+    </div>
+    <div class="dist"><div class="dist-num" style="color:#dc2626;">30</div><div class="dist-lbl">open HPD violations</div></div>
+  </div>
+  <div class="card-body">
+
+    <div class="stat-row">
+      <div class="stat-cell"><div class="stat-num">1935</div><div class="stat-lbl">Year Built</div></div>
+      <div class="stat-cell"><div class="stat-num">5</div><div class="stat-lbl">Floors</div></div>
+      <div class="stat-cell"><div class="stat-num">30</div><div class="stat-lbl">Total Units</div></div>
+      <div class="stat-cell"><div class="stat-num">30</div><div class="stat-lbl">Residential</div></div>
+      <div class="stat-cell"><div class="stat-num" style="color:#dc2626;">30</div><div class="stat-lbl">Open Violations</div></div>
+      <div class="stat-cell"><div class="stat-num">22</div><div class="stat-lbl">Complaints Filed</div></div>
+    </div>
+
+    <div class="grid2">
+
+      <div>
+        <div class="sec-label">Managing Agent (HPD Registration)</div>
+        <div style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:6px;">Leo Louie</div>
+        <div class="row2"><span class="row2-lbl">Address</span><span class="row2-val">20 Utopia Ct, Staten Island, NY 10304</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">Not on record</span></div>
+      </div>
+
+      <div>
+        <div class="sec-label">Ownership</div>
+        <div class="row2"><span class="row2-lbl">Owner of record</span><span class="row2-val">Zailan Xu</span></div>
+        <div class="row2"><span class="row2-lbl">Owner type</span><span class="row2-val">Private</span></div>
+        <div class="row2"><span class="row2-lbl">Building class</span><span class="row2-val">Multi-Family Walkup</span></div>
+      </div>
+
+      <div>
+        <div class="sec-label">HPD Pest Violations</div>
+        <div class="row2"><span class="row2-lbl">Currently open</span><span class="row2-val bold red">30 open violations</span></div>
+        <div class="row2"><span class="row2-lbl">Total on record</span><span class="row2-val">69 total</span></div>
+      </div>
+
+      <div>
+        <div class="sec-label">Tenant Pest Complaints</div>
+        <div class="row2"><span class="row2-lbl">Total filed</span><span class="row2-val bold">22 complaints</span></div>
+        <div class="row2"><span class="row2-lbl">Open</span><span class="row2-val red">Active complaints on file</span></div>
+      </div>
+
+      <div class="span2 pitch-box">
+        <strong>Why this is worth a call:</strong> 30 open HPD violations puts the managing agent in active cure-notice territory — housing court is the next step if this stays unresolved. Come in as the building-wide solution and get introduced to every tenant inside. One contract, multiple upsells. The landlord is motivated — this isn&rsquo;t discretionary, it&rsquo;s legally required.
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="legend-title">How to read these leads</div>
+  <div class="legend-text">Every lead is a hypothesis built from public data — not a guarantee. We watch a pattern emerge across DOH inspections, 311 rodent complaints, and HPD violations, then draw a conclusion about what it probably means and why it&rsquo;s worth a call. Doesn&rsquo;t mean any of these definitely sign. It means there&rsquo;s a real reason to call, and the data tells you exactly what that reason is.</div>
+  <div class="legend-codes">
+    <div class="legend-item"><span class="vcode">04L</span><span class="legend-lbl">Live mice on premises</span></div>
+    <div class="legend-item"><span class="vcode">04M</span><span class="legend-lbl">Mouse droppings</span></div>
+    <div class="legend-item"><span class="vcode">04K</span><span class="legend-lbl">Cockroach evidence</span></div>
+    <div class="legend-item"><span class="vcode">06C</span><span class="legend-lbl">Harborage conditions</span></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="cta-title">Ready to move on any of these?</div>
+  <div class="cta-sub">Reply with the number of the account you want first.<br>We&rsquo;ll send you everything — DOH contact, violation details, suggested opener.<br><span>First month is free.</span></div>
+  <a href="mailto:hi@gettrdi.com?subject=Evergreen - send the file&body=Hi Prateek,%0A%0AI want the full details on account #" class="cta-btn">Reply: Send me account details →</a>
+  <div class="cta-footer">Or email: <a href="mailto:hi@gettrdi.com">hi@gettrdi.com</a> · Prateek @ trdi</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>trdi · gettrdi.com</strong><br>
+  Data sourced from NYC DOH, HPD, and 311 public records.<br>
+  This brief was prepared specifically for Evergreen Eco Pest Control Inc.
+</div>
+
+</div><!-- /wrap -->
+</body>
+</html>
