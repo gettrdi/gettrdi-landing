@@ -387,14 +387,28 @@
       font-size: 12.5px; color: rgba(244,241,234,.72); line-height: 1.85;
     }
 
+    /* ── Logo lockup ── */
+    .trdi-lockup {
+      display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+    }
+    .trdi-mark { width: 22px; height: 22px; flex-shrink: 0; display: block; }
+    .trdi-wordmark {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 18px;
+      line-height: 1; letter-spacing: .01em; color: #fff;
+    }
+
     /* ── Footer ── */
     .footer {
       padding: 28px 0 48px; text-align: center;
       border-top: 1px solid var(--border);
     }
     .footer-logo {
-      font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700;
-      color: var(--rust); letter-spacing: .08em; display: block; margin-bottom: 8px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin-bottom: 10px;
+    }
+    .footer-wordmark {
+      font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800;
+      color: #fff; letter-spacing: .01em; line-height: 1;
     }
   </style>
 </head>
@@ -403,7 +417,20 @@
 <!-- HEADER -->
 <div class="hd">
   <div class="hd-inner">
-    <div class="hd-eyebrow">trdi · lead intelligence brief</div>
+    <div class="hd-eyebrow" style="display:flex; align-items:center; gap:10px;">
+      <a href="https://gettrdi.com" class="trdi-lockup" aria-label="trdi home">
+        <svg class="trdi-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" rx="14" fill="#1E1E1F"/>
+          <path d="M12 32h18" fill="none" stroke="#8A7E72" stroke-width="4" stroke-linecap="round"/>
+          <path d="M20 24h12" fill="none" stroke="#8A7E72" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+          <path d="M20 40h12" fill="none" stroke="#8A7E72" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+          <path d="M32 14h18L34 21c-4 1-5 5-1 7l8 3c5 2 4 7-1 7H16l20-6c4-1 5-5 1-7l-9-3c-5-2-4-7 4-8Z" fill="#F4F1EA"/>
+          <path d="M33 14h17L35 21c-5 2-6 6-1 8l-9-3c-8-3-7-12 8-12Z" fill="#C87A53"/>
+        </svg>
+        <span class="trdi-wordmark">trdi</span>
+      </a>
+      <span style="color:var(--subtle); font-size:11px; letter-spacing:.05em; text-transform:uppercase; font-weight:600;">lead intelligence brief</span>
+    </div>
     <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;">
       <div>
         <div class="hd-name">Evergreen Eco Pest Control Inc</div>
@@ -1864,7 +1891,17 @@
 
 <!-- FOOTER -->
 <div class="footer">
-  <span class="footer-logo">trdi</span>
+  <div class="footer-logo">
+    <svg class="trdi-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <rect width="64" height="64" rx="14" fill="#1E1E1F"/>
+      <path d="M12 32h18" fill="none" stroke="#8A7E72" stroke-width="4" stroke-linecap="round"/>
+      <path d="M20 24h12" fill="none" stroke="#8A7E72" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+      <path d="M20 40h12" fill="none" stroke="#8A7E72" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+      <path d="M32 14h18L34 21c-4 1-5 5-1 7l8 3c5 2 4 7-1 7H16l20-6c4-1 5-5 1-7l-9-3c-5-2-4-7 4-8Z" fill="#F4F1EA"/>
+      <path d="M33 14h17L35 21c-5 2-6 6-1 8l-9-3c-8-3-7-12 8-12Z" fill="#C87A53"/>
+    </svg>
+    <span class="footer-wordmark">trdi</span>
+  </div>
   <span style="color:var(--subtle);">Data: NYC DOH Inspection Records · HPD Violation Database · 311 Complaint Feed · NYC PLUTO 24v1</span><br>
   <span style="color:var(--subtle); font-size:10px;">Prepared May 28, 2026 · Confidential — for Evergreen Eco Pest Control Inc only · <a href="https://gettrdi.com" style="color:var(--rust);">gettrdi.com</a></span>
 </div>
