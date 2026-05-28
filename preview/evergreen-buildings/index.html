@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building Leads [TEST] — Evergreen Eco Pest Control</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 14px; -webkit-font-smoothing: antialiased; }
+    :root {
+      --rust:    #C87A53;
+      --linen:   #F4F1EA;
+      --taupe:   #8A7E72;
+      --charcoal:#1E1E1F;
+      --panel:   #242221;
+      --card:    #272422;
+      --soft:    #2D2926;
+      --border:  rgba(244,241,234,.10);
+      --border-hi: rgba(244,241,234,.16);
+      --muted:   rgba(244,241,234,.55);
+      --subtle:  rgba(244,241,234,.35);
+    }
+    body { background: var(--charcoal); color: var(--linen); font-family: 'Inter', sans-serif; }
+    a { color: inherit; }
+    .hd { background: var(--panel); border-bottom: 1px solid var(--border); }
+    .hd-inner { padding: 32px 20px 24px; max-width: 740px; margin: 0 auto; }
+    .hd-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--rust); margin-bottom: 10px; font-family: 'Syne', sans-serif; }
+    .hd-eyebrow .sc-trdi { font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: .01em; color: #fff; text-transform: none; }
+    .hd-name { font-size: 24px; font-weight: 700; color: var(--linen); line-height: 1.15; font-family: 'Instrument Serif', Georgia, serif; }
+    .hd-sub { font-size: 12px; color: var(--muted); margin-top: 6px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .hd-sub a { color: var(--muted); text-decoration: none; }
+    .hd-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .pill { font-size: 11px; background: var(--soft); color: var(--taupe); border-radius: 3px; padding: 3px 9px; font-weight: 500; }
+    .hd-bar { border-top: 1px solid var(--border); }
+    .hd-bar-inner { max-width: 740px; margin: 0 auto; padding: 10px 20px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; font-size: 12px; color: var(--subtle); }
+    .src-pill { font-size: 11px; background: var(--soft); color: var(--muted); border-radius: 3px; padding: 2px 7px; }
+    .jump-nav { position: sticky; top: 0; z-index: 10; background: var(--panel); border-bottom: 1px solid var(--border); }
+    .jump-nav-inner { max-width: 740px; margin: 0 auto; padding: 8px 20px; display: flex; gap: 6px; flex-wrap: nowrap; overflow-x: auto; }
+    .jump-pill { font-size: 11px; color: var(--muted); text-decoration: none; padding: 4px 10px; border-radius: 20px; background: var(--soft); white-space: nowrap; display: flex; align-items: center; gap: 5px; border: 1px solid transparent; }
+    .jump-pill:hover { color: var(--linen); border-color: var(--border-hi); }
+    .jp-g { font-size: 9px; font-weight: 800; border-radius: 2px; padding: 1px 5px; }
+    .jp-g.red   { background: rgba(220,38,38,.25); color: #f87171; }
+    .jp-g.amber { background: rgba(217,119,6,.20);  color: #fbbf24; }
+    .jp-g.green { background: rgba(22,163,74,.20);  color: #4ade80; }
+    .wrap { max-width: 740px; margin: 0 auto; padding: 28px 20px 60px; }
+    .section-label { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--subtle); margin-bottom: 14px; }
+    .card { background: var(--card); border-radius: 8px; margin-bottom: 18px; border: 1px solid var(--border); overflow: hidden; }
+    .card.u-red   { border-color: rgba(220,38,38,.30); }
+    .card.u-amber { border-color: rgba(217,119,6,.25); }
+    .card.u-green { border-color: rgba(22,163,74,.20); }
+    .card-head { list-style: none; display: flex; gap: 12px; align-items: flex-start; padding: 14px 18px; cursor: pointer; }
+    .card-head::-webkit-details-marker { display: none; }
+    .u-red   .card-head { background: rgba(220,38,38,.07); }
+    .u-amber .card-head { background: rgba(217,119,6,.06); }
+    .u-green .card-head { background: rgba(22,163,74,.05); }
+    .badge { display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; border-radius: 2px; padding: 3px 8px; color: #fff; flex-shrink: 0; margin-top: 3px; width: 58px; text-align: center; }
+    .u-red   .badge { background: #dc2626; }
+    .u-amber .badge { background: #d97706; }
+    .u-green .badge { background: #16a34a; }
+    .card-name { font-size: 16px; font-weight: 700; color: var(--linen); line-height: 1.2; }
+    .card-sub { font-size: 12px; color: var(--muted); margin-top: 4px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .dist-div { flex-shrink: 0; text-align: right; }
+    .dist-num { font-size: 22px; font-weight: 800; }
+    .u-red   .dist-num { color: #f87171; }
+    .u-amber .dist-num { color: #fbbf24; }
+    .u-green .dist-num { color: #4ade80; }
+    .dist-lbl { font-size: 10px; color: var(--subtle); }
+    .card-body { padding: 18px 18px 20px; border-top: 1px solid var(--border); }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 28px; }
+    .sec-label { font-size: 9px; font-weight: 700; color: var(--subtle); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 7px; }
+    .row2 { display: flex; gap: 8px; margin-bottom: 4px; align-items: baseline; }
+    .r2l { font-size: 11px; color: var(--subtle); flex-shrink: 0; min-width: 110px; }
+    .r2v { font-size: 12px; color: var(--linen); font-weight: 500; }
+    .sig-summary { font-size: 13px; color: var(--muted); line-height: 1.8; background: rgba(200,122,83,.05); border-radius: 4px; padding: 12px 14px; border-left: 3px solid rgba(200,122,83,.35); font-family: 'Instrument Serif', Georgia, serif; }
+    .footer { padding: 28px 0 48px; text-align: center; border-top: 1px solid var(--border); }
+    .footer-wordmark { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800; letter-spacing: .01em; color: #fff; line-height: 1; display: block; margin-bottom: 10px; }
+    @media (max-width: 540px) {
+      .grid2 { grid-template-columns: 1fr; }
+      .hd-inner { padding: 24px 16px 20px; }
+      .wrap { padding: 20px 16px 48px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hd">
+  <div class="hd-inner">
+    <div class="hd-eyebrow"><span class="sc-trdi">trdi</span> · lead intelligence brief · buildings [test]</div>
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="hd-name">Evergreen Eco Pest Control Inc</div>
+        <div class="hd-sub">
+          <span>194 Quentin Rd, Brooklyn, NY 11223</span>
+          <a href="tel:7187621820">(718) 762-1820</a>
+        </div>
+      </div>
+      <div style="font-size:12px; color:var(--muted); text-align:right; flex-shrink:0;">
+        <div>Prepared May 29, 2026</div>
+        <div style="margin-top:4px; color:var(--linen); font-weight:600;">10 building leads</div>
+      </div>
+    </div>
+    <div class="hd-meta">
+      <span class="pill">DEC #16909</span>
+      <span class="pill">Structural &amp; Rodent Control</span>
+      <span class="pill">Expires Feb 2029</span>
+      <span class="pill">10 years in business</span>
+      <span class="pill">All 5 boroughs</span>
+    </div>
+  </div>
+  <div class="hd-bar">
+    <div class="hd-bar-inner">
+      Data:
+      <span class="src-pill">HPD Violation Database</span>
+      <span class="src-pill">HPD Tenant Complaints</span>
+      <span class="src-pill">NYC PLUTO 24v1</span>
+    </div>
+  </div>
+</div>
+
+<div class="jump-nav">
+  <div class="jump-nav-inner">
+<a href="#card-1" class="jump-pill"><span class="jp-g red">40</span> 2026 NOSTRAND</a>
+<a href="#card-2" class="jump-pill"><span class="jp-g red">30</span> 6623 FT</a>
+<a href="#card-3" class="jump-pill"><span class="jp-g red">28</span> 509 HINSDALE</a>
+<a href="#card-4" class="jump-pill"><span class="jp-g amber">17</span> 1502 CORTELYOU</a>
+<a href="#card-5" class="jump-pill"><span class="jp-g amber">17</span> 88 CHAUNCEY</a>
+<a href="#card-6" class="jump-pill"><span class="jp-g amber">16</span> 5302 7</a>
+<a href="#card-7" class="jump-pill"><span class="jp-g amber">15</span> 1337 FULTON</a>
+<a href="#card-8" class="jump-pill"><span class="jp-g amber">14</span> 434 PARK</a>
+<a href="#card-9" class="jump-pill"><span class="jp-g amber">14</span> 1543 NOSTRAND</a>
+<a href="#card-10" class="jump-pill"><span class="jp-g amber">14</span> 1685 PRESIDENT</a>
+
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="section-label" style="margin-bottom:18px">Residential Buildings — HPD Open Pest Violations · Brooklyn · within 10 mi of your office</div>
+
+
+  <div class="card u-red" id="card-1">
+    <summary class="card-head">
+      <div class="badge">Critical</div>
+      <div style="flex:1;min-width:0">
+        <div class="card-name">1. 2026 NOSTRAND AVENUE</div>
+        <div class="card-sub">
+          <a href="https://maps.google.com/?q=2026+NOSTRAND+AVENUE+Brooklyn+NY" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline">Brooklyn 11210</a>
+          <span>· 12 units</span>
+          <span>· Built 1931</span>
+        </div>
+      </div>
+      <div class="dist-div">
+        <div class="dist-num">40</div>
+        <div class="dist-lbl">open violations</div>
+        <div style='font-size:11px;color:var(--subtle);margin-top:4px'>2.3 mi away</div>
+      </div>
+    </summary>
+
+    <div class="card-body">
+
+      <!-- Stats strip -->
+      <div style="display:flex;gap:0;flex-wrap:wrap;margin-bottom:18px;background:var(--soft);border-radius:6px;overflow:hidden;border:1px solid var(--border)">
+        <div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:#f87171">40</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Open Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">80</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Total Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:#fbbf24">18</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Complaints</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">12</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Units</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">4</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Floors</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">$416K</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Assessed</div></div>
+      </div>
+
+      <div class="grid2">
+
+        <!-- HPD Record -->
+        <div>
+          <div class="sec-label">HPD Record</div>
+          <div class="row2"><span class="r2l">Open violations</span><span class="r2v" style="color:#f87171;font-weight:700">40</span></div>
+          <div class="row2"><span class="r2l">Total violations</span><span class="r2v">80</span></div>
+          <div class="row2"><span class="r2l">Tenant complaints</span><span class="r2v">18</span></div>
+          <div class='row2'><span class='r2l'>Most recent</span><span class='r2v'>Mar 4, 2014</span></div>
+          <div class='row2'><span class='r2l'>Last complaint</span><span class='r2v'>Apr 26, 2023</span></div>
+        </div>
+
+        <!-- Building -->
+        <div>
+          <div class="sec-label">Building</div>
+          <div class='row2'><span class='r2l'>Floors</span><span class='r2v'>4</span></div>
+          <div class='row2'><span class='r2l'>Total units</span><span class='r2v'>12</span></div>
+          <div class='row2'><span class='r2l'>Residential</span><span class='r2v'>11</span></div>
+          <div class="row2"><span class="r2l">Construction</span><span class="r2v">1931</span></div>
+          <div class='row2'><span class='r2l'>Bldg area</span><span class='r2v'>9,280 sf</span></div>
+        </div>
+
+        <!-- Managing Agent -->
+        <div>
+          <div class="sec-label">Managing Agent</div>
+          <div style='font-size:12px;color:var(--subtle)'>Not on record — likely owner-managed</div>
+          
+          
+          <div class='row2'><span class='r2l'>Reg #</span><span class='r2v'>307118  · Sep 12, 2024</span></div>
+        </div>
+
+        <!-- Owner -->
+        <div>
+          <div class="sec-label">Owner</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>CLINTON SPICER</div>
+          
+          <div class='row2'><span class='r2l'>Address</span><span class='r2v'>315 HAWTHORNE STREET, Brooklyn, NY, 11225</span></div>
+        </div>
+
+        
+        <div style="grid-column:1/-1">
+          <div class="sec-label">Open HPD Pest Violations (33)</div>
+          <div style="overflow-x:auto">
+            <table style="width:100%;border-collapse:collapse;font-size:12px">
+              <thead><tr style="border-bottom:1px solid var(--border)">
+                <th style="text-align:left;padding:4px 10px 4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em">Class</th>
+                <th style="text-align:left;padding:4px 10px 4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap">Issued</th>
+                <th style="text-align:left;padding:4px 10px 4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em">Unit</th>
+                <th style="text-align:left;padding:4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em">Description</th>
+              </tr></thead>
+              <tbody>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#2a2a2a;color:#94a3b8">A</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2026-05-05</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">—</td>
+            <td style="padding:5px 0;color:var(--linen)">(A) § HMC:FILE ANNUAL BEDBUG REPORT IN ACCORDANCE WITH HPD RULE AS DESCRIBED ON THE BACK OF THIS NOTICE OF VIOLATION OR </td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2026-04-09</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">4A / Fl 4</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 4A, 4th STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a2e0a;color:#fbbf24">B</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2026-04-09</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">4A / Fl 4</td>
+            <td style="padding:5px 0;color:var(--linen)">566 (B) 27-2021.4 HMC: ABATE THE NUISANCE CONSISTING OF PESTS. EVIDENCE OF FLIES IN THE ENTIRE APARTMENT LOCATED AT APT </td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2026-04-07</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">4C / Fl 4</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 4C, 4th STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2026-03-23</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">3C / Fl 3</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 3C, 3rd STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2026-02-27</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">4A / Fl 4</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 4A, 4th STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-12-29</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">2C / Fl 2</td>
+            <td style="padding:5px 0;color:var(--linen)">567 (C) § 27-2017, 27-2017.1, 27-2017.4, 27-2017.5, 27-2017.8, 27-2019, 27-2021 HMC: ABATE THE NUISANCE CONSISTING OF EV</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-10-31</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">Fl 0</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE YARD</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-08-27</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">3C / Fl 3</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 3C, 3rd STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-07-18</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">3C / Fl 3</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 3C, 3rd STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-02-03</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">3C / Fl 3</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 3C, 3rd STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-01-21</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">4C / Fl 4</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 4C, 4th STORY,</td>
+          </tr></tbody>
+            </table>
+            <div style="font-size:11px;color:var(--subtle);margin-top:6px">+21 more open violations</div>
+          </div>
+        </div>
+
+        <!-- Signal Summary -->
+        <div style="grid-column:1/-1">
+          <div class="sec-label">Signal Summary</div>
+          <div class="sig-summary">40 open HPD Class C pest violations (80 total) across this 12-unit building. Most recent violation: Mar 4, 2014. No managing agent on record — likely owner-managed. 18 tenant pest complaints on file.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card u-red" id="card-2">
+    <summary class="card-head">
+      <div class="badge">Critical</div>
+      <div style="flex:1;min-width:0">
+        <div class="card-name">2. 6623 FT HAMILTON PARKWAY</div>
+        <div class="card-sub">
+          <a href="https://maps.google.com/?q=6623+FT+HAMILTON+PARKWAY+Brooklyn+NY" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline">Brooklyn 11219</a>
+          <span>· 30 units</span>
+          <span>· Built 1935</span>
+        </div>
+      </div>
+      <div class="dist-div">
+        <div class="dist-num">30</div>
+        <div class="dist-lbl">open violations</div>
+        <div style='font-size:11px;color:var(--subtle);margin-top:4px'>2.5 mi away</div>
+      </div>
+    </summary>
+
+    <div class="card-body">
+
+      <!-- Stats strip -->
+      <div style="display:flex;gap:0;flex-wrap:wrap;margin-bottom:18px;background:var(--soft);border-radius:6px;overflow:hidden;border:1px solid var(--border)">
+        <div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:#f87171">30</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Open Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">69</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Total Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:#fbbf24">22</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Complaints</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">30</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Units</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">5</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Floors</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">$1.2M</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Assessed</div></div>
+      </div>
+
+      <div class="grid2">
+
+        <!-- HPD Record -->
+        <div>
+          <div class="sec-label">HPD Record</div>
+          <div class="row2"><span class="r2l">Open violations</span><span class="r2v" style="color:#f87171;font-weight:700">30</span></div>
+          <div class="row2"><span class="r2l">Total violations</span><span class="r2v">69</span></div>
+          <div class="row2"><span class="r2l">Tenant complaints</span><span class="r2v">22</span></div>
+          <div class='row2'><span class='r2l'>Most recent</span><span class='r2v'>May 22, 2023</span></div>
+          <div class='row2'><span class='r2l'>Last complaint</span><span class='r2v'>Sep 30, 2020</span></div>
+        </div>
+
+        <!-- Building -->
+        <div>
+          <div class="sec-label">Building</div>
+          <div class='row2'><span class='r2l'>Floors</span><span class='r2v'>5</span></div>
+          <div class='row2'><span class='r2l'>Total units</span><span class='r2v'>30</span></div>
+          <div class='row2'><span class='r2l'>Residential</span><span class='r2v'>27</span></div>
+          <div class="row2"><span class="r2l">Construction</span><span class="r2v">1935</span></div>
+          <div class='row2'><span class='r2l'>Bldg area</span><span class='r2v'>24,001 sf</span></div>
+        </div>
+
+        <!-- Managing Agent -->
+        <div>
+          <div class="sec-label">Managing Agent</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>LEO LOUIE</div>
+          
+          <div class='row2'><span class='r2l'>Address</span><span class='r2v'>20 UTOPIA CT, STATEN ISLAND, NY, 10304</span></div>
+          <div class='row2'><span class='r2l'>Reg #</span><span class='r2v'>358409  · Oct 21, 2025</span></div>
+        </div>
+
+        <!-- Owner -->
+        <div>
+          <div class="sec-label">Owner</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>GOLDEN CIRCLE 6623 LLC</div>
+          <div class='row2'><span class='r2l'>HPD registered</span><span class='r2v'>zailan xu</span></div>
+          <div class='row2'><span class='r2l'>Address</span><span class='r2v'>7109 18 Ave, Brooklyn, NY, 11204</span></div>
+        </div>
+
+        
+
+        <!-- Signal Summary -->
+        <div style="grid-column:1/-1">
+          <div class="sec-label">Signal Summary</div>
+          <div class="sig-summary">30 open HPD Class C pest violations (69 total) across this 30-unit building. Most recent violation: May 22, 2023. Managing agent: LEO LOUIE. 22 tenant pest complaints on file.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card u-red" id="card-3">
+    <summary class="card-head">
+      <div class="badge">Critical</div>
+      <div style="flex:1;min-width:0">
+        <div class="card-name">3. 509 HINSDALE STREET</div>
+        <div class="card-sub">
+          <a href="https://maps.google.com/?q=509+HINSDALE+STREET+Brooklyn+NY" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline">Brooklyn 11207</a>
+          <span>· 25 units</span>
+          <span>· Built 1930</span>
+        </div>
+      </div>
+      <div class="dist-div">
+        <div class="dist-num">28</div>
+        <div class="dist-lbl">open violations</div>
+        <div style='font-size:11px;color:var(--subtle);margin-top:4px'>5.4 mi away</div>
+      </div>
+    </summary>
+
+    <div class="card-body">
+
+      <!-- Stats strip -->
+      <div style="display:flex;gap:0;flex-wrap:wrap;margin-bottom:18px;background:var(--soft);border-radius:6px;overflow:hidden;border:1px solid var(--border)">
+        <div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:#f87171">28</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Open Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">58</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Total Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:#fbbf24">48</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Complaints</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">25</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Units</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">4</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Floors</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">$875K</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Assessed</div></div>
+      </div>
+
+      <div class="grid2">
+
+        <!-- HPD Record -->
+        <div>
+          <div class="sec-label">HPD Record</div>
+          <div class="row2"><span class="r2l">Open violations</span><span class="r2v" style="color:#f87171;font-weight:700">28</span></div>
+          <div class="row2"><span class="r2l">Total violations</span><span class="r2v">58</span></div>
+          <div class="row2"><span class="r2l">Tenant complaints</span><span class="r2v">48</span></div>
+          <div class='row2'><span class='r2l'>Most recent</span><span class='r2v'>Mar 24, 2023</span></div>
+          <div class='row2'><span class='r2l'>Last complaint</span><span class='r2v'>Sep 10, 2024</span></div>
+        </div>
+
+        <!-- Building -->
+        <div>
+          <div class="sec-label">Building</div>
+          <div class='row2'><span class='r2l'>Floors</span><span class='r2v'>4</span></div>
+          <div class='row2'><span class='r2l'>Total units</span><span class='r2v'>25</span></div>
+          <div class='row2'><span class='r2l'>Residential</span><span class='r2v'>21</span></div>
+          <div class="row2"><span class="r2l">Construction</span><span class="r2v">1930</span></div>
+          <div class='row2'><span class='r2l'>Bldg area</span><span class='r2v'>18,000 sf</span></div>
+        </div>
+
+        <!-- Managing Agent -->
+        <div>
+          <div class="sec-label">Managing Agent</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>DANIEL CALLER</div>
+          
+          <div class='row2'><span class='r2l'>Address</span><span class='r2v'>333 PEARSALL AVENUE, Apt 207, Cedarhurst, NY, 11516</span></div>
+          <div class='row2'><span class='r2l'>Reg #</span><span class='r2v'>324839  · Oct 3, 2025</span></div>
+        </div>
+
+        <!-- Owner -->
+        <div>
+          <div class="sec-label">Owner</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>RIVERDALE AVENUE PROPERTIES LLC</div>
+          
+          <div class='row2'><span class='r2l'>Address</span><span class='r2v'>333 PEARSALL AVENUE, Apt 207, Cedarhurst, NY, 11516</span></div>
+        </div>
+
+        
+        <div style="grid-column:1/-1">
+          <div class="sec-label">Open HPD Pest Violations (5)</div>
+          <div style="overflow-x:auto">
+            <table style="width:100%;border-collapse:collapse;font-size:12px">
+              <thead><tr style="border-bottom:1px solid var(--border)">
+                <th style="text-align:left;padding:4px 10px 4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em">Class</th>
+                <th style="text-align:left;padding:4px 10px 4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap">Issued</th>
+                <th style="text-align:left;padding:4px 10px 4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em">Unit</th>
+                <th style="text-align:left;padding:4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em">Description</th>
+              </tr></thead>
+              <tbody>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-10-29</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">2F / Fl 2</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 2F, 2nd STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-06-27</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">2F / Fl 2</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 2F, 2nd STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2023-09-12</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">4E / Fl 4</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 4E, 4th STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2023-03-24</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">4F / Fl 4</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 4F, 4th STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2020-02-10</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">4A / Fl 4</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 4A, 4th STORY,</td>
+          </tr></tbody>
+            </table>
+            
+          </div>
+        </div>
+
+        <!-- Signal Summary -->
+        <div style="grid-column:1/-1">
+          <div class="sec-label">Signal Summary</div>
+          <div class="sig-summary">28 open HPD Class C pest violations (58 total) across this 25-unit building. Most recent violation: Mar 24, 2023. Managing agent: DANIEL CALLER. 48 tenant pest complaints on file.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card u-amber" id="card-4">
+    <summary class="card-head">
+      <div class="badge">High</div>
+      <div style="flex:1;min-width:0">
+        <div class="card-name">4. 1502 CORTELYOU ROAD</div>
+        <div class="card-sub">
+          <a href="https://maps.google.com/?q=1502+CORTELYOU+ROAD+Brooklyn+NY" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline">Brooklyn 11226</a>
+          <span>· 6 units</span>
+          <span>· Built 1930</span>
+        </div>
+      </div>
+      <div class="dist-div">
+        <div class="dist-num">17</div>
+        <div class="dist-lbl">open violations</div>
+        <div style='font-size:11px;color:var(--subtle);margin-top:4px'>2.3 mi away</div>
+      </div>
+    </summary>
+
+    <div class="card-body">
+
+      <!-- Stats strip -->
+      <div style="display:flex;gap:0;flex-wrap:wrap;margin-bottom:18px;background:var(--soft);border-radius:6px;overflow:hidden;border:1px solid var(--border)">
+        <div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:#f87171">17</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Open Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">17</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Total Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">2</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Complaints</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">6</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Units</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">3</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Floors</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">$459K</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Assessed</div></div>
+      </div>
+
+      <div class="grid2">
+
+        <!-- HPD Record -->
+        <div>
+          <div class="sec-label">HPD Record</div>
+          <div class="row2"><span class="r2l">Open violations</span><span class="r2v" style="color:#f87171;font-weight:700">17</span></div>
+          <div class="row2"><span class="r2l">Total violations</span><span class="r2v">17</span></div>
+          <div class="row2"><span class="r2l">Tenant complaints</span><span class="r2v">2</span></div>
+          <div class='row2'><span class='r2l'>Most recent</span><span class='r2v'>Jun 9, 2025</span></div>
+          <div class='row2'><span class='r2l'>Last complaint</span><span class='r2v'>Nov 14, 2022</span></div>
+        </div>
+
+        <!-- Building -->
+        <div>
+          <div class="sec-label">Building</div>
+          <div class='row2'><span class='r2l'>Floors</span><span class='r2v'>3</span></div>
+          <div class='row2'><span class='r2l'>Total units</span><span class='r2v'>6</span></div>
+          <div class='row2'><span class='r2l'>Residential</span><span class='r2v'>4</span></div>
+          <div class="row2"><span class="r2l">Construction</span><span class="r2v">1930</span></div>
+          <div class='row2'><span class='r2l'>Bldg area</span><span class='r2v'>4,140 sf</span></div>
+        </div>
+
+        <!-- Managing Agent -->
+        <div>
+          <div class="sec-label">Managing Agent</div>
+          <div style='font-size:12px;color:var(--subtle)'>Not on record — likely owner-managed</div>
+          
+          
+          <div class='row2'><span class='r2l'>Reg #</span><span class='r2v'>316717  · Aug 18, 2022</span></div>
+        </div>
+
+        <!-- Owner -->
+        <div>
+          <div class="sec-label">Owner</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>JHANGIR, ASIF</div>
+          <div class='row2'><span class='r2l'>HPD registered</span><span class='r2v'>ASIF JHANGIR</span></div>
+          <div class='row2'><span class='r2l'>Address</span><span class='r2v'>1234 CONEY ISLAND AVE, BK, NY, 11230</span></div>
+        </div>
+
+        
+
+        <!-- Signal Summary -->
+        <div style="grid-column:1/-1">
+          <div class="sec-label">Signal Summary</div>
+          <div class="sig-summary">17 open HPD Class C pest violations (17 total) across this 6-unit building. Most recent violation: Jun 9, 2025. No managing agent on record — likely owner-managed. 2 tenant pest complaints on file.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card u-amber" id="card-5">
+    <summary class="card-head">
+      <div class="badge">High</div>
+      <div style="flex:1;min-width:0">
+        <div class="card-name">5. 88 CHAUNCEY STREET</div>
+        <div class="card-sub">
+          <a href="https://maps.google.com/?q=88+CHAUNCEY+STREET+Brooklyn+NY" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline">Brooklyn 11233</a>
+          <span>· 287 units</span>
+          <span>· Built 1974</span>
+        </div>
+      </div>
+      <div class="dist-div">
+        <div class="dist-num">17</div>
+        <div class="dist-lbl">open violations</div>
+        <div style='font-size:11px;color:var(--subtle);margin-top:4px'>5.4 mi away</div>
+      </div>
+    </summary>
+
+    <div class="card-body">
+
+      <!-- Stats strip -->
+      <div style="display:flex;gap:0;flex-wrap:wrap;margin-bottom:18px;background:var(--soft);border-radius:6px;overflow:hidden;border:1px solid var(--border)">
+        <div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:#f87171">17</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Open Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">50</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Total Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">0</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Complaints</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">287</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Units</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">6</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Floors</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">$13.3M</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Assessed</div></div>
+      </div>
+
+      <div class="grid2">
+
+        <!-- HPD Record -->
+        <div>
+          <div class="sec-label">HPD Record</div>
+          <div class="row2"><span class="r2l">Open violations</span><span class="r2v" style="color:#f87171;font-weight:700">17</span></div>
+          <div class="row2"><span class="r2l">Total violations</span><span class="r2v">50</span></div>
+          <div class="row2"><span class="r2l">Tenant complaints</span><span class="r2v">0</span></div>
+          <div class='row2'><span class='r2l'>Most recent</span><span class='r2v'>Nov 8, 2024</span></div>
+          
+        </div>
+
+        <!-- Building -->
+        <div>
+          <div class="sec-label">Building</div>
+          <div class='row2'><span class='r2l'>Floors</span><span class='r2v'>6</span></div>
+          <div class='row2'><span class='r2l'>Total units</span><span class='r2v'>287</span></div>
+          
+          <div class="row2"><span class="r2l">Construction</span><span class="r2v">1974</span></div>
+          <div class='row2'><span class='r2l'>Bldg area</span><span class='r2v'>277,200 sf</span></div>
+        </div>
+
+        <!-- Managing Agent -->
+        <div>
+          <div class="sec-label">Managing Agent</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>JOSEPH MILSTEIN</div>
+          
+          <div class='row2'><span class='r2l'>Address</span><span class='r2v'>1 Pennsylvania Plaza, Apt 1115, New York, NY, 10119</span></div>
+          <div class='row2'><span class='r2l'>Reg #</span><span class='r2v'>374782  · Oct 12, 2024</span></div>
+        </div>
+
+        <!-- Owner -->
+        <div>
+          <div class="sec-label">Owner</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>FULTON PARK SITE 4 HOUSES,INC</div>
+          <div class='row2'><span class='r2l'>HPD registered</span><span class='r2v'>VERTICES HOLDINGS LLC</span></div>
+          <div class='row2'><span class='r2l'>Address</span><span class='r2v'>1 Pennsylvania Plaza, Apt 1115, New York, NY, 10119</span></div>
+        </div>
+
+        
+
+        <!-- Signal Summary -->
+        <div style="grid-column:1/-1">
+          <div class="sec-label">Signal Summary</div>
+          <div class="sig-summary">17 open HPD Class C pest violations (50 total) across this 287-unit building. Most recent violation: Nov 8, 2024. Managing agent: JOSEPH MILSTEIN. No tenant complaints logged.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card u-amber" id="card-6">
+    <summary class="card-head">
+      <div class="badge">High</div>
+      <div style="flex:1;min-width:0">
+        <div class="card-name">6. 5302 7 AVENUE</div>
+        <div class="card-sub">
+          <a href="https://maps.google.com/?q=5302+7+AVENUE+Brooklyn+NY" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline">Brooklyn 11220</a>
+          <span>· 11 units</span>
+          <span>· Built 1915</span>
+        </div>
+      </div>
+      <div class="dist-div">
+        <div class="dist-num">16</div>
+        <div class="dist-lbl">open violations</div>
+        <div style='font-size:11px;color:var(--subtle);margin-top:4px'>2.9 mi away</div>
+      </div>
+    </summary>
+
+    <div class="card-body">
+
+      <!-- Stats strip -->
+      <div style="display:flex;gap:0;flex-wrap:wrap;margin-bottom:18px;background:var(--soft);border-radius:6px;overflow:hidden;border:1px solid var(--border)">
+        <div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:#f87171">16</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Open Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">16</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Total Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">5</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Complaints</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">11</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Units</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">4</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Floors</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">$998K</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Assessed</div></div>
+      </div>
+
+      <div class="grid2">
+
+        <!-- HPD Record -->
+        <div>
+          <div class="sec-label">HPD Record</div>
+          <div class="row2"><span class="r2l">Open violations</span><span class="r2v" style="color:#f87171;font-weight:700">16</span></div>
+          <div class="row2"><span class="r2l">Total violations</span><span class="r2v">16</span></div>
+          <div class="row2"><span class="r2l">Tenant complaints</span><span class="r2v">5</span></div>
+          <div class='row2'><span class='r2l'>Most recent</span><span class='r2v'>Jul 16, 2025</span></div>
+          <div class='row2'><span class='r2l'>Last complaint</span><span class='r2v'>Dec 8, 2022</span></div>
+        </div>
+
+        <!-- Building -->
+        <div>
+          <div class="sec-label">Building</div>
+          <div class='row2'><span class='r2l'>Floors</span><span class='r2v'>4</span></div>
+          <div class='row2'><span class='r2l'>Total units</span><span class='r2v'>11</span></div>
+          <div class='row2'><span class='r2l'>Residential</span><span class='r2v'>9</span></div>
+          <div class="row2"><span class="r2l">Construction</span><span class="r2v">1915</span></div>
+          <div class='row2'><span class='r2l'>Bldg area</span><span class='r2v'>9,057 sf</span></div>
+        </div>
+
+        <!-- Managing Agent -->
+        <div>
+          <div class="sec-label">Managing Agent</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>QI LIU</div>
+          
+          <div class='row2'><span class='r2l'>Address</span><span class='r2v'>5302 7 AVENUE, Brooklyn, NY, 11220</span></div>
+          <div class='row2'><span class='r2l'>Reg #</span><span class='r2v'>313773  · Dec 29, 2025</span></div>
+        </div>
+
+        <!-- Owner -->
+        <div>
+          <div class="sec-label">Owner</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>QI LONG LLC</div>
+          
+          <div class='row2'><span class='r2l'>Address</span><span class='r2v'>2002 BERWICK DR, Riverton, NJ, 08077</span></div>
+        </div>
+
+        
+        <div style="grid-column:1/-1">
+          <div class="sec-label">Open HPD Pest Violations (16)</div>
+          <div style="overflow-x:auto">
+            <table style="width:100%;border-collapse:collapse;font-size:12px">
+              <thead><tr style="border-bottom:1px solid var(--border)">
+                <th style="text-align:left;padding:4px 10px 4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em">Class</th>
+                <th style="text-align:left;padding:4px 10px 4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap">Issued</th>
+                <th style="text-align:left;padding:4px 10px 4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em">Unit</th>
+                <th style="text-align:left;padding:4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em">Description</th>
+              </tr></thead>
+              <tbody>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#2a2a2a;color:#94a3b8">A</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2026-04-30</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">—</td>
+            <td style="padding:5px 0;color:var(--linen)">(A) § HMC:FILE ANNUAL BEDBUG REPORT IN ACCORDANCE WITH HPD RULE AS DESCRIBED ON THE BACK OF THIS NOTICE OF VIOLATION OR </td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2026-01-12</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">8 / Fl 4</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 8, 4th STORY, </td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-11-24</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">9 / Fl 4</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 9, 4th STORY, </td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-09-05</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">6 / Fl 3</td>
+            <td style="padding:5px 0;color:var(--linen)">567 (C) § 27-2017, 27-2017.1, 27-2017.4, 27-2017.5, 27-2017.8, 27-2019, 27-2021 HMC: ABATE THE NUISANCE CONSISTING OF EV</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-07-16</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">8 / Fl 4</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 8, 4th STORY, </td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#2a2a2a;color:#94a3b8">A</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-06-05</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">—</td>
+            <td style="padding:5px 0;color:var(--linen)">(A) § HMC:FILE ANNUAL BEDBUG REPORT IN ACCORDANCE WITH HPD RULE AS DESCRIBED ON THE BACK OF THIS NOTICE OF VIOLATION OR </td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#2a2a2a;color:#94a3b8">A</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2024-04-03</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">—</td>
+            <td style="padding:5px 0;color:var(--linen)">(A) § HMC:FILE ANNUAL BEDBUG REPORT IN ACCORDANCE WITH HPD RULE AS DESCRIBED ON THE BACK OF THIS NOTICE OF VIOLATION OR </td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#2a2a2a;color:#94a3b8">A</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2023-03-20</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">—</td>
+            <td style="padding:5px 0;color:var(--linen)">(A) § HMC:FILE ANNUAL BEDBUG REPORT IN ACCORDANCE WITH HPD RULE AS DESCRIBED ON THE BACK OF THIS NOTICE OF VIOLATION OR </td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2022-12-14</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">6 / Fl 3</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 6, 3rd STORY, </td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a2e0a;color:#fbbf24">B</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2022-12-14</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">6 / Fl 3</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF VERMIN FLIES IN THE ENTIRE APARTMENT LOCATED AT APT 6, 3rd</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#2a2a2a;color:#94a3b8">A</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2022-02-18</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">—</td>
+            <td style="padding:5px 0;color:var(--linen)">(A) § HMC:FILE ANNUAL BEDBUG REPORT IN ACCORDANCE WITH HPD RULE AS DESCRIBED ON THE BACK OF THIS NOTICE OF VIOLATION OR </td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#2a2a2a;color:#94a3b8">A</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2021-04-05</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">—</td>
+            <td style="padding:5px 0;color:var(--linen)">(A) § HMC:FILE ANNUAL BEDBUG REPORT IN ACCORDANCE WITH HPD RULE AS DESCRIBED ON THE BACK OF THIS NOTICE OF VIOLATION OR </td>
+          </tr></tbody>
+            </table>
+            <div style="font-size:11px;color:var(--subtle);margin-top:6px">+4 more open violations</div>
+          </div>
+        </div>
+
+        <!-- Signal Summary -->
+        <div style="grid-column:1/-1">
+          <div class="sec-label">Signal Summary</div>
+          <div class="sig-summary">16 open HPD Class C pest violations (16 total) across this 11-unit building. Most recent violation: Jul 16, 2025. Managing agent: QI LIU. 5 tenant pest complaints on file.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card u-amber" id="card-7">
+    <summary class="card-head">
+      <div class="badge">High</div>
+      <div style="flex:1;min-width:0">
+        <div class="card-name">7. 1337 FULTON STREET</div>
+        <div class="card-sub">
+          <a href="https://maps.google.com/?q=1337+FULTON+STREET+Brooklyn+NY" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline">Brooklyn 11216</a>
+          <span>· 4 units</span>
+          <span>· Built 1910</span>
+        </div>
+      </div>
+      <div class="dist-div">
+        <div class="dist-num">15</div>
+        <div class="dist-lbl">open violations</div>
+        <div style='font-size:11px;color:var(--subtle);margin-top:4px'>5.2 mi away</div>
+      </div>
+    </summary>
+
+    <div class="card-body">
+
+      <!-- Stats strip -->
+      <div style="display:flex;gap:0;flex-wrap:wrap;margin-bottom:18px;background:var(--soft);border-radius:6px;overflow:hidden;border:1px solid var(--border)">
+        <div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:#f87171">15</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Open Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">19</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Total Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:#fbbf24">7</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Complaints</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">4</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Units</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">4</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Floors</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">$440K</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Assessed</div></div>
+      </div>
+
+      <div class="grid2">
+
+        <!-- HPD Record -->
+        <div>
+          <div class="sec-label">HPD Record</div>
+          <div class="row2"><span class="r2l">Open violations</span><span class="r2v" style="color:#f87171;font-weight:700">15</span></div>
+          <div class="row2"><span class="r2l">Total violations</span><span class="r2v">19</span></div>
+          <div class="row2"><span class="r2l">Tenant complaints</span><span class="r2v">7</span></div>
+          <div class='row2'><span class='r2l'>Most recent</span><span class='r2v'>Mar 22, 2023</span></div>
+          <div class='row2'><span class='r2l'>Last complaint</span><span class='r2v'>Jan 9, 2020</span></div>
+        </div>
+
+        <!-- Building -->
+        <div>
+          <div class="sec-label">Building</div>
+          <div class='row2'><span class='r2l'>Floors</span><span class='r2v'>4</span></div>
+          <div class='row2'><span class='r2l'>Total units</span><span class='r2v'>4</span></div>
+          <div class='row2'><span class='r2l'>Residential</span><span class='r2v'>3</span></div>
+          <div class="row2"><span class="r2l">Construction</span><span class="r2v">1910 · alt. 2017</span></div>
+          <div class='row2'><span class='r2l'>Bldg area</span><span class='r2v'>5,200 sf</span></div>
+        </div>
+
+        <!-- Managing Agent -->
+        <div>
+          <div class="sec-label">Managing Agent</div>
+          <div style='font-size:12px;color:var(--subtle)'>Not on record — likely owner-managed</div>
+          
+          
+          <div class='row2'><span class='r2l'>Reg #</span><span class='r2v'>308562</span></div>
+        </div>
+
+        <!-- Owner -->
+        <div>
+          <div class="sec-label">Owner</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>FULTON NY LLC</div>
+          
+          
+        </div>
+
+        
+
+        <!-- Signal Summary -->
+        <div style="grid-column:1/-1">
+          <div class="sec-label">Signal Summary</div>
+          <div class="sig-summary">15 open HPD Class C pest violations (19 total) across this 4-unit building. Most recent violation: Mar 22, 2023. No managing agent on record — likely owner-managed. 7 tenant pest complaints on file.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card u-amber" id="card-8">
+    <summary class="card-head">
+      <div class="badge">High</div>
+      <div style="flex:1;min-width:0">
+        <div class="card-name">8. 434 PARK PLACE</div>
+        <div class="card-sub">
+          <a href="https://maps.google.com/?q=434+PARK+PLACE+Brooklyn+NY" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline">Brooklyn 11238</a>
+          <span>· 11 units</span>
+          <span>· Built 1900</span>
+        </div>
+      </div>
+      <div class="dist-div">
+        <div class="dist-num">14</div>
+        <div class="dist-lbl">open violations</div>
+        <div style='font-size:11px;color:var(--subtle);margin-top:4px'>4.7 mi away</div>
+      </div>
+    </summary>
+
+    <div class="card-body">
+
+      <!-- Stats strip -->
+      <div style="display:flex;gap:0;flex-wrap:wrap;margin-bottom:18px;background:var(--soft);border-radius:6px;overflow:hidden;border:1px solid var(--border)">
+        <div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:#f87171">14</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Open Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">14</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Total Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">0</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Complaints</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">11</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Units</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">4</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Floors</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">$605K</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Assessed</div></div>
+      </div>
+
+      <div class="grid2">
+
+        <!-- HPD Record -->
+        <div>
+          <div class="sec-label">HPD Record</div>
+          <div class="row2"><span class="r2l">Open violations</span><span class="r2v" style="color:#f87171;font-weight:700">14</span></div>
+          <div class="row2"><span class="r2l">Total violations</span><span class="r2v">14</span></div>
+          <div class="row2"><span class="r2l">Tenant complaints</span><span class="r2v">0</span></div>
+          <div class='row2'><span class='r2l'>Most recent</span><span class='r2v'>Apr 11, 2024</span></div>
+          
+        </div>
+
+        <!-- Building -->
+        <div>
+          <div class="sec-label">Building</div>
+          <div class='row2'><span class='r2l'>Floors</span><span class='r2v'>4</span></div>
+          <div class='row2'><span class='r2l'>Total units</span><span class='r2v'>11</span></div>
+          <div class='row2'><span class='r2l'>Residential</span><span class='r2v'>10</span></div>
+          <div class="row2"><span class="r2l">Construction</span><span class="r2v">1900</span></div>
+          <div class='row2'><span class='r2l'>Bldg area</span><span class='r2v'>8,852 sf</span></div>
+        </div>
+
+        <!-- Managing Agent -->
+        <div>
+          <div class="sec-label">Managing Agent</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>STEPHEN MCDOWELL</div>
+          
+          <div class='row2'><span class='r2l'>Address</span><span class='r2v'>434 PARK PL, Apt 1A, BROOKLYN, NY, 11238</span></div>
+          <div class='row2'><span class='r2l'>Reg #</span><span class='r2v'>309313  · Nov 5, 2024</span></div>
+        </div>
+
+        <!-- Owner -->
+        <div>
+          <div class="sec-label">Owner</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>ELLEN DRAKE, TRUSTEE</div>
+          
+          
+        </div>
+
+        
+
+        <!-- Signal Summary -->
+        <div style="grid-column:1/-1">
+          <div class="sec-label">Signal Summary</div>
+          <div class="sig-summary">14 open HPD Class C pest violations (14 total) across this 11-unit building. Most recent violation: Apr 11, 2024. Managing agent: STEPHEN MCDOWELL. No tenant complaints logged.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card u-amber" id="card-9">
+    <summary class="card-head">
+      <div class="badge">High</div>
+      <div style="flex:1;min-width:0">
+        <div class="card-name">9. 1543 NOSTRAND AVENUE</div>
+        <div class="card-sub">
+          <a href="https://maps.google.com/?q=1543+NOSTRAND+AVENUE+Brooklyn+NY" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline">Brooklyn 11226</a>
+          <span>· 56 units</span>
+          <span>· Built 1925</span>
+        </div>
+      </div>
+      <div class="dist-div">
+        <div class="dist-num">14</div>
+        <div class="dist-lbl">open violations</div>
+        <div style='font-size:11px;color:var(--subtle);margin-top:4px'>3 mi away</div>
+      </div>
+    </summary>
+
+    <div class="card-body">
+
+      <!-- Stats strip -->
+      <div style="display:flex;gap:0;flex-wrap:wrap;margin-bottom:18px;background:var(--soft);border-radius:6px;overflow:hidden;border:1px solid var(--border)">
+        <div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:#f87171">14</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Open Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">37</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Total Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:#fbbf24">15</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Complaints</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">56</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Units</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">5</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Floors</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">$1.5M</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Assessed</div></div>
+      </div>
+
+      <div class="grid2">
+
+        <!-- HPD Record -->
+        <div>
+          <div class="sec-label">HPD Record</div>
+          <div class="row2"><span class="r2l">Open violations</span><span class="r2v" style="color:#f87171;font-weight:700">14</span></div>
+          <div class="row2"><span class="r2l">Total violations</span><span class="r2v">37</span></div>
+          <div class="row2"><span class="r2l">Tenant complaints</span><span class="r2v">15</span></div>
+          <div class='row2'><span class='r2l'>Most recent</span><span class='r2v'>Oct 9, 2024</span></div>
+          <div class='row2'><span class='r2l'>Last complaint</span><span class='r2v'>Sep 10, 2020</span></div>
+        </div>
+
+        <!-- Building -->
+        <div>
+          <div class="sec-label">Building</div>
+          <div class='row2'><span class='r2l'>Floors</span><span class='r2v'>5</span></div>
+          <div class='row2'><span class='r2l'>Total units</span><span class='r2v'>56</span></div>
+          <div class='row2'><span class='r2l'>Residential</span><span class='r2v'>50</span></div>
+          <div class="row2"><span class="r2l">Construction</span><span class="r2v">1925 · alt. 1984</span></div>
+          <div class='row2'><span class='r2l'>Bldg area</span><span class='r2v'>42,000 sf</span></div>
+        </div>
+
+        <!-- Managing Agent -->
+        <div>
+          <div class="sec-label">Managing Agent</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>NOSTRAND 1543</div>
+          
+          <div class='row2'><span class='r2l'>Address</span><span class='r2v'>2047 NOSTRAND AVE, Apt #AA, Brooklyn, NY, 11210</span></div>
+          <div class='row2'><span class='r2l'>Reg #</span><span class='r2v'>304781  · Jul 15, 2025</span></div>
+        </div>
+
+        <!-- Owner -->
+        <div>
+          <div class="sec-label">Owner</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>NOSTRAND1543 LLC</div>
+          <div class='row2'><span class='r2l'>HPD registered</span><span class='r2v'>NOSTRAND 1543 LLC</span></div>
+          <div class='row2'><span class='r2l'>Address</span><span class='r2v'>2047 NOSTRAND AVENUE, Apt #AA, Brooklyn, NY, 11210</span></div>
+        </div>
+
+        
+        <div style="grid-column:1/-1">
+          <div class="sec-label">Open HPD Pest Violations (14)</div>
+          <div style="overflow-x:auto">
+            <table style="width:100%;border-collapse:collapse;font-size:12px">
+              <thead><tr style="border-bottom:1px solid var(--border)">
+                <th style="text-align:left;padding:4px 10px 4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em">Class</th>
+                <th style="text-align:left;padding:4px 10px 4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap">Issued</th>
+                <th style="text-align:left;padding:4px 10px 4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em">Unit</th>
+                <th style="text-align:left;padding:4px 0;font-size:9px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em">Description</th>
+              </tr></thead>
+              <tbody>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2026-04-27</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">1A / Fl 1</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 1A, 1st STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2026-02-20</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">1A / Fl 1</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 1A, 1st STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2026-02-19</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">1A / Fl 1</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 1A, 1st STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2026-02-02</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">5C / Fl 5</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 5C, 5th STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2026-02-02</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">1A / Fl 1</td>
+            <td style="padding:5px 0;color:var(--linen)">567 (C) § 27-2017, 27-2017.1, 27-2017.4, 27-2017.5, 27-2017.8, 27-2019, 27-2021 HMC: ABATE THE NUISANCE CONSISTING OF EV</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2026-01-26</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">5B / Fl 5</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 5B, 5th STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2026-01-02</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">2I / Fl 2</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 2I, 2nd STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-09-18</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">1E / Fl 1</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 1E, 1st STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-09-02</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">1F / Fl 1</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 1F, 1st STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-07-31</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">5B / Fl 5</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 5B, 5th STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2025-04-28</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">3H / Fl 3</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 3H, 3rd STORY,</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px 5px 0"><span style="font-size:9px;font-weight:800;border-radius:2px;padding:2px 5px;background:#3a1a1a;color:#f87171">C</span></td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted);white-space:nowrap">2024-10-09</td>
+            <td style="padding:5px 10px 5px 0;color:var(--muted)">5B / Fl 5</td>
+            <td style="padding:5px 0;color:var(--linen)">HMC ADM CODE: § 27-2017.4 ABATE THE INFESTATION CONSISTING OF MICE IN THE ENTIRE APARTMENT LOCATED AT APT 5B, 5th STORY,</td>
+          </tr></tbody>
+            </table>
+            <div style="font-size:11px;color:var(--subtle);margin-top:6px">+2 more open violations</div>
+          </div>
+        </div>
+
+        <!-- Signal Summary -->
+        <div style="grid-column:1/-1">
+          <div class="sec-label">Signal Summary</div>
+          <div class="sig-summary">14 open HPD Class C pest violations (37 total) across this 56-unit building. Most recent violation: Oct 9, 2024. Managing agent: NOSTRAND 1543. 15 tenant pest complaints on file.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card u-amber" id="card-10">
+    <summary class="card-head">
+      <div class="badge">High</div>
+      <div style="flex:1;min-width:0">
+        <div class="card-name">10. 1685 PRESIDENT STREET</div>
+        <div class="card-sub">
+          <a href="https://maps.google.com/?q=1685+PRESIDENT+STREET+Brooklyn+NY" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline">Brooklyn 11213</a>
+          <span>· 25 units</span>
+          <span>· Built 1915</span>
+        </div>
+      </div>
+      <div class="dist-div">
+        <div class="dist-num">14</div>
+        <div class="dist-lbl">open violations</div>
+        <div style='font-size:11px;color:var(--subtle);margin-top:4px'>4.6 mi away</div>
+      </div>
+    </summary>
+
+    <div class="card-body">
+
+      <!-- Stats strip -->
+      <div style="display:flex;gap:0;flex-wrap:wrap;margin-bottom:18px;background:var(--soft);border-radius:6px;overflow:hidden;border:1px solid var(--border)">
+        <div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:#f87171">14</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Open Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">14</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Total Viol.</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">5</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Complaints</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">25</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Units</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">4</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Floors</div></div><div style="flex:1;min-width:80px;padding:10px 12px;text-align:center;border-right:1px solid var(--border)"><div style="font-size:15px;font-weight:700;color:var(--linen)">$776K</div><div style="font-size:9px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-top:2px">Assessed</div></div>
+      </div>
+
+      <div class="grid2">
+
+        <!-- HPD Record -->
+        <div>
+          <div class="sec-label">HPD Record</div>
+          <div class="row2"><span class="r2l">Open violations</span><span class="r2v" style="color:#f87171;font-weight:700">14</span></div>
+          <div class="row2"><span class="r2l">Total violations</span><span class="r2v">14</span></div>
+          <div class="row2"><span class="r2l">Tenant complaints</span><span class="r2v">5</span></div>
+          <div class='row2'><span class='r2l'>Most recent</span><span class='r2v'>Apr 11, 2024</span></div>
+          <div class='row2'><span class='r2l'>Last complaint</span><span class='r2v'>May 2, 2026</span></div>
+        </div>
+
+        <!-- Building -->
+        <div>
+          <div class="sec-label">Building</div>
+          <div class='row2'><span class='r2l'>Floors</span><span class='r2v'>4</span></div>
+          <div class='row2'><span class='r2l'>Total units</span><span class='r2v'>25</span></div>
+          <div class='row2'><span class='r2l'>Residential</span><span class='r2v'>19</span></div>
+          <div class="row2"><span class="r2l">Construction</span><span class="r2v">1915</span></div>
+          <div class='row2'><span class='r2l'>Bldg area</span><span class='r2v'>18,000 sf</span></div>
+        </div>
+
+        <!-- Managing Agent -->
+        <div>
+          <div class="sec-label">Managing Agent</div>
+          <div style='font-size:12px;color:var(--subtle)'>Not on record — likely owner-managed</div>
+          
+          
+          <div class='row2'><span class='r2l'>Reg #</span><span class='r2v'>308602  · Oct 1, 2025</span></div>
+        </div>
+
+        <!-- Owner -->
+        <div>
+          <div class="sec-label">Owner</div>
+          <div style='font-size:13px;font-weight:700;color:var(--linen);margin-bottom:6px'>SEROR, NISSIM</div>
+          <div class='row2'><span class='r2l'>HPD registered</span><span class='r2v'>NISSIM SEROR</span></div>
+          <div class='row2'><span class='r2l'>Address</span><span class='r2v'>866 6 AVENUE, New York, NY, 10001</span></div>
+        </div>
+
+        
+
+        <!-- Signal Summary -->
+        <div style="grid-column:1/-1">
+          <div class="sec-label">Signal Summary</div>
+          <div class="sig-summary">14 open HPD Class C pest violations (14 total) across this 25-unit building. Most recent violation: Apr 11, 2024. No managing agent on record — likely owner-managed. 5 tenant pest complaints on file.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="footer">
+    <span class="footer-wordmark">trdi</span>
+    <span style="color:var(--subtle);">Data: HPD Violation Database · HPD Tenant Complaints · NYC PLUTO 24v1</span><br>
+    <span style="color:var(--subtle); font-size:10px;">Prepared May 29, 2026 · Confidential — for Evergreen Eco Pest Control Inc only · <a href="https://gettrdi.com" style="color:var(--rust);">gettrdi.com</a></span>
+    <div style="margin-top:8px;font-size:10px;color:var(--subtle);font-style:italic">[TEST PAGE — buildings preview]</div>
+  </div>
+</div>
+
+</body>
+</html>
