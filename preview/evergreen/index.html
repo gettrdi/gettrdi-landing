@@ -80,6 +80,7 @@
     .row2-val.green { color: #16a34a; }
 
     .vcode { display: inline-block; background: #fee2e2; color: #dc2626; font-size: 10px; font-weight: 800; border-radius: 3px; padding: 2px 6px; flex-shrink: 0; margin-top: 1px; }
+    .vcode-nc { background: #f1f5f9; color: #64748b; }
     .vrow { display: flex; gap: 7px; align-items: flex-start; margin-bottom: 5px; }
     .vdesc { font-size: 12px; color: #374151; line-height: 1.4; }
     .vdate { font-size: 11px; color: #94a3b8; margin-left: 4px; }
@@ -145,6 +146,75 @@
     /* Tenants */
     .tenant-row { font-size: 12px; display: flex; gap: 10px; align-items: center; padding: 5px 0; border-bottom: 1px solid #f1f5f9; }
     .tenant-name { font-weight: 600; color: #334155; }
+
+    /* ── Violation History (collapsible) ── */
+    .vh-wrap { margin-top: 20px; border-top: 1px solid #e2e8f0; padding-top: 16px; }
+    details.vh { }
+    details.vh summary {
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      user-select: none;
+    }
+    details.vh summary::-webkit-details-marker { display: none; }
+    details.vh summary::before {
+      content: '▶';
+      font-size: 8px;
+      color: #94a3b8;
+      transition: transform .15s;
+      flex-shrink: 0;
+    }
+    details.vh[open] summary::before { transform: rotate(90deg); }
+    details.vh summary .vh-counts {
+      font-size: 10px;
+      color: #94a3b8;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+      margin-left: 4px;
+    }
+    .vh-inner { margin-top: 14px; }
+
+    /* Inspection group */
+    .insp-group { margin-bottom: 14px; background: #f8fafc; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; }
+    .insp-header { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding: 8px 12px; background: #f1f5f9; border-bottom: 1px solid #e2e8f0; }
+    .insp-date { font-size: 12px; font-weight: 700; color: #334155; }
+    .insp-score { font-size: 11px; color: #64748b; background: #e2e8f0; border-radius: 3px; padding: 1px 6px; font-weight: 600; }
+    .insp-action { font-size: 11px; color: #94a3b8; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .insp-viols { padding: 8px 12px 6px; }
+    .iv-row { display: flex; gap: 6px; align-items: flex-start; margin-bottom: 5px; }
+    .iv-code { display: inline-block; font-size: 10px; font-weight: 800; border-radius: 3px; padding: 2px 6px; flex-shrink: 0; margin-top: 1px; }
+    .iv-code.crit { background: #fee2e2; color: #dc2626; }
+    .iv-code.pest { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+    .iv-code.nc   { background: #f3f4f6; color: #6b7280; }
+    .iv-flag { font-size: 9px; font-weight: 700; border-radius: 3px; padding: 1px 5px; flex-shrink: 0; margin-top: 2px; }
+    .iv-flag.crit { background: #fee2e2; color: #991b1b; }
+    .iv-flag.nc { background: #f3f4f6; color: #9ca3af; }
+    .iv-desc { font-size: 11px; color: #374151; line-height: 1.4; }
+
+    /* HPD violation row */
+    .hpd-row { display: flex; gap: 8px; align-items: flex-start; padding: 6px 0; border-bottom: 1px solid #f1f5f9; }
+    .hpd-row:last-child { border-bottom: none; }
+    .hpd-date2 { font-size: 11px; color: #94a3b8; flex-shrink: 0; min-width: 80px; }
+    .hpd-status-badge { font-size: 9px; font-weight: 700; border-radius: 3px; padding: 2px 6px; flex-shrink: 0; white-space: nowrap; }
+    .hpd-status-badge.open { background: #fee2e2; color: #991b1b; }
+    .hpd-status-badge.active { background: #fef3c7; color: #92400e; }
+    .hpd-status-badge.closed { background: #f3f4f6; color: #6b7280; }
+    .hpd-desc2 { font-size: 11px; color: #374151; line-height: 1.4; }
+
+    /* Complaint section */
+    .comp-row { display: flex; gap: 8px; align-items: center; padding: 5px 0; border-bottom: 1px solid #f1f5f9; font-size: 11px; }
+    .comp-row:last-child { border-bottom: none; }
+    .comp-date2 { color: #94a3b8; flex-shrink: 0; min-width: 80px; }
+    .comp-status { font-size: 9px; font-weight: 700; border-radius: 3px; padding: 2px 5px; background: #f3f4f6; color: #6b7280; flex-shrink: 0; }
+    .comp-desc2 { color: #475569; }
   </style>
 </head>
 <body>
@@ -214,13 +284,15 @@
         <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Mar 17, 2026</span></div>
         <div class="row2"><span class="row2-lbl">Reinspection</span><span class="row2-val bold red">27 days overdue</span></div>
         <div class="row2"><span class="row2-lbl">Current grade</span><span class="row2-val bold red">Grade Z (was C)</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold red">32 points</span></div>
+        <div class="row2"><span class="row2-lbl">Inspections on file</span><span class="row2-val">4 (2024–2026)</span></div>
       </div>
 
       <div>
-        <div class="sec-label">Pest Violations Cited (90 days)</div>
-        <div class="vrow"><span class="vcode">04M</span><span class="vdesc">Mouse droppings present<span class="vdate">Mar 17, 2026</span></span></div>
-        <div class="vrow"><span class="vcode">04K</span><span class="vdesc">Evidence of cockroaches<span class="vdate">Mar 17, 2026</span></span></div>
-        <div class="vrow"><span class="vcode">06C</span><span class="vdesc">Harborage conditions (physical pest shelter)<span class="vdate">Mar 17, 2026</span></span></div>
+        <div class="sec-label">Pest Violations Cited (current)</div>
+        <div class="vrow"><span class="vcode">04N</span><span class="vdesc">Filth flies / FRSA flies present<span class="vdate">Mar 17, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">04M</span><span class="vdesc">Live roaches in food or non-food area<span class="vdate">Mar 17, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">08A</span><span class="vdesc vcode-nc">Harborage conditions / not vermin-proof<span class="vdate">Mar 17, 2026</span></span></div>
       </div>
 
       <div>
@@ -240,16 +312,92 @@
       </div>
 
       <div>
-        <div class="sec-label">Inspection History</div>
-        <div class="ih-row"><span class="ih-date">Mar 17, 2026</span><span class="grade grade-z" style="font-size:11px;">Z</span><span class="ih-score">Score —</span><span class="ih-action">Reinspection pending</span></div>
+        <div class="sec-label">Pattern at a glance</div>
+        <div class="row2"><span class="row2-lbl">Fly/roach combo</span><span class="row2-val red">2 consecutive inspections</span></div>
+        <div class="row2"><span class="row2-lbl">Harborage cited</span><span class="row2-val red">3 of 4 inspections</span></div>
+        <div class="row2"><span class="row2-lbl">Prior Grade A</span><span class="row2-val">May 2024 — before it degraded</span></div>
+        <div class="row2"><span class="row2-lbl">Temp violations</span><span class="row2-val amber">Multiple (cold &amp; hot holding)</span></div>
       </div>
 
       <div class="span2">
         <div class="sec-label">Signal Summary</div>
-        <div class="summary-box">Two critical pest categories at the same March inspection — live cockroaches and mouse droppings together — means multiple active infestation vectors running in parallel. This is not a spray-and-leave job. Full IPM: harborage sealing, food storage audit, recurring treatment across roach and rodent pressure simultaneously. The 27-day overdue follow-up tells us they haven&rsquo;t found that solution yet. The block is running 96th percentile for 311 rat activity, with complaints still coming in as of last week.</div>
+        <div class="summary-box">Two critical pest categories at the same March inspection — live roaches and fly infestation together — means multiple active vectors running in parallel. This is not a spray-and-leave job. Full IPM: harborage sealing, food storage audit, recurring treatment across fly and roach pressure simultaneously. The 27-day overdue follow-up tells us they haven&rsquo;t found that solution yet. The block is running 96th percentile for 311 rat activity. Roaches are a separate infestation from the rodent pressure outside — they need both addressed.</div>
       </div>
 
     </div>
+
+    <!-- FULL VIOLATION HISTORY -->
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>Full DOH Inspection History <span class="vh-counts">— 4 inspections · 15 violations on record</span></summary>
+        <div class="vh-inner">
+
+          <!-- Mar 2026 -->
+          <div class="insp-group">
+            <div class="insp-header">
+              <span class="insp-date">Mar 17, 2026</span>
+              <span class="grade grade-z" style="font-size:10px; padding:1px 6px;">Grade Z</span>
+              <span class="insp-score">Score 32</span>
+              <span class="insp-action">Violations cited · Reinspection pending</span>
+            </div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04N</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Filth flies or food/refuse/sewage-associated (FRSA) flies or other nuisance pests in facility&rsquo;s food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code crit">04M</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Live roaches in facility&rsquo;s food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Establishment is not free of harborage or conditions conducive to rodents, insects, or other pests.</span></div>
+              <div class="iv-row"><span class="iv-code crit">06C</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service, or from customer self-service.</span></div>
+              <div class="iv-row"><span class="iv-code crit">06D</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.</span></div>
+              <div class="iv-row"><span class="iv-code crit">02G</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Cold TCS food item held above 41°F; smoked or processed fish held above 38°F; intact raw eggs held above 45°F; or reduced-oxygen-packaged food not held at 41°F or below.</span></div>
+            </div>
+          </div>
+
+          <!-- Oct 2025 -->
+          <div class="insp-group">
+            <div class="insp-header">
+              <span class="insp-date">Oct 14, 2025</span>
+              <span class="insp-score">Score 17</span>
+              <span class="insp-action">Violations cited</span>
+            </div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04N</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Filth flies or food/refuse/sewage-associated (FRSA) flies or other nuisance pests in facility&rsquo;s food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code crit">04M</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Live roaches in facility&rsquo;s food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code crit">02B</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Hot TCS food item not held at or above 140°F.</span></div>
+              <div class="iv-row"><span class="iv-code nc">10E</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Accurate thermometer not provided or properly located in refrigerated or cold storage unit.</span></div>
+            </div>
+          </div>
+
+          <!-- May 2024 -->
+          <div class="insp-group">
+            <div class="insp-header">
+              <span class="insp-date">May 13, 2024</span>
+              <span class="grade grade-a" style="font-size:10px; padding:1px 6px;">Grade A</span>
+              <span class="insp-score">Score 13</span>
+              <span class="insp-action">Violations cited</span>
+            </div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04N</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Filth flies or food/refuse/sewage-associated (FRSA) flies or other nuisance pests in facility&rsquo;s food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Establishment is not free of harborage or conditions conducive to rodents, insects, or other pests.</span></div>
+            </div>
+          </div>
+
+          <!-- Feb 2024 -->
+          <div class="insp-group">
+            <div class="insp-header">
+              <span class="insp-date">Feb 28, 2024</span>
+              <span class="insp-score">Score 21</span>
+              <span class="insp-action">Violations cited</span>
+            </div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">02B</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Hot TCS food item not held at or above 140°F.</span></div>
+              <div class="iv-row"><span class="iv-code nc">10B</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Anti-siphonage or back-flow prevention device not provided where required; equipment or floor not properly graded to drain.</span></div>
+              <div class="iv-row"><span class="iv-code nc">10H</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Single service article not provided. Single service article reused or not protected from contamination.</span></div>
+              <div class="iv-row"><span class="iv-code nc">10F</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced, or movable to allow accessibility for cleaning.</span></div>
+            </div>
+          </div>
+
+        </div>
+      </details>
+    </div>
+
   </div>
 </div>
 
@@ -277,19 +425,114 @@
         <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Dec 30, 2025</span></div>
         <div class="row2"><span class="row2-lbl">Reinspection</span><span class="row2-val bold red">59 days overdue — most overdue in this set</span></div>
         <div class="row2"><span class="row2-lbl">Current grade</span><span class="row2-val bold red">Grade C</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold red">31 points</span></div>
+        <div class="row2"><span class="row2-lbl">Inspections on file</span><span class="row2-val">5 (2023–2025)</span></div>
       </div>
 
       <div>
-        <div class="sec-label">Pest Violations Cited</div>
+        <div class="sec-label">Pest Violations Cited (current)</div>
         <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Live mice on premises<span class="vdate">Dec 30, 2025</span></span></div>
+        <div class="vrow"><span class="vcode">08A</span><span class="vdesc">Harborage conditions present<span class="vdate">Dec 30, 2025</span></span></div>
+        <div style="margin-top:8px;">
+          <div class="row2"><span class="row2-lbl">Prior pest history</span><span class="row2-val red">Mice + roaches in Nov 2023</span></div>
+          <div class="row2"><span class="row2-lbl">Pattern</span><span class="row2-val red">Recurrent — 3 of 5 inspections have pest code</span></div>
+        </div>
       </div>
 
       <div class="span2">
         <div class="sec-label">Signal Summary</div>
-        <div class="summary-box">Active mice since December, follow-up nearly two months overdue. This isn&rsquo;t a vendor underperforming — it&rsquo;s a void. Either they have nobody, or whoever they have isn&rsquo;t showing up. 59 days is a long time to let a mice problem sit on file with an open C grade posted in the window. Given your expert witness background, you literally sell the documentation side of pest control better than most PCOs in the area. Specific angle: &ldquo;your current vendor isn&rsquo;t documenting this properly — we do that for a living.&rdquo;</div>
+        <div class="summary-box">Active mice since December, follow-up nearly two months overdue. This isn&rsquo;t a vendor underperforming — it&rsquo;s a void. Either they have nobody, or whoever they have isn&rsquo;t showing up. 59 days is a long time to let a mice problem sit on file with an open C grade posted in the window. Looking back at the record, this restaurant had roaches <em>and</em> mice in Nov 2023 (score 48), cleaned up to a Grade A by March 2024, then slid back to mice by end of 2025. Classic cycle — without a recurring programme in place, the problem comes back. Your specific angle: &ldquo;your current vendor isn&rsquo;t documenting this properly — we do that for a living.&rdquo;</div>
       </div>
 
     </div>
+
+    <!-- FULL VIOLATION HISTORY -->
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>Full DOH Inspection History <span class="vh-counts">— 5 inspections · 20 violations on record</span></summary>
+        <div class="vh-inner">
+
+          <!-- Dec 2025 -->
+          <div class="insp-group">
+            <div class="insp-header">
+              <span class="insp-date">Dec 30, 2025</span>
+              <span class="grade grade-c" style="font-size:10px; padding:1px 6px;">Grade C</span>
+              <span class="insp-score">Score 31</span>
+              <span class="insp-action">Violations cited · Reinspection overdue</span>
+            </div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04L</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of mice or live mice in establishment&rsquo;s food or non-food areas.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Establishment is not free of harborage or conditions conducive to rodents, insects, or other pests.</span></div>
+              <div class="iv-row"><span class="iv-code crit">02G</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Cold TCS food item held above 41°F; smoked or processed fish held above 38°F.</span></div>
+              <div class="iv-row"><span class="iv-code crit">06C</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, or service.</span></div>
+              <div class="iv-row"><span class="iv-code crit">02C</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Hot TCS food item that has been cooked and cooled is being held for service without having been reheated to 165°F or above within 2 hours.</span></div>
+              <div class="iv-row"><span class="iv-code nc">10G</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Dishwashing and ware washing: cleaning and sanitizing of tableware, including dishes and utensils, not done in accordance with standard procedure.</span></div>
+            </div>
+          </div>
+
+          <!-- Nov 2025 -->
+          <div class="insp-group">
+            <div class="insp-header">
+              <span class="insp-date">Nov 1, 2025</span>
+              <span class="insp-score">Score 21</span>
+              <span class="insp-action">Violations cited</span>
+            </div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04H</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.</span></div>
+              <div class="iv-row"><span class="iv-code crit">06D</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.</span></div>
+              <div class="iv-row"><span class="iv-code crit">06E</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Sanitized equipment or utensil, including in-use food dispensing utensil, improperly used or stored.</span></div>
+              <div class="iv-row"><span class="iv-code nc">10B</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Anti-siphonage or back-flow prevention device not provided where required; equipment or floor not properly graded to drain.</span></div>
+            </div>
+          </div>
+
+          <!-- Mar 2024 -->
+          <div class="insp-group">
+            <div class="insp-header">
+              <span class="insp-date">Mar 6, 2024</span>
+              <span class="grade grade-a" style="font-size:10px; padding:1px 6px;">Grade A</span>
+              <span class="insp-score">Score 8</span>
+              <span class="insp-action">Violations cited</span>
+            </div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">06C</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Food, supplies, or equipment not protected from potential source of contamination.</span></div>
+            </div>
+          </div>
+
+          <!-- May 2024 -->
+          <div class="insp-group">
+            <div class="insp-header">
+              <span class="insp-date">May 30, 2024</span>
+              <span class="insp-action">Compliance inspection</span>
+            </div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code nc" style="font-size:9px;">15-21</span><span class="iv-flag nc">N/A</span><span class="iv-desc">Flavored tobacco products sold, offered for sale, or offered for free — administrative notice only.</span></div>
+            </div>
+          </div>
+
+          <!-- Nov 2023 -->
+          <div class="insp-group">
+            <div class="insp-header">
+              <span class="insp-date">Nov 28, 2023</span>
+              <span class="insp-score">Score 48</span>
+              <span class="insp-action">Violations cited — high score, multiple critical</span>
+            </div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04L</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of mice or live mice in establishment&rsquo;s food or non-food areas.</span></div>
+              <div class="iv-row"><span class="iv-code crit">04M</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Live roaches in facility&rsquo;s food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Establishment is not free of harborage or conditions conducive to rodents, insects, or other pests.</span></div>
+              <div class="iv-row"><span class="iv-code crit">04H</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Raw, cooked or prepared food is adulterated, contaminated, or cross-contaminated.</span></div>
+              <div class="iv-row"><span class="iv-code crit">06C</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Food, supplies, or equipment not protected from potential source of contamination.</span></div>
+              <div class="iv-row"><span class="iv-code crit">02B</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Hot TCS food item not held at or above 140°F.</span></div>
+              <div class="iv-row"><span class="iv-code crit">05D</span><span class="iv-flag crit">Critical</span><span class="iv-desc">No hand washing facility in or adjacent to toilet room or within 25 feet of a food preparation area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">10B</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Anti-siphonage or back-flow prevention device not provided where required.</span></div>
+              <div class="iv-row"><span class="iv-code nc">10F</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed.</span></div>
+            </div>
+          </div>
+
+        </div>
+      </details>
+    </div>
+
   </div>
 </div>
 
@@ -317,19 +560,83 @@
         <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">May 5, 2026</span></div>
         <div class="row2"><span class="row2-lbl">Reinspection</span><span class="row2-val bold amber">in 22 days — window closing</span></div>
         <div class="row2"><span class="row2-lbl">Current grade</span><span class="row2-val bold red">Grade Z</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold red">25 points</span></div>
+        <div class="row2"><span class="row2-lbl">Inspections on file</span><span class="row2-val">3 (2024–2026)</span></div>
       </div>
 
       <div>
-        <div class="sec-label">Pest Violations Cited (90 days)</div>
+        <div class="sec-label">Pest Violations Cited (current)</div>
         <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Live mice on premises<span class="vdate">May 5, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">08A</span><span class="vdesc">Harborage conditions present<span class="vdate">May 5, 2026</span></span></div>
+        <div style="margin-top:8px;">
+          <div class="row2"><span class="row2-lbl">Prior mice</span><span class="row2-val red">Oct 2025 inspection — same code 04L</span></div>
+          <div class="row2"><span class="row2-lbl">Pattern</span><span class="row2-val red">Recurring mice across 2 consecutive inspections</span></div>
+          <div class="row2"><span class="row2-lbl">Prior Grade A</span><span class="row2-val">Jun 2024 — mice-free then</span></div>
+        </div>
       </div>
 
       <div class="span2">
         <div class="sec-label">Signal Summary</div>
-        <div class="summary-box">Pitch this as a chain, not a single account. There&rsquo;s an operator behind this managing at least 2 other NYC locations, and the inspection hit their 18th Ave location. Chains don&rsquo;t want three separate vendors — they want one contact, one programme, one invoice. Win the 18th Ave account on the 22-day urgency, resolve it properly, then use it as the opening: &ldquo;I just sorted your 18th Ave location — want me to run the same programme at your other two?&rdquo;</div>
+        <div class="summary-box">Pitch this as a chain, not a single account. There&rsquo;s an operator behind this managing at least 2 other NYC locations, and the inspection hit their 18th Ave location. Chains don&rsquo;t want three separate vendors — they want one contact, one programme, one invoice. Win the 18th Ave account on the 22-day urgency, resolve it properly, then use it as the opening: &ldquo;I just sorted your 18th Ave location — want me to run the same programme at your other two?&rdquo; Note the pattern: mice appeared in Oct 2025, weren&rsquo;t resolved before the May 2026 inspection. That&rsquo;s a vendor failure, not a one-off event.</div>
       </div>
 
     </div>
+
+    <!-- FULL VIOLATION HISTORY -->
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>Full DOH Inspection History <span class="vh-counts">— 3 inspections · 10 violations on record</span></summary>
+        <div class="vh-inner">
+
+          <!-- May 2026 -->
+          <div class="insp-group">
+            <div class="insp-header">
+              <span class="insp-date">May 5, 2026</span>
+              <span class="grade grade-z" style="font-size:10px; padding:1px 6px;">Grade Z</span>
+              <span class="insp-score">Score 25</span>
+              <span class="insp-action">Violations cited · Reinspection window: 22 days</span>
+            </div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04L</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of mice or live mice in establishment&rsquo;s food or non-food areas.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Establishment is not free of harborage or conditions conducive to rodents, insects, or other pests.</span></div>
+              <div class="iv-row"><span class="iv-code crit">02G</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Cold TCS food item held above 41°F; smoked or processed fish held above 38°F.</span></div>
+              <div class="iv-row"><span class="iv-code crit">02B</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Hot TCS food item not held at or above 140°F.</span></div>
+            </div>
+          </div>
+
+          <!-- Oct 2025 -->
+          <div class="insp-group">
+            <div class="insp-header">
+              <span class="insp-date">Oct 14, 2025</span>
+              <span class="insp-score">Score 22</span>
+              <span class="insp-action">Violations cited</span>
+            </div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04L</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of mice or live mice in establishment&rsquo;s food or non-food areas.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Establishment is not free of harborage or conditions conducive to rodents, insects, or other pests.</span></div>
+              <div class="iv-row"><span class="iv-code crit">02G</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Cold TCS food item held above 41°F.</span></div>
+            </div>
+          </div>
+
+          <!-- Jun 2024 -->
+          <div class="insp-group">
+            <div class="insp-header">
+              <span class="insp-date">Jun 5, 2024</span>
+              <span class="grade grade-a" style="font-size:10px; padding:1px 6px;">Grade A</span>
+              <span class="insp-score">Score 12</span>
+              <span class="insp-action">Violations cited</span>
+            </div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">09A</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Swollen, leaking, rusted or otherwise damaged canned goods not returned to distributor. Food from unapproved source used.</span></div>
+              <div class="iv-row"><span class="iv-code crit">06C</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, or service.</span></div>
+              <div class="iv-row"><span class="iv-code nc">10F</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Non-food contact surface or equipment made of unacceptable material, not kept clean.</span></div>
+            </div>
+          </div>
+
+        </div>
+      </details>
+    </div>
+
   </div>
 </div>
 
@@ -356,21 +663,57 @@
         <div class="sec-label">DOH Inspection</div>
         <div class="row2"><span class="row2-lbl">Inspection date</span><span class="row2-val">May 4, 2026</span></div>
         <div class="row2"><span class="row2-lbl">Type</span><span class="row2-val bold red">Pre-permit opening inspection — failed</span></div>
-        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold red">53 (7 violations, 3 critical)</span></div>
         <div class="row2"><span class="row2-lbl">Status</span><span class="row2-val bold red">Cannot open to public until resolved</span></div>
+        <div class="row2"><span class="row2-lbl">Total violations</span><span class="row2-val bold red">7 violations — 3 critical pest-related</span></div>
+        <div class="row2"><span class="row2-lbl">Prior inspections</span><span class="row2-val">None — brand new venue</span></div>
       </div>
 
       <div>
-        <div class="sec-label">Pest Violations Cited</div>
+        <div class="sec-label">All Violations Cited (opening inspection)</div>
         <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Live mice on premises<span class="vdate">May 4, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">08A</span><span class="vdesc">Harborage conditions present<span class="vdate">May 4, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">05H</span><span class="vdesc">No written SOP for contamination prevention<span class="vdate">May 4, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">02G</span><span class="vdesc">Cold food held above 41°F<span class="vdate">May 4, 2026</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">10F</span><span class="vdesc">Non-food surface unacceptable material<span class="vdate">May 4, 2026</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">10D</span><span class="vdesc">Ventilation not provided / inadequate<span class="vdate">May 4, 2026</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">20-04</span><span class="vdesc">Choking / Pregnancy warning signs not posted<span class="vdate">May 4, 2026</span></span></div>
       </div>
 
       <div class="span2">
         <div class="sec-label">Signal Summary</div>
-        <div class="summary-box">Grade N doesn&rsquo;t mean not-yet-graded in the usual sense. It means this was their pre-permit opening inspection, and they failed it. Hard. Score 53, live mice, 7 violations before they&rsquo;ve served a single customer. They cannot open to the public until this is resolved — not &ldquo;worried about a grade&rdquo;, not &ldquo;panicking about a C&rdquo;, but literally cannot operate. An owner who built out a cafe, invested everything, and found mice on opening day is a highly motivated buyer. And a brand-new cafe in 2026 self-selects for the eco-conscious crowd from day one — if you&rsquo;re the vendor who gets them open, you set the standard for how the whole operation runs going forward.</div>
+        <div class="summary-box">Grade N doesn&rsquo;t mean not-yet-graded in the usual sense. It means this was their pre-permit opening inspection, and they failed it. Hard. Live mice, harborage conditions, and a missing SOP before they&rsquo;ve served a single customer. They cannot open to the public until this is resolved — not &ldquo;worried about a grade&rdquo;, not &ldquo;panicking about a C&rdquo;, but literally cannot operate. An owner who built out a cafe, invested everything, and found mice on opening day is a highly motivated buyer. And a brand-new cafe in 2026 self-selects for the eco-conscious crowd from day one — if you&rsquo;re the vendor who gets them open, you set the standard for how the whole operation runs going forward.</div>
       </div>
 
     </div>
+
+    <!-- FULL VIOLATION HISTORY -->
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>Full DOH Inspection Record <span class="vh-counts">— 1 inspection (opening) · 7 violations</span></summary>
+        <div class="vh-inner">
+
+          <!-- May 2026 — Opening -->
+          <div class="insp-group">
+            <div class="insp-header">
+              <span class="insp-date">May 4, 2026</span>
+              <span class="grade grade-n" style="font-size:10px; padding:1px 6px;">Grade N</span>
+              <span class="insp-action">Pre-permit opening inspection — FAILED · Cannot operate</span>
+            </div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04L</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of mice or live mice in establishment&rsquo;s food or non-food areas.</span></div>
+              <div class="iv-row"><span class="iv-code crit">05H</span><span class="iv-flag crit">Critical</span><span class="iv-desc">No approved written standard operating procedure (SOP) for avoiding contamination by reduced-oxygen-packaged (ROP) foods.</span></div>
+              <div class="iv-row"><span class="iv-code crit">02G</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Cold TCS food item held above 41°F; smoked or processed fish held above 38°F.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Establishment is not free of harborage or conditions conducive to rodents, insects, or other pests.</span></div>
+              <div class="iv-row"><span class="iv-code nc">10F</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed.</span></div>
+              <div class="iv-row"><span class="iv-code nc">10D</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Mechanical or natural ventilation not provided, inadequate, improperly installed, in disrepair, or fails to prevent excessive build-up of grease, heat, or condensation.</span></div>
+              <div class="iv-row"><span class="iv-code nc" style="font-size:9px;">20-04</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">&ldquo;Choking first aid&rdquo; poster not posted. &ldquo;Alcohol and Pregnancy&rdquo; warning sign not posted or not conspicuous.</span></div>
+            </div>
+          </div>
+
+        </div>
+      </details>
+    </div>
+
   </div>
 </div>
 
@@ -388,7 +731,7 @@
         <a href="https://maps.google.com/?q=6623+Fort+Hamilton+Pkwy+Brooklyn+NY" target="_blank" rel="noopener">Brooklyn, NY &nbsp;·&nbsp; BIN 3142359 &nbsp;·&nbsp; BBL 3033600048</a>
       </div>
     </div>
-    <div class="dist"><div class="dist-num" style="color:#dc2626;">30</div><div class="dist-lbl">open HPD violations</div></div>
+    <div class="dist"><div class="dist-num" style="color:#dc2626;">22</div><div class="dist-lbl">pest complaints filed</div></div>
   </div>
   <div class="card-body">
 
@@ -396,9 +739,8 @@
       <div class="stat-cell"><div class="stat-num">1935</div><div class="stat-lbl">Year Built</div></div>
       <div class="stat-cell"><div class="stat-num">5</div><div class="stat-lbl">Floors</div></div>
       <div class="stat-cell"><div class="stat-num">30</div><div class="stat-lbl">Total Units</div></div>
-      <div class="stat-cell"><div class="stat-num">30</div><div class="stat-lbl">Residential</div></div>
-      <div class="stat-cell"><div class="stat-num" style="color:#dc2626;">30</div><div class="stat-lbl">Open Violations</div></div>
-      <div class="stat-cell"><div class="stat-num">22</div><div class="stat-lbl">Complaints Filed</div></div>
+      <div class="stat-cell"><div class="stat-num" style="color:#dc2626;">69</div><div class="stat-lbl">Total HPD Pest Viols</div></div>
+      <div class="stat-cell"><div class="stat-num" style="color:#dc2626;">22</div><div class="stat-lbl">Pest Complaints</div></div>
     </div>
 
     <div class="grid2">
@@ -407,33 +749,141 @@
         <div class="sec-label">Managing Agent (HPD Registration)</div>
         <div style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:6px;">Leo Louie</div>
         <div class="row2"><span class="row2-lbl">Address</span><span class="row2-val">20 Utopia Ct, Staten Island, NY 10304</span></div>
+        <div class="row2"><span class="row2-lbl">Registration</span><span class="row2-val">#358409 · Active to Sep 2026</span></div>
         <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">Not on record</span></div>
       </div>
 
       <div>
         <div class="sec-label">Ownership</div>
         <div class="row2"><span class="row2-lbl">Owner of record</span><span class="row2-val">Zailan Xu</span></div>
+        <div class="row2"><span class="row2-lbl">Owner address</span><span class="row2-val">7109 18th Ave, Brooklyn 11204</span></div>
         <div class="row2"><span class="row2-lbl">Owner type</span><span class="row2-val">Private</span></div>
         <div class="row2"><span class="row2-lbl">Building class</span><span class="row2-val">Multi-Family Walkup</span></div>
       </div>
 
       <div>
-        <div class="sec-label">HPD Pest Violations</div>
-        <div class="row2"><span class="row2-lbl">Currently open</span><span class="row2-val bold red">30 open violations</span></div>
-        <div class="row2"><span class="row2-lbl">Total on record</span><span class="row2-val">69 total</span></div>
+        <div class="sec-label">HPD Pest Violation History</div>
+        <div class="row2"><span class="row2-lbl">Total on record</span><span class="row2-val bold">69 total pest violations</span></div>
+        <div class="row2"><span class="row2-lbl">Last issued</span><span class="row2-val red">May 22, 2023</span></div>
+        <div class="row2"><span class="row2-lbl">Active violations</span><span class="row2-val red">Roaches &amp; mice — basement + units</span></div>
+        <div class="row2"><span class="row2-lbl">Status</span><span class="row2-val red">No access to reinspect (Dec 2024)</span></div>
       </div>
 
       <div>
-        <div class="sec-label">Tenant Pest Complaints</div>
+        <div class="sec-label">Tenant Pest Complaints (311 via HPD)</div>
         <div class="row2"><span class="row2-lbl">Total filed</span><span class="row2-val bold">22 complaints</span></div>
-        <div class="row2"><span class="row2-lbl">Open</span><span class="row2-val red">Active complaints on file</span></div>
+        <div class="row2"><span class="row2-lbl">Most recent</span><span class="row2-val">Jun 2024</span></div>
+        <div class="row2"><span class="row2-lbl">Most common</span><span class="row2-val red">Mice (17 of 22 complaints)</span></div>
+        <div class="row2"><span class="row2-lbl">Also</span><span class="row2-val amber">Flies (2 complaints)</span></div>
       </div>
 
       <div class="span2 pitch-box">
-        <strong>Why this is worth a call:</strong> 30 open HPD violations puts the managing agent in active cure-notice territory — housing court is the next step if this stays unresolved. Come in as the building-wide solution and get introduced to every tenant inside. One contract, multiple upsells. The landlord is motivated — this isn&rsquo;t discretionary, it&rsquo;s legally required.
+        <strong>Why this is worth a call:</strong> 69 HPD pest violations on a 30-unit building going back years. The most recent violations (Dec 2024) are still showing &ldquo;first no access to reinspect&rdquo; status — meaning the inspector showed up, nobody let them in, and the violation remains open. That&rsquo;s not resolved, that&rsquo;s deferred. 22 tenant complaints over 4 years, all mice. Come in as the building-wide solution: one contract, one programme, and the documentation that clears HPD. The landlord gets liability off their plate; you get a recurring contract for 30 units.
       </div>
 
     </div>
+
+    <!-- HPD VIOLATION HISTORY -->
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>HPD Pest Violation Detail &amp; Tenant Complaints <span class="vh-counts">— 69 pest violations · 22 pest complaints on record</span></summary>
+        <div class="vh-inner">
+
+          <div class="sec-label" style="margin-bottom:10px;">Active / Recent Pest Violations (HPD — Class C)</div>
+          <div style="background:#f8fafc; border-radius:6px; border:1px solid #e2e8f0; padding:10px 12px; margin-bottom:14px;">
+            <div class="hpd-row">
+              <span class="hpd-date2">Dec 27, 2024</span>
+              <span class="hpd-status-badge active">No Access</span>
+              <span class="hpd-desc2 class-c" style="font-size:10px; margin-right:6px; display:inline-block; background:#fee2e2; border-radius:3px; padding:1px 5px;">Class C</span>
+              <span class="hpd-desc2">Abate roach infestation — basement apartment. Inspector attempted reinspection, no access granted.</span>
+            </div>
+            <div class="hpd-row">
+              <span class="hpd-date2">Dec 9, 2024</span>
+              <span class="hpd-status-badge active">No Access</span>
+              <span class="hpd-desc2 class-c" style="font-size:10px; margin-right:6px; display:inline-block; background:#fee2e2; border-radius:3px; padding:1px 5px;">Class C</span>
+              <span class="hpd-desc2">Abate roach infestation — basement apartment (1st floor). Inspector attempted reinspection, no access.</span>
+            </div>
+            <div class="hpd-row">
+              <span class="hpd-date2">Dec 9, 2024</span>
+              <span class="hpd-status-badge active">No Access</span>
+              <span class="hpd-desc2 class-c" style="font-size:10px; margin-right:6px; display:inline-block; background:#fee2e2; border-radius:3px; padding:1px 5px;">Class C</span>
+              <span class="hpd-desc2">Abate mice infestation — basement apartment (1st floor). Inspector attempted reinspection, no access.</span>
+            </div>
+            <div class="hpd-row">
+              <span class="hpd-date2">Oct 4, 2024</span>
+              <span class="hpd-status-badge active">Defect Letter</span>
+              <span class="hpd-desc2 class-c" style="font-size:10px; margin-right:6px; display:inline-block; background:#fee2e2; border-radius:3px; padding:1px 5px;">Class C</span>
+              <span class="hpd-desc2">Abate mice infestation — Apt 1A, 1st story. Defect letter issued to owner.</span>
+            </div>
+            <div class="hpd-row">
+              <span class="hpd-date2">Oct 4, 2024</span>
+              <span class="hpd-status-badge active">Defect Letter</span>
+              <span class="hpd-desc2 class-c" style="font-size:10px; margin-right:6px; display:inline-block; background:#fee2e2; border-radius:3px; padding:1px 5px;">Class C</span>
+              <span class="hpd-desc2">Abate roach infestation — Apt 1A, 1st story. Defect letter issued to owner.</span>
+            </div>
+            <div class="hpd-row">
+              <span class="hpd-date2">Sep 12, 2024</span>
+              <span class="hpd-status-badge active">Not Complied</span>
+              <span class="hpd-desc2 class-c" style="font-size:10px; margin-right:6px; display:inline-block; background:#fee2e2; border-radius:3px; padding:1px 5px;">Class C</span>
+              <span class="hpd-desc2">Abate mice infestation — Apt 1A. Owner did not comply with correction order.</span>
+            </div>
+            <div class="hpd-row">
+              <span class="hpd-date2">Sep 12, 2024</span>
+              <span class="hpd-status-badge active">Not Complied</span>
+              <span class="hpd-desc2 class-c" style="font-size:10px; margin-right:6px; display:inline-block; background:#fee2e2; border-radius:3px; padding:1px 5px;">Class C</span>
+              <span class="hpd-desc2">Abate roach infestation — Apt 1A. Owner did not comply with correction order.</span>
+            </div>
+            <div class="hpd-row">
+              <span class="hpd-date2">Jun 29, 2024</span>
+              <span class="hpd-status-badge active">No Access</span>
+              <span class="hpd-desc2 class-c" style="font-size:10px; margin-right:6px; display:inline-block; background:#fee2e2; border-radius:3px; padding:1px 5px;">Class C</span>
+              <span class="hpd-desc2">Abate mice infestation. Inspector attempted reinspection, no access.</span>
+            </div>
+            <div class="hpd-row">
+              <span class="hpd-date2">Jun 5, 2024</span>
+              <span class="hpd-status-badge active">No Access</span>
+              <span class="hpd-desc2 class-c" style="font-size:10px; margin-right:6px; display:inline-block; background:#fee2e2; border-radius:3px; padding:1px 5px;">Class C</span>
+              <span class="hpd-desc2">Abate mice infestation. Inspector attempted reinspection, no access.</span>
+            </div>
+            <div class="hpd-row">
+              <span class="hpd-date2">Jun 5, 2024</span>
+              <span class="hpd-status-badge active">No Access</span>
+              <span class="hpd-desc2 class-c" style="font-size:10px; margin-right:6px; display:inline-block; background:#fee2e2; border-radius:3px; padding:1px 5px;">Class C</span>
+              <span class="hpd-desc2">Abate roach infestation. Inspector attempted reinspection, no access.</span>
+            </div>
+            <p style="font-size:11px; color:#94a3b8; margin-top:8px; font-style:italic;">+ 59 additional violations going back to 2015 · all mice, roach, or vermin-related. Total: 69 pest violations on record.</p>
+          </div>
+
+          <div class="sec-label" style="margin-bottom:10px;">All 22 Tenant Pest Complaints</div>
+          <div style="background:#f8fafc; border-radius:6px; border:1px solid #e2e8f0; padding:10px 12px;">
+            <div class="comp-row"><span class="comp-date2">Jun 16, 2024</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Flies</span></div>
+            <div class="comp-row"><span class="comp-date2">Jun 16, 2024</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">May 30, 2024</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Apr 30, 2024</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Apr 1, 2024</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Dec 8, 2023</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Dec 3, 2023</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Oct 8, 2023</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Flies</span></div>
+            <div class="comp-row"><span class="comp-date2">Aug 25, 2023</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Aug 23, 2023</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Jun 25, 2023</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Feb 16, 2023</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Jan 23, 2023</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Jan 13, 2023</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Jan 12, 2023</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Dec 19, 2022</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Oct 10, 2022</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Mar 2, 2022</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Aug 22, 2021</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Jun 17, 2021</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Oct 26, 2020</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+            <div class="comp-row"><span class="comp-date2">Sep 30, 2020</span><span class="comp-status">Closed</span><span class="comp-desc2">Unsanitary condition — Mice</span></div>
+          </div>
+
+        </div>
+      </details>
+    </div>
+
   </div>
 </div>
 
@@ -443,9 +893,10 @@
   <div class="legend-text">Every lead is a hypothesis built from public data — not a guarantee. We watch a pattern emerge across DOH inspections, 311 rodent complaints, and HPD violations, then draw a conclusion about what it probably means and why it&rsquo;s worth a call. Doesn&rsquo;t mean any of these definitely sign. It means there&rsquo;s a real reason to call, and the data tells you exactly what that reason is.</div>
   <div class="legend-codes">
     <div class="legend-item"><span class="vcode">04L</span><span class="legend-lbl">Live mice on premises</span></div>
-    <div class="legend-item"><span class="vcode">04M</span><span class="legend-lbl">Mouse droppings</span></div>
-    <div class="legend-item"><span class="vcode">04K</span><span class="legend-lbl">Cockroach evidence</span></div>
-    <div class="legend-item"><span class="vcode">06C</span><span class="legend-lbl">Harborage conditions</span></div>
+    <div class="legend-item"><span class="vcode">04M</span><span class="legend-lbl">Live roaches</span></div>
+    <div class="legend-item"><span class="vcode">04N</span><span class="legend-lbl">Filth / FRSA flies</span></div>
+    <div class="legend-item"><span class="vcode">08A</span><span class="legend-lbl">Harborage conditions</span></div>
+    <div class="legend-item"><span class="vcode">06C</span><span class="legend-lbl">Food not protected</span></div>
   </div>
 </div>
 
