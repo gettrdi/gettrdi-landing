@@ -79,13 +79,6 @@
     /* ── Collapsible cards ── */
     details.card > summary { cursor: pointer; list-style: none; position: relative; }
     details.card > summary::-webkit-details-marker { display: none; }
-    details.card > summary::after {
-      content: '›';
-      position: absolute; right: 20px; top: 50%; transform: translateY(-50%) rotate(90deg);
-      font-size: 18px; color: var(--taupe); transition: transform .18s; line-height: 1;
-    }
-    details.card[open] > summary::after { transform: translateY(-50%) rotate(270deg); }
-    details.card > summary:hover::after { color: var(--rust); }
 
     /* ── Lead cards ── */
     .card {
@@ -185,6 +178,7 @@
       background: var(--soft); border-radius: 2px; padding: 10px 14px;
       border-left: 2px solid var(--rust);
     }
+    /* overridden below by enhanced version */
 
     /* ── Building stats ── */
     .stat-row {
@@ -208,6 +202,7 @@
       background: rgba(167,139,250,.07); border-radius: 2px; padding: 12px 14px;
       border-left: 2px solid rgba(167,139,250,.50); font-size: 12px; color: #c4b5fd; line-height: 1.7;
     }
+    /* overridden below */
 
     /* ── Legend ── */
     .legend { background: var(--soft); border-radius: 2px; padding: 16px 20px; margin: 8px 0 24px; border: 1px solid var(--border); }
@@ -217,26 +212,15 @@
     .legend-item { display: flex; gap: 7px; align-items: center; }
     .legend-lbl { font-size: 11px; color: var(--muted); }
 
-    /* ── CTA ── */
-    .cta {
-      background: var(--panel); border-radius: 2px; padding: 28px;
-      text-align: center; margin-bottom: 32px; border: 1px solid var(--border-hi);
-    }
-    .cta-title { font-size: 18px; font-weight: 700; color: var(--linen); margin-bottom: 8px; font-family: 'Instrument Serif', Georgia, serif; }
-    .cta-sub { font-size: 13px; color: var(--muted); margin-bottom: 22px; line-height: 1.8; }
-    .cta-sub span { color: var(--rust); font-weight: 600; }
-    .cta-btn {
-      display: inline-block; background: var(--rust); color: var(--linen); font-weight: 700;
-      font-size: 13px; border-radius: 2px; padding: 12px 32px; text-decoration: none;
-      letter-spacing: .04em; font-family: 'Syne', sans-serif;
-    }
-    .cta-btn:hover { background: #b86840; }
-    .cta-footer { margin-top: 14px; font-size: 12px; color: var(--subtle); }
-    .cta-footer a { color: var(--muted); }
-
     /* ── Footer ── */
-    .footer { text-align: center; font-size: 11px; color: var(--subtle); padding-bottom: 40px; line-height: 1.9; }
-    .footer strong { color: var(--muted); }
+    .footer {
+      padding: 28px 0 48px; text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700;
+      color: var(--rust); letter-spacing: .08em; display: block; margin-bottom: 8px;
+    }
 
     /* ── Tenants ── */
     .tenant-row { font-size: 12px; display: flex; gap: 10px; align-items: center; padding: 5px 0; border-bottom: 1px solid var(--border); }
@@ -324,6 +308,92 @@
     .comp-date2 { color: var(--subtle); flex-shrink: 0; min-width: 80px; font-family: 'Geist Mono', 'SF Mono', monospace; }
     .comp-status { font-size: 9px; font-weight: 700; border-radius: 2px; padding: 2px 5px; background: var(--soft); color: var(--muted); flex-shrink: 0; }
     .comp-desc2 { color: var(--muted); }
+
+    /* ── Jump nav ── */
+    .jump-nav {
+      display: flex; gap: 6px; flex-wrap: wrap;
+      position: sticky; top: 0; z-index: 100;
+      background: var(--charcoal);
+      padding: 12px 0 14px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .jump-pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 11px; font-weight: 600; color: var(--muted);
+      background: var(--soft); border: 1px solid var(--border);
+      border-radius: 2px; padding: 4px 10px; text-decoration: none;
+      transition: color .12s, border-color .12s, background .12s;
+      white-space: nowrap;
+    }
+    .jump-pill:hover { color: var(--linen); background: var(--card); border-color: var(--border-hi); }
+    .jp-g { font-size: 9px; font-weight: 800; border-radius: 2px; padding: 1px 5px; }
+    .jp-g.red    { background: rgba(239,68,68,.18); color: #f87171; }
+    .jp-g.amber  { background: rgba(245,158,11,.15); color: #fbbf24; }
+    .jp-g.purple { background: rgba(167,139,250,.15); color: #c4b5fd; }
+
+    /* ── Signal strip ── */
+    .signal-strip { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 7px; }
+    .sig {
+      font-size: 10px; font-weight: 700; border-radius: 2px; padding: 2px 7px;
+      font-family: 'Geist Mono', 'SF Mono', monospace; white-space: nowrap;
+    }
+    .sig-score  { background: var(--soft); color: var(--muted); border: 1px solid var(--border); }
+    .sig-red    { background: rgba(239,68,68,.13); color: #fca5a5; }
+    .sig-amber  { background: rgba(245,158,11,.11); color: #fcd34d; }
+    .sig-purple { background: rgba(167,139,250,.12); color: #c4b5fd; }
+    .sig-green  { background: rgba(34,197,94,.11); color: #86efac; }
+
+    /* ── Card interactions ── */
+    details.card { transition: border-color .18s, box-shadow .18s; }
+    details.card:not([open]):hover { box-shadow: 0 4px 20px rgba(0,0,0,.30); }
+    details.card[open] { border-color: rgba(244,241,234,.20); }
+
+    /* ── Card body separator + animation ── */
+    .card-body { border-top: 1px solid var(--border); }
+    details.card[open] > .card-body { animation: bodyReveal .22s ease; }
+    @keyframes bodyReveal {
+      from { opacity: 0; transform: translateY(-5px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Chevron: + rotates to × ── */
+    details.card > summary::after {
+      content: '+'; font-size: 20px; font-weight: 300; line-height: 1;
+      position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
+      color: var(--taupe); transition: transform .18s, color .18s;
+    }
+    details.card[open] > summary::after {
+      transform: translateY(-50%) rotate(45deg); color: var(--rust);
+    }
+    details.card > summary:hover::after { color: var(--linen); }
+
+    /* ── Urgency accent top border ── */
+    .u-red    { border-top: 2px solid rgba(239,68,68,.55)  !important; }
+    .u-amber  { border-top: 2px solid rgba(245,158,11,.50) !important; }
+    .u-purple { border-top: 2px solid rgba(167,139,250,.50)!important; }
+
+    /* ── Enhanced signal summary + pitch box (override) ── */
+    .summary-box {
+      font-size: 13px; color: rgba(244,241,234,.74); line-height: 1.85;
+      background: rgba(200,122,83,.06); border-radius: 2px; padding: 14px 18px;
+      border: 1px solid rgba(200,122,83,.16); border-left: 3px solid rgba(200,122,83,.65);
+    }
+    .pitch-box {
+      background: rgba(200,122,83,.05); border-radius: 2px; padding: 14px 18px;
+      border: 1px solid rgba(200,122,83,.13); border-left: 3px solid rgba(200,122,83,.50);
+      font-size: 12.5px; color: rgba(244,241,234,.72); line-height: 1.85;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      padding: 28px 0 48px; text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700;
+      color: var(--rust); letter-spacing: .08em; display: block; margin-bottom: 8px;
+    }
   </style>
 </head>
 <body>
@@ -366,11 +436,18 @@
 
 <div class="wrap">
 
+<nav class="jump-nav">
+  <a href="#card-1" class="jump-pill"><span class="jp-g red">Z</span> Golden Bun</a>
+  <a href="#card-2" class="jump-pill"><span class="jp-g red">C</span> Living Room</a>
+  <a href="#card-3" class="jump-pill"><span class="jp-g amber">Z</span> Dragon Garden</a>
+  <a href="#card-4" class="jump-pill"><span class="jp-g red">N</span> Saamo Cafe</a>
+  <a href="#card-5" class="jump-pill"><span class="jp-g purple">HPD</span> Fort Hamilton</a>
+</nav>
 <!-- RESTAURANT LEADS -->
 <div class="section-label">Restaurant Accounts — NYC Department of Health</div>
 
 <!-- ① Golden Bun Bakery -->
-<details class="card u-red">
+<details class="card u-red" id="card-1">
   <summary class="card-head">
     <span class="badge badge-red">27d overdue</span>
     <div style="flex:1; min-width:0;">
@@ -382,7 +459,13 @@
       <div class="address">
         <a href="https://maps.google.com/?q=2180+86th+Street+Brooklyn+NY+11214" target="_blank" rel="noopener">2180 86th Street, Brooklyn 11214</a>
       </div>
-      <a href="tel:7183732866" class="phone-link">📞 (718) 373-2866</a>
+      <div class="signal-strip">
+        <span class="sig sig-score">Score 32</span>
+        <span class="sig sig-red">Roaches</span>
+        <span class="sig sig-red">Flies</span>
+        <span class="sig sig-amber">Harborage</span>
+      </div>
+      <a href="tel:7183732866" class="phone-link" onclick="event.stopPropagation()">(718) 373-2866</a>
     </div>
     <div class="dist"><div class="dist-num">1.21 mi</div><div class="dist-lbl">from your office</div></div>
   </summary>
@@ -520,7 +603,7 @@
 </details>
 
 <!-- ② Living Room Sushi & Steak House -->
-<details class="card u-red">
+<details class="card u-red" id="card-2">
   <summary class="card-head">
     <span class="badge badge-red">59d overdue</span>
     <div style="flex:1; min-width:0;">
@@ -532,7 +615,13 @@
       <div class="address">
         <a href="https://maps.google.com/?q=192+Avenue+U+Brooklyn+NY+11223" target="_blank" rel="noopener">192 Avenue U, Brooklyn 11223</a>
       </div>
-      <a href="tel:7189968900" class="phone-link">📞 (718) 996-8900</a>
+      <div class="signal-strip">
+        <span class="sig sig-score">Score 31</span>
+        <span class="sig sig-red">Mice</span>
+        <span class="sig sig-amber">Harborage</span>
+        <span class="sig sig-red">59d overdue</span>
+      </div>
+      <a href="tel:7189968900" class="phone-link" onclick="event.stopPropagation()">(718) 996-8900</a>
     </div>
     <div class="dist"><div class="dist-num">0.24 mi</div><div class="dist-lbl">from your office</div></div>
   </summary>
@@ -680,7 +769,7 @@
 </details>
 
 <!-- ③ Dragon Garden -->
-<details class="card u-amber">
+<details class="card u-amber" id="card-3">
   <summary class="card-head">
     <span class="badge badge-amber">22d window</span>
     <div style="flex:1; min-width:0;">
@@ -692,7 +781,13 @@
       <div class="address">
         <a href="https://maps.google.com/?q=8024+18th+Avenue+Brooklyn+NY+11214" target="_blank" rel="noopener">8024 18th Avenue, Brooklyn 11214</a>
       </div>
-      <a href="tel:7182348288" class="phone-link">📞 (718) 234-8288</a>
+      <div class="signal-strip">
+        <span class="sig sig-score">Score 25</span>
+        <span class="sig sig-red">Mice</span>
+        <span class="sig sig-amber">Harborage</span>
+        <span class="sig sig-amber">Chain — 3 locations</span>
+      </div>
+      <a href="tel:7182348288" class="phone-link" onclick="event.stopPropagation()">(718) 234-8288</a>
     </div>
     <div class="dist"><div class="dist-num">1.69 mi</div><div class="dist-lbl">from your office</div></div>
   </summary>
@@ -809,7 +904,7 @@
 </details>
 
 <!-- ④ Saamo Cafe -->
-<details class="card u-red">
+<details class="card u-red" id="card-4">
   <summary class="card-head">
     <span class="badge badge-red">Cannot open</span>
     <div style="flex:1; min-width:0;">
@@ -821,7 +916,12 @@
       <div class="address">
         <a href="https://maps.google.com/?q=2568+86th+Street+Brooklyn+NY+11214" target="_blank" rel="noopener">2568 86th Street, Brooklyn 11214</a>
       </div>
-      <a href="tel:7186761266" class="phone-link">📞 (718) 676-1266</a>
+      <div class="signal-strip">
+        <span class="sig sig-red">Mice on opening</span>
+        <span class="sig sig-red">Cannot open</span>
+        <span class="sig sig-amber">New venue</span>
+      </div>
+      <a href="tel:7186761266" class="phone-link" onclick="event.stopPropagation()">(718) 676-1266</a>
     </div>
     <div class="dist"><div class="dist-num">0.69 mi</div><div class="dist-lbl">from your office</div></div>
   </summary>
@@ -917,7 +1017,7 @@
 <!-- BUILDING -->
 <div class="section-label" style="margin-top:32px;">Residential Building — HPD / NYC PLUTO</div>
 
-<details class="card u-purple">
+<details class="card u-purple" id="card-5">
   <summary class="card-head">
     <span class="badge badge-purple">Building Play</span>
     <div style="flex:1; min-width:0;">
@@ -928,6 +1028,12 @@
         <a href="https://maps.google.com/?q=6623+Fort+Hamilton+Pkwy+Brooklyn+NY" target="_blank" rel="noopener">Brooklyn, NY &nbsp;·&nbsp; BIN 3142359 &nbsp;·&nbsp; BBL 3033600048</a>
       </div>
       <div style="margin-top:6px; font-size:11px; color:var(--muted);">Agent: <strong style="color:var(--linen);">Leo Louie</strong> &nbsp;·&nbsp; Owner: <strong style="color:var(--linen);">Zailan Xu</strong> &nbsp;·&nbsp; No phone on HPD record</div>
+      <div class="signal-strip">
+        <span class="sig sig-red">69 HPD pest viols</span>
+        <span class="sig sig-red">Mice + Roaches</span>
+        <span class="sig sig-purple">2 restaurant tenants</span>
+        <span class="sig sig-amber">No access Dec 2024</span>
+      </div>
     </div>
     <div class="dist"><div class="dist-num" style="color:#f87171;">22</div><div class="dist-lbl">pest complaints filed</div></div>
   </summary>
@@ -1156,7 +1262,7 @@
     </div>
 
   </div>
-</div>
+</details>
 
 <!-- LEGEND -->
 <div class="legend">
@@ -1174,9 +1280,9 @@
 
 <!-- FOOTER -->
 <div class="footer">
-  <strong>trdi · gettrdi.com</strong><br>
-  Data sourced from NYC DOH, HPD, and 311 public records.<br>
-  This brief was prepared specifically for Evergreen Eco Pest Control Inc.
+  <span class="footer-logo">trdi</span>
+  <span style="color:var(--subtle);">Data: NYC DOH Inspection Records · HPD Violation Database · 311 Complaint Feed · NYC PLUTO 24v1</span><br>
+  <span style="color:var(--subtle); font-size:10px;">Prepared May 28, 2026 · Confidential — for Evergreen Eco Pest Control Inc only · <a href="https://gettrdi.com" style="color:var(--rust);">gettrdi.com</a></span>
 </div>
 
 </div><!-- /wrap -->
