@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your TRDI Lead Brief — Fillmore Termite and Pest Control</title>
+  <meta name="description" content="10 matched commercial accounts across NYC — live DOH, 311, and HPD data.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 14px; -webkit-font-smoothing: antialiased; }
+
+    :root {
+      --rust:    #C87A53;
+      --linen:   #F4F1EA;
+      --taupe:   #8A7E72;
+      --charcoal:#1E1E1F;
+      --panel:   #242221;
+      --card:    #272422;
+      --soft:    #2D2926;
+      --border:  rgba(244,241,234,.10);
+      --border-hi: rgba(244,241,234,.16);
+      --muted:   rgba(244,241,234,.55);
+      --subtle:  rgba(244,241,234,.35);
+    }
+
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--charcoal); color: var(--linen); line-height: 1.5; }
+    a { color: inherit; }
+    .wrap { max-width: 740px; margin: 0 auto; padding: 0 20px; }
+
+    .hd { background: var(--panel); border-bottom: 1px solid var(--border); }
+    .hd-inner { padding: 32px 20px 24px; max-width: 740px; margin: 0 auto; }
+    .hd-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--rust); margin-bottom: 10px; font-family: 'Syne', sans-serif; }
+    .hd-name { font-size: 24px; font-weight: 700; color: var(--linen); line-height: 1.15; font-family: 'Instrument Serif', Georgia, serif; }
+    .hd-sub { font-size: 12px; color: var(--muted); margin-top: 6px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .hd-sub a { color: var(--muted); text-decoration: none; }
+    .hd-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .pill { font-size: 10px; background: var(--soft); color: var(--muted); border-radius: 2px; padding: 3px 9px; font-weight: 500; border: 1px solid var(--border); }
+    .hd-bar { border-top: 1px solid var(--border); }
+    .hd-bar-inner { max-width: 740px; margin: 0 auto; padding: 10px 20px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .src-label { font-size: 11px; color: var(--subtle); }
+    .src-tag { font-size: 10px; color: var(--muted); background: var(--soft); border-radius: 2px; padding: 2px 7px; border: 1px solid var(--border); }
+
+    /* Tabs */
+    .tab-nav { max-width: 740px; margin: 0 auto; padding: 0 20px; display: flex; gap: 4px; }
+    .tab-btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 18px; font-size: 12px; font-weight: 700; border: none; background: transparent; color: var(--subtle); cursor: pointer; border-radius: 6px 6px 0 0; border-top: 2px solid transparent; transition: all .15s; font-family: 'Inter', sans-serif; }
+    .tab-btn:hover { color: var(--linen); }
+    .tab-btn.active { background: var(--charcoal); color: var(--linen); border-top-color: var(--rust); }
+    .tab-badge { font-size: 9px; font-weight: 800; padding: 1px 6px; border-radius: 10px; }
+    .tab-btn.active .tab-badge { background: var(--rust); color: #fff; }
+    .tab-btn:not(.active) .tab-badge { background: var(--soft); color: var(--muted); border: 1px solid var(--border); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .section-label { font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--rust); margin-bottom: 12px; margin-top: 28px; font-family: 'Syne', sans-serif; }
+
+    details.card > summary { cursor: pointer; list-style: none; position: relative; }
+    details.card > summary::-webkit-details-marker { display: none; }
+
+    .card { background: var(--card); border-radius: 2px; margin-bottom: 16px; overflow: hidden; border: 1px solid var(--border); }
+    .card-head { padding: 14px 20px; display: flex; gap: 12px; align-items: flex-start; }
+    .card-body { padding: 18px 20px; }
+
+    .u-red   { border-color: rgba(239,68,68,.30); }
+    .u-amber { border-color: rgba(245,158,11,.28); }
+    .u-green { border-color: rgba(34,197,94,.22); }
+    .u-red   .card-head { background: rgba(239,68,68,.08);  border-bottom: 1px solid rgba(239,68,68,.20); }
+    .u-amber .card-head { background: rgba(245,158,11,.07); border-bottom: 1px solid rgba(245,158,11,.18); }
+    .u-green .card-head { background: rgba(34,197,94,.07);  border-bottom: 1px solid rgba(34,197,94,.16); }
+
+    .badge { display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; border-radius: 2px; padding: 3px 8px; color: #fff; flex-shrink: 0; margin-top: 3px; min-width: 64px; text-align: center; white-space: nowrap; line-height: 1.3; }
+    .badge-red   { background: rgba(220,38,38,.80); }
+    .badge-amber { background: rgba(217,119,6,.80); }
+    .badge-green { background: rgba(22,163,74,.75); }
+
+    .score-badge { background: var(--soft); border: 1px solid var(--border-hi); border-radius: 2px; padding: 4px 8px; flex-shrink: 0; text-align: center; min-width: 52px; }
+    .score-num { font-size: 15px; font-weight: 800; color: var(--linen); line-height: 1; font-family: 'Syne', sans-serif; }
+    .score-lbl { font-size: 9px; color: var(--subtle); letter-spacing: .08em; text-transform: uppercase; margin-top: 2px; }
+
+    .lead-name { font-size: 16px; font-weight: 700; color: var(--linen); font-family: 'Instrument Serif', Georgia, serif; }
+    .lead-meta { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+    .grade { font-size: 10px; font-weight: 800; border-radius: 2px; padding: 2px 7px; font-family: 'Inter', sans-serif; letter-spacing: .05em; }
+    .grade-a  { background: rgba(34,197,94,.15);  color: #4ade80; border: 1px solid rgba(34,197,94,.25); }
+    .grade-b  { background: rgba(245,158,11,.12); color: #fbbf24; border: 1px solid rgba(245,158,11,.22); }
+    .grade-b+ { background: rgba(245,158,11,.12); color: #fbbf24; border: 1px solid rgba(245,158,11,.22); }
+    .grade-c  { background: rgba(239,68,68,.14);  color: #f87171; border: 1px solid rgba(239,68,68,.24); }
+    .grade-n  { background: rgba(239,68,68,.14);  color: #f87171; border: 1px solid rgba(239,68,68,.24); }
+    .cuisine { font-size: 12px; color: var(--muted); }
+    .address { font-size: 12px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; }
+    .address a { color: var(--muted); }
+    .dist { text-align: right; flex-shrink: 0; }
+    .dist-num { font-size: 14px; font-weight: 700; color: var(--linen); font-family: 'Geist Mono', 'SF Mono', monospace; }
+    .dist-lbl { font-size: 10px; color: var(--subtle); }
+
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 28px; }
+    @media (max-width: 560px) { .grid2 { grid-template-columns: 1fr; } }
+    .span2 { grid-column: 1 / -1; }
+
+    .sec-label { font-size: 10px; font-weight: 700; color: var(--rust); text-transform: uppercase; letter-spacing: .14em; margin-bottom: 7px; font-family: 'Syne', sans-serif; }
+    .row2 { display: flex; gap: 8px; margin-bottom: 4px; align-items: baseline; }
+    .row2-lbl { font-size: 11px; color: var(--subtle); flex-shrink: 0; min-width: 110px; }
+    .row2-val { font-size: 12px; color: var(--linen); font-weight: 500; }
+    .row2-val.bold { font-weight: 700; }
+    .row2-val.red   { color: #f87171; }
+    .row2-val.amber { color: #fbbf24; }
+    .row2-val.green { color: #4ade80; }
+
+    .vcode { display: inline-block; background: rgba(239,68,68,.15); color: #f87171; font-size: 10px; font-weight: 800; border-radius: 2px; padding: 2px 6px; flex-shrink: 0; margin-top: 1px; }
+    .vcode-nc { background: var(--soft); color: var(--muted); }
+    .vrow { display: flex; gap: 7px; align-items: flex-start; margin-bottom: 5px; }
+    .vdesc { font-size: 12px; color: var(--linen); line-height: 1.4; }
+    .vdate { font-size: 11px; color: var(--subtle); margin-left: 4px; }
+
+    .vtable { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .vtable th { text-align: left; padding: 4px 10px 4px 0; font-size: 10px; font-weight: 700; color: var(--rust); text-transform: uppercase; letter-spacing: .08em; border-bottom: 1px solid var(--border); }
+    .vtable td { padding: 5px 10px 5px 0; border-bottom: 1px solid var(--border); color: var(--linen); vertical-align: top; }
+    .vtable td.muted { color: var(--muted); white-space: nowrap; }
+
+    .ih-row { display: flex; gap: 8px; align-items: center; font-size: 12px; padding: 4px 0; border-bottom: 1px solid var(--border); }
+    .ih-date { color: var(--subtle); flex-shrink: 0; min-width: 90px; }
+    .ih-score { color: var(--linen); font-family: 'Geist Mono', 'SF Mono', monospace; }
+    .ih-action { color: var(--subtle); font-size: 11px; }
+
+    .complaints-list { margin-top: 8px; }
+    .complaint-row { font-size: 11px; color: var(--muted); margin-bottom: 3px; display: flex; gap: 6px; }
+    .complaint-date { color: var(--subtle); flex-shrink: 0; }
+
+    .summary-box { font-size: 13px; color: rgba(244,241,234,.74); line-height: 1.85; background: rgba(200,122,83,.06); border-radius: 2px; padding: 14px 18px; border: 1px solid rgba(200,122,83,.16); border-left: 3px solid rgba(200,122,83,.65); }
+
+    .legend { background: var(--soft); border-radius: 2px; padding: 16px 20px; margin: 8px 0 24px; border: 1px solid var(--border); }
+    .legend-title { font-size: 12px; font-weight: 700; color: var(--linen); margin-bottom: 8px; }
+    .legend-text { font-size: 12px; color: var(--muted); line-height: 1.8; margin-bottom: 12px; }
+    .legend-codes { display: flex; gap: 16px; flex-wrap: wrap; }
+    .legend-item { display: flex; gap: 7px; align-items: center; }
+    .legend-lbl { font-size: 11px; color: var(--muted); }
+
+    .phone-link { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 700; color: var(--rust); text-decoration: none; margin-top: 6px; background: rgba(200,122,83,.10); border: 1px solid rgba(200,122,83,.25); border-radius: 2px; padding: 4px 10px; font-family: 'Geist Mono', 'SF Mono', monospace; }
+    .phone-link:hover { background: rgba(200,122,83,.18); }
+
+    .goog-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; background: var(--soft); border-radius: 2px; padding: 8px 12px; border: 1px solid var(--border); margin-bottom: 0; }
+    .goog-rating { font-size: 13px; font-weight: 700; color: var(--linen); font-family: 'Geist Mono', 'SF Mono', monospace; }
+    .goog-stars { color: #fbbf24; font-size: 12px; letter-spacing: .5px; }
+    .goog-count { font-size: 11px; color: var(--muted); }
+    .goog-hours { font-size: 11px; color: var(--muted); }
+    .goog-divider { color: var(--border-hi); }
+
+    .vh-wrap { margin-top: 20px; border-top: 1px solid var(--border); padding-top: 16px; }
+    details.vh summary { cursor: pointer; font-size: 10px; font-weight: 700; color: var(--rust); text-transform: uppercase; letter-spacing: .14em; list-style: none; display: flex; align-items: center; gap: 8px; user-select: none; font-family: 'Syne', sans-serif; }
+    details.vh summary::-webkit-details-marker { display: none; }
+    details.vh summary::before { content: '▶'; font-size: 8px; color: var(--taupe); transition: transform .15s; flex-shrink: 0; }
+    details.vh[open] summary::before { transform: rotate(90deg); }
+    details.vh summary .vh-counts { font-size: 10px; color: var(--muted); font-weight: 500; letter-spacing: 0; text-transform: none; margin-left: 4px; font-family: 'Geist Mono', 'SF Mono', monospace; }
+    .vh-inner { margin-top: 14px; }
+
+    .insp-group { margin-bottom: 14px; background: var(--soft); border-radius: 2px; overflow: hidden; border: 1px solid var(--border); }
+    .insp-header { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding: 8px 12px; background: rgba(244,241,234,.04); border-bottom: 1px solid var(--border); }
+    .insp-date { font-size: 12px; font-weight: 700; color: var(--linen); }
+    .insp-score { font-size: 11px; color: var(--muted); background: var(--panel); border-radius: 2px; padding: 1px 6px; font-weight: 600; font-family: 'Geist Mono', 'SF Mono', monospace; }
+    .insp-action { font-size: 11px; color: var(--subtle); flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .insp-viols { padding: 8px 12px 6px; }
+    .iv-row { display: flex; gap: 6px; align-items: flex-start; margin-bottom: 5px; }
+    .iv-code { display: inline-block; font-size: 10px; font-weight: 800; border-radius: 2px; padding: 2px 6px; flex-shrink: 0; margin-top: 1px; }
+    .iv-code.crit { background: rgba(239,68,68,.15); color: #f87171; }
+    .iv-code.nc   { background: var(--panel); color: var(--muted); }
+    .iv-flag { font-size: 9px; font-weight: 700; border-radius: 2px; padding: 1px 5px; flex-shrink: 0; margin-top: 2px; }
+    .iv-flag.crit { background: rgba(239,68,68,.15); color: #f87171; }
+    .iv-flag.nc { background: var(--panel); color: var(--subtle); }
+    .iv-desc { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+    .jump-nav { display: flex; gap: 6px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; background: var(--charcoal); padding: 12px 0 14px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+    .jump-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; color: var(--muted); background: var(--soft); border: 1px solid var(--border); border-radius: 2px; padding: 4px 10px; text-decoration: none; transition: color .12s, border-color .12s, background .12s; white-space: nowrap; }
+    .jump-pill:hover { color: var(--linen); background: var(--card); border-color: var(--border-hi); }
+    .jp-g { font-size: 9px; font-weight: 800; border-radius: 2px; padding: 1px 5px; }
+    .jp-g.red   { background: rgba(239,68,68,.18); color: #f87171; }
+    .jp-g.amber { background: rgba(245,158,11,.15); color: #fbbf24; }
+
+    .signal-strip { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 7px; }
+    .sig { font-size: 10px; font-weight: 700; border-radius: 2px; padding: 2px 7px; font-family: 'Geist Mono', 'SF Mono', monospace; white-space: nowrap; }
+    .sig-score  { background: var(--soft); color: var(--muted); border: 1px solid var(--border); }
+    .sig-red    { background: rgba(239,68,68,.13); color: #fca5a5; }
+    .sig-amber  { background: rgba(245,158,11,.11); color: #fcd34d; }
+    .sig-green  { background: rgba(34,197,94,.11); color: #86efac; }
+
+    details.card { transition: border-color .18s, box-shadow .18s; }
+    details.card:not([open]):hover { box-shadow: 0 4px 20px rgba(0,0,0,.30); }
+    details.card[open] { border-color: rgba(244,241,234,.20); }
+    .card-body { border-top: 1px solid var(--border); }
+    details.card[open] > .card-body { animation: bodyReveal .22s ease; }
+    @keyframes bodyReveal { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+    details.card > summary::after { content: '+'; font-size: 20px; font-weight: 300; line-height: 1; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--taupe); transition: transform .18s, color .18s; }
+    details.card[open] > summary::after { transform: translateY(-50%) rotate(45deg); color: var(--rust); }
+    details.card > summary:hover::after { color: var(--linen); }
+
+    .u-red   { border-top: 2px solid rgba(239,68,68,.55)  !important; }
+    .u-amber { border-top: 2px solid rgba(245,158,11,.50) !important; }
+
+    .sc-trdi { font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: .01em; color: #fff; text-transform: none; }
+
+    .footer { padding: 28px 0 48px; text-align: center; border-top: 1px solid var(--border); }
+    .footer-wordmark { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800; letter-spacing: .01em; color: #fff; line-height: 1; }
+
+    .past-notice { background: rgba(245,158,11,.08); border: 1px solid rgba(245,158,11,.22); border-radius: 2px; padding: 12px 16px; margin-bottom: 20px; font-size: 13px; color: #fbbf24; }
+    .past-notice a { color: var(--rust); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hd">
+  <div class="hd-inner">
+    <div class="hd-eyebrow"><span class="sc-trdi">trdi</span> · lead intelligence brief</div>
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="hd-name">Fillmore Termite and Pest Control Inc</div>
+        <div class="hd-sub">
+          <span>449 Craig Ave, Staten Island, NY 10307</span>
+          <a href="https://www.pestcontrolsi.com/" target="_blank" rel="noopener">pestcontrolsi.com</a>
+          <a href="tel:7183079818">(718) 307-9818</a>
+        </div>
+      </div>
+      <div style="font-size:12px; color:var(--muted); text-align:right; flex-shrink:0;">
+        <div>Prepared Jun 11, 2026</div>
+        <div style="margin-top:4px; color:var(--linen); font-weight:600;" id="hd-count">10 new leads</div>
+      </div>
+    </div>
+    <div class="hd-meta">
+      <span class="pill">DEC #14213</span>
+      <span class="pill">Structural &amp; Rodent Control</span>
+      <span class="pill">Expires Feb 2028</span>
+      <span class="pill">20 years in business</span>
+      <span class="pill">All 5 boroughs</span>
+    </div>
+  </div>
+  <div class="hd-bar">
+    <div class="hd-bar-inner">
+      <span class="src-label">Sources:</span>
+      <span class="src-tag">NYC DOH Inspection Records</span>
+      <span class="src-tag">HPD Violation Database</span>
+      <span class="src-tag">311 Complaint Feed</span>
+      <span class="src-tag">NYC PLUTO 24v1</span>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('new', this)" id="tab-new">
+      🆕 New Leads <span class="tab-badge">10</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab('past', this)" id="tab-past">
+      📋 Past Leads <span class="tab-badge">5</span>
+    </button>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ══════════════════════════════════════════════════════════════
+     TAB: NEW LEADS
+══════════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="panel-new">
+
+<nav class="jump-nav">
+  <a href="#n1" class="jump-pill"><span class="jp-g red">04K</span> Fine Food Cuisine</a>
+  <a href="#n2" class="jump-pill"><span class="jp-g red">04M</span> Crave Fish Bar</a>
+  <a href="#n3" class="jump-pill"><span class="jp-g red">04L</span> Addeos of the Bronx</a>
+  <a href="#n4" class="jump-pill"><span class="jp-g red">04K</span> Chomp Chomp</a>
+  <a href="#n5" class="jump-pill"><span class="jp-g red">04L</span> Angeles Bakery</a>
+  <a href="#n6" class="jump-pill"><span class="jp-g red">04L</span> Club Amadeus</a>
+  <a href="#n7" class="jump-pill"><span class="jp-g amber">04L</span> Yaad Man Thing</a>
+  <a href="#n8" class="jump-pill"><span class="jp-g amber">04L</span> Balancero</a>
+  <a href="#n9" class="jump-pill"><span class="jp-g amber">04L</span> El Sol de Mexico</a>
+  <a href="#n10" class="jump-pill"><span class="jp-g amber">04M</span> Madame Vo&rsquo;s</a>
+</nav>
+
+<div class="section-label">Top Leads — Ranked by TRDI Intelligence Score</div>
+
+<!-- ① Fine Food Cuisine -->
+<details class="card u-red" id="n1">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">78.2</div><div class="score-lbl">score</div></div>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">1. Fine Food Cuisine</span>
+        <span class="grade grade-b">B+</span>
+        <span class="cuisine">East Harlem · Manhattan</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=227+East+116+Street+New+York+NY+10029" target="_blank" rel="noopener">227 East 116th Street, 10029</a>
+      </div>
+      <div class="signal-strip">
+        <span class="sig sig-red">🪳 Roaches (04K)</span>
+        <span class="sig sig-red">Post-violation shock</span>
+        <span class="sig sig-red">Warned → Failed (55d)</span>
+      </div>
+      <a href="tel:9172614343" class="phone-link" onclick="event.stopPropagation()">(917) 261-4343</a>
+    </div>
+    <div><span class="badge badge-red">Call Mon</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 6, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Reinspection</span><span class="row2-val bold amber">Window opening soon</span></div>
+        <div class="row2"><span class="row2-lbl">Grade</span><span class="row2-val bold amber">B+ — at risk</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">(917) 261-4343</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pest Violations (current)</div>
+        <div class="vrow"><span class="vcode">04K</span><span class="vdesc">Evidence of cockroaches in food area<span class="vdate">Jun 6, 2026</span></span></div>
+        <div style="margin-top:8px;">
+          <div class="row2"><span class="row2-lbl">Prior (Apr 2026)</span><span class="row2-val red">08A — contaminated food warning</span></div>
+          <div class="row2"><span class="row2-lbl">Pattern</span><span class="row2-val red">Warned → failed cockroach 55d later</span></div>
+        </div>
+      </div>
+      <div class="span2">
+        <div class="sec-label">Why call first</div>
+        <div class="summary-box">Inspected 5 days ago. They were warned for contaminated food (08A) in April — 55 days later DOH came back and found cockroaches. That&rsquo;s the arc of an operator who knows they have a problem and hasn&rsquo;t solved it. The reinspection window hasn&rsquo;t started yet — they&rsquo;re in the exact moment between violation and consequence where a call from a licensed operator lands hardest. &ldquo;I saw your DOH record from last week — we specialize in the exact violation code on your report&rdquo; is the opener.</div>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- ② Crave Fish Bar -->
+<details class="card u-amber" id="n2">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">76.0</div><div class="score-lbl">score</div></div>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">2. Crave Fish Bar</span>
+        <span class="grade grade-b">B+</span>
+        <span class="cuisine">Midtown East · Manhattan</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=945+2nd+Avenue+New+York+NY+10022" target="_blank" rel="noopener">945 2nd Avenue, 10022</a>
+      </div>
+      <div class="signal-strip">
+        <span class="sig sig-red">🐭 Live mice (04L)</span>
+        <span class="sig sig-red">🐭 Droppings (04M)</span>
+        <span class="sig sig-amber">28d window</span>
+        <span class="sig sig-red">↑ Rising 311</span>
+      </div>
+      <a href="tel:6468959585" class="phone-link" onclick="event.stopPropagation()">(646) 895-9585</a>
+    </div>
+    <div><span class="badge badge-amber">28 days</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">May 29, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Reinspection</span><span class="row2-val bold amber">~28 days remaining</span></div>
+        <div class="row2"><span class="row2-lbl">Grade</span><span class="row2-val bold amber">B+ — reinspection coming</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">(646) 895-9585</span></div>
+      </div>
+      <div>
+        <div class="sec-label">311 Rodent Complaints</div>
+        <div class="row2"><span class="row2-lbl">Last 90 days</span><span class="row2-val bold amber">3 complaints</span></div>
+        <div class="row2"><span class="row2-lbl">Trend</span><span class="row2-val red">↑ Rising</span></div>
+        <div class="sec-label" style="margin-top:10px;">Pest Violations (current)</div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Live mice on premises<span class="vdate">May 29</span></span></div>
+        <div class="vrow"><span class="vcode">04M</span><span class="vdesc">Mouse droppings present<span class="vdate">May 29</span></span></div>
+      </div>
+      <div class="span2">
+        <div class="sec-label">Why call this week</div>
+        <div class="summary-box">Fish bar with active mice — two separate mouse codes at the same inspection means established infestation, not a one-off sighting. 28-day reinspection window is closing fast. Area 311 complaints are rising which means exterior pressure won&rsquo;t stop on its own. A Midtown East operation cares deeply about their grade — one failed reinspection is a posted C in the window. &ldquo;You have 28 days before DOH comes back — we can document a proper programme before the reinspection&rdquo; is a deadline they can act on.</div>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- ③ Addeos of the Bronx -->
+<details class="card u-red" id="n3">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">74.9</div><div class="score-lbl">score</div></div>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">3. Addeos of the Bronx</span>
+        <span class="grade grade-b">B+</span>
+        <span class="cuisine">Morris Park · The Bronx</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=1056+Morris+Park+Avenue+Bronx+NY+10461" target="_blank" rel="noopener">1056 Morris Park Avenue, 10461</a>
+      </div>
+      <div class="signal-strip">
+        <span class="sig sig-red">🐭 Live mice (04L)</span>
+        <span class="sig sig-red">🐭 Droppings (04M)</span>
+        <span class="sig sig-red">Post-violation shock</span>
+      </div>
+      <a href="tel:7188245036" class="phone-link" onclick="event.stopPropagation()">(718) 824-5036</a>
+    </div>
+    <div><span class="badge badge-red">Call this week</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 3, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Reinspection</span><span class="row2-val">Window opening</span></div>
+        <div class="row2"><span class="row2-lbl">Grade</span><span class="row2-val bold amber">B+</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">(718) 824-5036</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pest Violations (current)</div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Live mice on premises<span class="vdate">Jun 3, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">04M</span><span class="vdesc">Mouse droppings present<span class="vdate">Jun 3, 2026</span></span></div>
+      </div>
+      <div class="span2">
+        <div class="sec-label">Why this matters</div>
+        <div class="summary-box">Morris Park neighbourhood restaurant, cited 8 days ago. Live mice and droppings together confirms an established infestation — not a single sighting that gets dismissed. Bronx accounts are squarely in Fillmore&rsquo;s coverage area. Word travels fast in tight neighbourhood corridors like Morris Park; a clean resolution here can generate referrals. Call while the inspection is still fresh in the owner&rsquo;s mind.</div>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- ④ Chomp Chomp -->
+<details class="card u-amber" id="n4">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">74.0</div><div class="score-lbl">score</div></div>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">4. Chomp Chomp</span>
+        <span class="grade grade-b">B+</span>
+        <span class="cuisine">East Village · Manhattan</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=78+East+1+Street+New+York+NY+10009" target="_blank" rel="noopener">78 East 1st Street, 10009</a>
+      </div>
+      <div class="signal-strip">
+        <span class="sig sig-red">🪳 Roaches (04K)</span>
+        <span class="sig sig-red">🐭 Droppings (04M)</span>
+        <span class="sig sig-amber">27d window</span>
+        <span class="sig sig-red">↑ Rising 311</span>
+      </div>
+      <a href="tel:6467999642" class="phone-link" onclick="event.stopPropagation()">(646) 799-9642</a>
+    </div>
+    <div><span class="badge badge-amber">27 days</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">May 28, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Reinspection</span><span class="row2-val bold amber">~27 days remaining</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">(646) 799-9642</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pest Violations + 311</div>
+        <div class="vrow"><span class="vcode">04K</span><span class="vdesc">Cockroach evidence<span class="vdate">May 28</span></span></div>
+        <div class="vrow"><span class="vcode">04M</span><span class="vdesc">Mouse droppings<span class="vdate">May 28</span></span></div>
+        <div class="row2" style="margin-top:8px;"><span class="row2-lbl">311 complaints</span><span class="row2-val red">4 in 90d · ↑ rising</span></div>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- ⑤ Angeles Bakery -->
+<details class="card u-green" id="n5">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">73.5</div><div class="score-lbl">score</div></div>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">5. Angeles Bakery</span>
+        <span class="grade grade-b">B+</span>
+        <span class="cuisine">Bushwick · Brooklyn</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=729+Flushing+Avenue+Brooklyn+NY+11206" target="_blank" rel="noopener">729 Flushing Avenue, 11206</a>
+      </div>
+      <div class="signal-strip">
+        <span class="sig sig-red">🐭 Live mice (04L)</span>
+        <span class="sig sig-green">Post-violation</span>
+      </div>
+      <a href="tel:7187827023" class="phone-link" onclick="event.stopPropagation()">(718) 782-7023</a>
+    </div>
+    <div><span class="badge badge-green">Active</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">May 27, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Reinspection</span><span class="row2-val">Window not yet started</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">(718) 782-7023</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pest Violations</div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Live mice on premises<span class="vdate">May 27</span></span></div>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- ⑥ Club Amadeus -->
+<details class="card u-green" id="n6">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">73.3</div><div class="score-lbl">score</div></div>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">6. Club Amadeus</span>
+        <span class="grade grade-b">B+</span>
+        <span class="cuisine">Elmhurst · Queens</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=79-51+Albion+Avenue+Elmhurst+NY+11373" target="_blank" rel="noopener">79-51 Albion Avenue, 11373</a>
+      </div>
+      <div class="signal-strip">
+        <span class="sig sig-red">🐭 Live mice (04L)</span>
+        <span class="sig sig-green">Fresh — Jun 6</span>
+      </div>
+      <a href="tel:7185051170" class="phone-link" onclick="event.stopPropagation()">(718) 505-1170</a>
+    </div>
+    <div><span class="badge badge-green">Active</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 6, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">(718) 505-1170</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pest Violations</div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Live mice on premises<span class="vdate">Jun 6</span></span></div>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- ⑦ Yaad Man Thing -->
+<details class="card u-green" id="n7">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">72.4</div><div class="score-lbl">score</div></div>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">7. Yaad Man Thing</span>
+        <span class="grade grade-b">B+</span>
+        <span class="cuisine">Flatbush · Brooklyn</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=3901+Church+Avenue+Brooklyn+NY+11203" target="_blank" rel="noopener">3901 Church Avenue, 11203</a>
+      </div>
+      <div class="signal-strip">
+        <span class="sig sig-amber">🐭 Live mice (04L)</span>
+        <span class="sig sig-amber">34d window</span>
+      </div>
+      <a href="tel:7189159239" class="phone-link" onclick="event.stopPropagation()">(718) 915-9239</a>
+    </div>
+    <div><span class="badge badge-green">34 days</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 4, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Reinspection</span><span class="row2-val bold">~34 days remaining</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">(718) 915-9239</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pest Violations</div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Live mice on premises<span class="vdate">Jun 4</span></span></div>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- ⑧ Balancero -->
+<details class="card u-amber" id="n8">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">72.4</div><div class="score-lbl">score</div></div>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">8. Balancero</span>
+        <span class="grade grade-b">B+</span>
+        <span class="cuisine">Astoria · Queens</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=3095+37+Street+Astoria+NY+11103" target="_blank" rel="noopener">3095 37th Street, 11103</a>
+      </div>
+      <div class="signal-strip">
+        <span class="sig sig-amber">🐭 Live mice (04L)</span>
+        <span class="sig sig-amber">27d window</span>
+        <span class="sig sig-red">16 complaints 90d</span>
+      </div>
+      <a href="tel:6468269920" class="phone-link" onclick="event.stopPropagation()">(646) 826-9920</a>
+    </div>
+    <div><span class="badge badge-amber">27 days</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">May 28, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Reinspection</span><span class="row2-val bold amber">~27 days remaining</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">(646) 826-9920</span></div>
+      </div>
+      <div>
+        <div class="sec-label">311 + Violations</div>
+        <div class="row2"><span class="row2-lbl">311 complaints</span><span class="row2-val bold red">16 in 90d — high area pressure</span></div>
+        <div class="vrow" style="margin-top:6px;"><span class="vcode">04L</span><span class="vdesc">Live mice on premises<span class="vdate">May 28</span></span></div>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- ⑨ El Sol de Mexico -->
+<details class="card u-green" id="n9">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">72.1</div><div class="score-lbl">score</div></div>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">9. El Sol de Mexico</span>
+        <span class="grade grade-b">B+</span>
+        <span class="cuisine">Jamaica · Queens</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=95-09+Sutphin+Boulevard+Jamaica+NY+11435" target="_blank" rel="noopener">95-09 Sutphin Boulevard, 11435</a>
+      </div>
+      <div class="signal-strip">
+        <span class="sig sig-amber">🐭 Live mice (04L)</span>
+        <span class="sig sig-green">Active</span>
+      </div>
+      <a href="tel:7186580231" class="phone-link" onclick="event.stopPropagation()">(718) 658-0231</a>
+    </div>
+    <div><span class="badge badge-green">Active</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 2, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">(718) 658-0231</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pest Violations</div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Live mice on premises<span class="vdate">Jun 2</span></span></div>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- ⑩ Madame Vo's -->
+<details class="card u-green" id="n10">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">71.3</div><div class="score-lbl">score</div></div>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">10. Madame Vo&rsquo;s</span>
+        <span class="grade grade-b">B+</span>
+        <span class="cuisine">East Village · Manhattan</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=212+East+10+Street+New+York+NY+10003" target="_blank" rel="noopener">212 East 10th Street, 10003</a>
+      </div>
+      <div class="signal-strip">
+        <span class="sig sig-amber">🐭 Droppings (04M)</span>
+        <span class="sig sig-red">10 complaints 90d · ↑ rising</span>
+      </div>
+      <a href="tel:9172612115" class="phone-link" onclick="event.stopPropagation()">(917) 261-2115</a>
+    </div>
+    <div><span class="badge badge-green">Active</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">May 28, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">(917) 261-2115</span></div>
+      </div>
+      <div>
+        <div class="sec-label">311 + Violations</div>
+        <div class="row2"><span class="row2-lbl">311 complaints</span><span class="row2-val bold amber">10 in 90d · ↑ rising</span></div>
+        <div class="vrow" style="margin-top:6px;"><span class="vcode">04M</span><span class="vdesc">Mouse droppings<span class="vdate">May 28</span></span></div>
+      </div>
+    </div>
+  </div>
+</details>
+
+</div><!-- /panel-new -->
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     TAB: PAST LEADS
+══════════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="panel-past">
+
+<div class="past-notice">
+  These are leads from a previous brief (Jun 9). Switch to <a href="#" onclick="switchTab('new', document.getElementById('tab-new')); return false;">New Leads</a> for the latest 10 accounts ranked by TRDI Intelligence Score.
+</div>
+
+<nav class="jump-nav">
+  <a href="#card-1" class="jump-pill"><span class="jp-g red">04K</span> Patrick's on the Hill</a>
+  <a href="#card-2" class="jump-pill"><span class="jp-g red">04M</span> Ringolevio</a>
+  <a href="#card-3" class="jump-pill"><span class="jp-g amber">04L</span> The Fiction</a>
+  <a href="#card-4" class="jump-pill"><span class="jp-g amber">04L</span> Jody's Club</a>
+  <a href="#card-5" class="jump-pill"><span class="jp-g amber">N</span> Rita Restaurant</a>
+</nav>
+
+<div class="section-label">Previous Brief — Restaurant Accounts — NYC Department of Health</div>
+
+<!-- ① Patrick's on the Hill -->
+<details class="card u-red" id="card-1">
+  <summary class="card-head">
+    <span class="badge badge-red">Re-Inspect</span>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta">
+        <span class="lead-name">1. Patrick's on the Hill</span>
+        <span class="cuisine">American · Hamilton Heights</span>
+      </div>
+      <div class="address">
+        <a href="https://maps.google.com/?q=1627+Amsterdam+Avenue+New+York+NY+10031" target="_blank" rel="noopener">1627 Amsterdam Avenue, New York 10031</a>
+      </div>
+      <div class="signal-strip">
+        <span class="sig sig-score">Score 18</span>
+        <span class="sig sig-red">Rats</span>
+        <span class="sig sig-red">Roaches</span>
+        <span class="sig sig-amber">Harborage</span>
+        <span class="sig sig-red">13 complaints 90d</span>
+      </div>
+      <a href="tel:9175352401" class="phone-link" onclick="event.stopPropagation()">(917) 535-2401</a>
+    </div>
+    <div class="dist"><div class="dist-num">26.5 mi</div><div class="dist-lbl">from your office</div></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 2, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Status</span><span class="row2-val bold red">Pre-permit re-inspection in progress</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold red">18 points</span></div>
+        <div class="row2"><span class="row2-lbl">Inspection type</span><span class="row2-val">Pre-permit / Re-inspection</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">(917) 535-2401</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Google Places</div>
+        <div class="goog-row">
+          <span class="goog-stars">★★★★½</span>
+          <span class="goog-rating">4.6</span>
+          <span class="goog-count">87 reviews</span>
+          <span class="goog-divider">·</span>
+          <span class="goog-hours">Tue–Sun 11 AM – 11 PM</span>
+        </div>
+        <div class="sec-label" style="margin-top:10px;">Pest Violations Cited (current)</div>
+        <div class="vrow"><span class="vcode">04K</span><span class="vdesc">Evidence of rats or live rats on premises<span class="vdate">Jun 2, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">04M</span><span class="vdesc">Live roaches in food or non-food area<span class="vdate">Jun 2, 2026</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">08A</span><span class="vdesc vcode-nc">Harborage conditions / not vermin-proof<span class="vdate">Jun 2, 2026</span></span></div>
+      </div>
+      <div>
+        <div class="sec-label">311 Rodent Complaints (200m radius)</div>
+        <div class="row2"><span class="row2-lbl">Last 90 days</span><span class="row2-val bold red">13 complaints</span></div>
+        <div class="row2"><span class="row2-lbl">Area pressure</span><span class="row2-val red">96/100 density — extreme hot zone</span></div>
+        <div class="row2"><span class="row2-lbl">Trend</span><span class="row2-val red">↑ Rising (30d vs 90d)</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pattern at a glance</div>
+        <div class="row2"><span class="row2-lbl">Rats + roaches</span><span class="row2-val red">Both active vectors — current inspection</span></div>
+        <div class="row2"><span class="row2-lbl">Recurrence</span><span class="row2-val red">04K cited across 3 separate inspections</span></div>
+        <div class="row2"><span class="row2-lbl">Status</span><span class="row2-val amber">Under active pre-permit review</span></div>
+      </div>
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">Rats and roaches at the same inspection is the hardest combination to resolve — they require two completely separate treatment protocols. This is a pre-permit re-inspection, which means the city is coming back specifically to confirm the violations were cleared. If they fail again the permit gets pulled. The 96/100 neighbourhood rodent pressure means exterior exclusion is table-stakes here; without it the inside treatments fail within weeks.</div>
+      </div>
+    </div>
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>Full DOH Inspection History <span class="vh-counts">— 3 visits · violations across all</span></summary>
+        <div class="vh-inner">
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jun 2, 2026</span><span class="insp-score">Score 18</span><span class="insp-action">Pre-permit / Re-inspection · violations cited</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04K</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of rats or live rats in establishment&rsquo;s food or non-food areas.</span></div>
+              <div class="iv-row"><span class="iv-code crit">04M</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Live roaches in facility&rsquo;s food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Establishment is not free of harborage or conditions conducive to rodents, insects, or other pests.</span></div>
+            </div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Mar 12, 2026</span><span class="grade grade-b" style="font-size:10px; padding:1px 6px;">Grade B</span><span class="insp-score">Score 18</span><span class="insp-action">Violations cited</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04K</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of rats or live rats in establishment&rsquo;s food or non-food areas.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Establishment is not free of harborage or conditions conducive to rodents, insects, or other pests.</span></div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</details>
+
+<!-- ② Ringolevio -->
+<details class="card u-red" id="card-2">
+  <summary class="card-head">
+    <span class="badge badge-red">Score 44</span>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta"><span class="lead-name">2. Ringolevio</span><span class="cuisine">Café · Greenpoint, Brooklyn</span></div>
+      <div class="address"><a href="https://maps.google.com/?q=490+Humboldt+Street+Brooklyn+NY+11222" target="_blank" rel="noopener">490 Humboldt Street, Brooklyn 11222</a></div>
+      <div class="signal-strip"><span class="sig sig-score">Score 44</span><span class="sig sig-red">Mice</span><span class="sig sig-red">Roaches</span><span class="sig sig-amber">Harborage</span><span class="sig sig-red">↑ Rising area</span></div>
+      <a href="tel:3473350056" class="phone-link" onclick="event.stopPropagation()">(347) 335-0056</a>
+    </div>
+    <div class="dist"><div class="dist-num">21.4 mi</div><div class="dist-lbl">from your office</div></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 1, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold red">44 points — highest in this set</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">(347) 335-0056</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pest Violations (current)</div>
+        <div class="vrow"><span class="vcode">04M</span><span class="vdesc">Live roaches in food area<span class="vdate">Jun 1, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Evidence of mice on premises<span class="vdate">Jun 1, 2026</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">08A</span><span class="vdesc vcode-nc">Harborage conditions present<span class="vdate">Jun 1, 2026</span></span></div>
+      </div>
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">A score of 44 is one bad re-inspection away from a Grade C posted in the window — for a café with 397 reviews and a strong local following, that&rsquo;s a reputation event. Mice and roaches at the same inspection means two separate infestation programmes running simultaneously. The rat complaint two doors down confirms exterior pressure on this block.</div>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- ③ The Fiction -->
+<details class="card u-amber" id="card-3">
+  <summary class="card-head">
+    <span class="badge badge-amber">Active</span>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta"><span class="lead-name">3. The Fiction</span><span class="cuisine">Bar · Café · Williamsburg, Brooklyn</span></div>
+      <div class="address"><a href="https://maps.google.com/?q=308+Hooper+Street+Brooklyn+NY+11211" target="_blank" rel="noopener">308 Hooper Street, Brooklyn 11211</a></div>
+      <div class="signal-strip"><span class="sig sig-score">Score 30</span><span class="sig sig-amber">Mice</span><span class="sig sig-amber">Harborage</span><span class="sig sig-amber">Recurring</span></div>
+      <a href="tel:7185995151" class="phone-link" onclick="event.stopPropagation()">(718) 599-5151</a>
+    </div>
+    <div class="dist"><div class="dist-num">20.4 mi</div><div class="dist-lbl">from your office</div></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">May 26, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Pattern</span><span class="row2-val red">Mice cited Jan 2025 and again May 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">(718) 599-5151</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pest Violations</div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Evidence of mice on premises<span class="vdate">May 26, 2026</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">08A</span><span class="vdesc vcode-nc">Harborage conditions present<span class="vdate">May 26, 2026</span></span></div>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- ④ Jody's Club -->
+<details class="card u-amber" id="card-4">
+  <summary class="card-head">
+    <span class="badge badge-amber">Active</span>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta"><span class="lead-name">4. Jody&rsquo;s Club Forest</span><span class="grade grade-a">Grade A</span><span class="cuisine">Irish · Staten Island</span></div>
+      <div class="address"><a href="https://maps.google.com/?q=372+Forest+Avenue+Staten+Island+NY+10301" target="_blank" rel="noopener">372 Forest Avenue, Staten Island 10301</a></div>
+      <div class="signal-strip"><span class="sig sig-score">Score 10</span><span class="sig sig-amber">Mice</span><span class="sig sig-amber">Grade A held</span><span class="sig sig-amber">Recurring</span></div>
+      <a href="tel:7187276338" class="phone-link" onclick="event.stopPropagation()">(718) 727-6338</a>
+    </div>
+    <div class="dist"><div class="dist-num">11.2 mi</div><div class="dist-lbl">from your office</div></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 1, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Current grade</span><span class="row2-val bold green">Grade A (Score 10) — barely held</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">(718) 727-6338</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pest Violations</div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Evidence of mice on premises<span class="vdate">Jun 1, 2026</span></span></div>
+        <div class="row2" style="margin-top:8px;"><span class="row2-lbl">Pattern</span><span class="row2-val red">Mice cited 4× since 2022 — same codes every time</span></div>
+        <div class="row2"><span class="row2-lbl">2022</span><span class="row2-val red">08C — improper bait station (unlicensed treatment)</span></div>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- ⑤ Rita Restaurant -->
+<details class="card u-amber" id="card-5">
+  <summary class="card-head">
+    <span class="badge badge-amber">Active</span>
+    <div style="flex:1; min-width:0;">
+      <div class="lead-meta"><span class="lead-name">5. Rita Restaurant</span><span class="grade grade-n">Grade N</span><span class="cuisine">Mexican · Staten Island</span></div>
+      <div class="address"><a href="https://maps.google.com/?q=108+Victory+Boulevard+Staten+Island+NY+10301" target="_blank" rel="noopener">108 Victory Boulevard, Staten Island 10301</a></div>
+      <div class="signal-strip"><span class="sig sig-score">Score 20</span><span class="sig sig-amber">Mice</span><span class="sig sig-amber">Grade N</span><span class="sig sig-amber">Pre-permit</span></div>
+      <a href="tel:7182854333" class="phone-link" onclick="event.stopPropagation()">(718) 285-4333</a>
+    </div>
+    <div class="dist"><div class="dist-num">12.3 mi</div><div class="dist-lbl">from your office</div></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">May 29, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Current grade</span><span class="row2-val bold red">Grade N — not yet graded</span></div>
+        <div class="row2"><span class="row2-lbl">Phone</span><span class="row2-val">(718) 285-4333</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pest Violations</div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Evidence of mice on premises<span class="vdate">May 29, 2026</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">08A</span><span class="vdesc vcode-nc">Harborage conditions present<span class="vdate">May 29, 2026</span></span></div>
+      </div>
+    </div>
+  </div>
+</details>
+
+</div><!-- /panel-past -->
+
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="legend-title">How to read these leads</div>
+  <div class="legend-text">Every lead is a hypothesis built from public data — not a guarantee. We watch a pattern emerge across DOH inspections, 311 rodent complaints, HPD violations, and building history, then draw a conclusion about what it probably means and why it&rsquo;s worth a call.</div>
+  <div class="legend-codes">
+    <div class="legend-item"><span class="vcode">04K</span><span class="legend-lbl">Evidence of cockroaches</span></div>
+    <div class="legend-item"><span class="vcode">04L</span><span class="legend-lbl">Live mice on premises</span></div>
+    <div class="legend-item"><span class="vcode">04M</span><span class="legend-lbl">Mouse droppings / live roaches</span></div>
+    <div class="legend-item"><span class="vcode">04N</span><span class="legend-lbl">Filth flies present</span></div>
+    <div class="legend-item"><span class="vcode vcode-nc">08A</span><span class="legend-lbl">Harborage conditions</span></div>
+    <div class="legend-item"><span class="vcode vcode-nc">08C</span><span class="legend-lbl">Unlicensed pest treatment</span></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-logo" style="margin-bottom:10px;">
+    <div class="footer-wordmark">trdi</div>
+  </div>
+  <div style="font-size:11px; color:var(--subtle); line-height:1.9;">
+    Data sourced from NYC DOH, HPD, and 311 public records. Prepared Jun 11, 2026.<br>
+    This brief was generated specifically for Fillmore Termite and Pest Control Inc.
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+function switchTab(id, btn) {
+  // Hide all panels
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  // Deactivate all buttons
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  // Show selected
+  document.getElementById('panel-' + id).classList.add('active');
+  btn.classList.add('active');
+  // Update header count
+  var counts = { new: '10 new leads', past: '5 past leads' };
+  document.getElementById('hd-count').textContent = counts[id];
+}
+</script>
+
+</body>
+</html>
