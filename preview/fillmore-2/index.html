@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your TRDI Lead Brief — Fillmore Termite and Pest Control</title>
+  <meta name="description" content="10 matched commercial accounts across NYC — live DOH, 311, and HPD data.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 14px; -webkit-font-smoothing: antialiased; }
+
+    :root {
+      --rust:    #C87A53;
+      --linen:   #F4F1EA;
+      --taupe:   #8A7E72;
+      --charcoal:#1E1E1F;
+      --panel:   #242221;
+      --card:    #272422;
+      --soft:    #2D2926;
+      --border:  rgba(244,241,234,.10);
+      --border-hi: rgba(244,241,234,.16);
+      --muted:   rgba(244,241,234,.55);
+      --subtle:  rgba(244,241,234,.35);
+    }
+
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--charcoal); color: var(--linen); line-height: 1.5; }
+    a { color: inherit; }
+    .wrap { max-width: 740px; margin: 0 auto; padding: 0 20px; }
+
+    .hd { background: var(--panel); border-bottom: 1px solid var(--border); }
+    .hd-inner { padding: 32px 20px 24px; max-width: 740px; margin: 0 auto; }
+    .hd-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--rust); margin-bottom: 10px; font-family: 'Syne', sans-serif; }
+    .hd-name { font-size: 24px; font-weight: 700; color: var(--linen); line-height: 1.15; font-family: 'Instrument Serif', Georgia, serif; }
+    .hd-sub { font-size: 12px; color: var(--muted); margin-top: 6px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .hd-sub a { color: var(--muted); text-decoration: none; }
+    .hd-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .pill { font-size: 10px; background: var(--soft); color: var(--muted); border-radius: 2px; padding: 3px 9px; font-weight: 500; border: 1px solid var(--border); }
+    .hd-bar { border-top: 1px solid var(--border); }
+    .hd-bar-inner { max-width: 740px; margin: 0 auto; padding: 10px 20px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .src-label { font-size: 11px; color: var(--subtle); }
+    .src-tag { font-size: 10px; color: var(--muted); background: var(--soft); border-radius: 2px; padding: 2px 7px; border: 1px solid var(--border); }
+
+    /* Tabs */
+    .tab-nav { max-width: 740px; margin: 0 auto; padding: 0 20px; display: flex; gap: 4px; }
+    .tab-btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 18px; font-size: 12px; font-weight: 700; border: none; background: transparent; color: var(--subtle); cursor: pointer; border-radius: 6px 6px 0 0; border-top: 2px solid transparent; transition: all .15s; font-family: 'Inter', sans-serif; }
+    .tab-btn:hover { color: var(--linen); }
+    .tab-btn.active { background: var(--charcoal); color: var(--linen); border-top-color: var(--rust); }
+    .tab-badge { font-size: 9px; font-weight: 800; padding: 1px 6px; border-radius: 10px; }
+    .tab-btn.active .tab-badge { background: var(--rust); color: #fff; }
+    .tab-btn:not(.active) .tab-badge { background: var(--soft); color: var(--muted); border: 1px solid var(--border); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .section-label { font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--rust); margin-bottom: 12px; margin-top: 28px; font-family: 'Syne', sans-serif; }
+
+    details.card > summary { cursor: pointer; list-style: none; position: relative; }
+    details.card > summary::-webkit-details-marker { display: none; }
+
+    .card { background: var(--card); border-radius: 2px; margin-bottom: 16px; overflow: hidden; border: 1px solid var(--border); }
+    .card-head { padding: 14px 20px; display: flex; gap: 12px; align-items: flex-start; }
+    .card-body { padding: 18px 20px; }
+
+    .u-red   { border-color: rgba(239,68,68,.30); }
+    .u-amber { border-color: rgba(245,158,11,.28); }
+    .u-green { border-color: rgba(34,197,94,.22); }
+    .u-red   .card-head { background: rgba(239,68,68,.08);  border-bottom: 1px solid rgba(239,68,68,.20); }
+    .u-amber .card-head { background: rgba(245,158,11,.07); border-bottom: 1px solid rgba(245,158,11,.18); }
+    .u-green .card-head { background: rgba(34,197,94,.07);  border-bottom: 1px solid rgba(34,197,94,.16); }
+
+    .badge { display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; border-radius: 2px; padding: 3px 8px; color: #fff; flex-shrink: 0; margin-top: 3px; min-width: 64px; text-align: center; white-space: nowrap; line-height: 1.3; }
+    .badge-red   { background: rgba(220,38,38,.80); }
+    .badge-amber { background: rgba(217,119,6,.80); }
+    .badge-green { background: rgba(22,163,74,.75); }
+
+    .score-badge { background: var(--soft); border: 1px solid var(--border-hi); border-radius: 2px; padding: 4px 8px; flex-shrink: 0; text-align: center; min-width: 52px; }
+    .score-num { font-size: 15px; font-weight: 800; color: var(--linen); line-height: 1; font-family: 'Syne', sans-serif; }
+    .score-lbl { font-size: 9px; color: var(--subtle); letter-spacing: .08em; text-transform: uppercase; margin-top: 2px; }
+
+    .lead-name { font-size: 16px; font-weight: 700; color: var(--linen); font-family: 'Instrument Serif', Georgia, serif; }
+    .lead-meta { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+    .grade { font-size: 10px; font-weight: 800; border-radius: 2px; padding: 2px 7px; font-family: 'Inter', sans-serif; letter-spacing: .05em; }
+    .grade-a  { background: rgba(34,197,94,.15);  color: #4ade80; border: 1px solid rgba(34,197,94,.25); }
+    .grade-b  { background: rgba(245,158,11,.12); color: #fbbf24; border: 1px solid rgba(245,158,11,.22); }
+    .grade-b+ { background: rgba(245,158,11,.12); color: #fbbf24; border: 1px solid rgba(245,158,11,.22); }
+    .grade-c  { background: rgba(239,68,68,.14);  color: #f87171; border: 1px solid rgba(239,68,68,.24); }
+    .grade-n  { background: rgba(239,68,68,.14);  color: #f87171; border: 1px solid rgba(239,68,68,.24); }
+    .cuisine { font-size: 12px; color: var(--muted); }
+    .address { font-size: 12px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; }
+    .address a { color: var(--muted); }
+    .dist { text-align: right; flex-shrink: 0; }
+    .dist-num { font-size: 14px; font-weight: 700; color: var(--linen); font-family: 'Geist Mono', 'SF Mono', monospace; }
+    .dist-lbl { font-size: 10px; color: var(--subtle); }
+
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 28px; }
+    @media (max-width: 560px) { .grid2 { grid-template-columns: 1fr; } }
+    .span2 { grid-column: 1 / -1; }
+
+    .sec-label { font-size: 10px; font-weight: 700; color: var(--rust); text-transform: uppercase; letter-spacing: .14em; margin-bottom: 7px; font-family: 'Syne', sans-serif; }
+    .row2 { display: flex; gap: 8px; margin-bottom: 4px; align-items: baseline; }
+    .row2-lbl { font-size: 11px; color: var(--subtle); flex-shrink: 0; min-width: 110px; }
+    .row2-val { font-size: 12px; color: var(--linen); font-weight: 500; }
+    .row2-val.bold { font-weight: 700; }
+    .row2-val.red   { color: #f87171; }
+    .row2-val.amber { color: #fbbf24; }
+    .row2-val.green { color: #4ade80; }
+
+    .vcode { display: inline-block; background: rgba(239,68,68,.15); color: #f87171; font-size: 10px; font-weight: 800; border-radius: 2px; padding: 2px 6px; flex-shrink: 0; margin-top: 1px; }
+    .vcode-nc { background: var(--soft); color: var(--muted); }
+    .vrow { display: flex; gap: 7px; align-items: flex-start; margin-bottom: 5px; }
+    .vdesc { font-size: 12px; color: var(--linen); line-height: 1.4; }
+    .vdate { font-size: 11px; color: var(--subtle); margin-left: 4px; }
+
+    .vtable { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .vtable th { text-align: left; padding: 4px 10px 4px 0; font-size: 10px; font-weight: 700; color: var(--rust); text-transform: uppercase; letter-spacing: .08em; border-bottom: 1px solid var(--border); }
+    .vtable td { padding: 5px 10px 5px 0; border-bottom: 1px solid var(--border); color: var(--linen); vertical-align: top; }
+    .vtable td.muted { color: var(--muted); white-space: nowrap; }
+
+    .ih-row { display: flex; gap: 8px; align-items: center; font-size: 12px; padding: 4px 0; border-bottom: 1px solid var(--border); }
+    .ih-date { color: var(--subtle); flex-shrink: 0; min-width: 90px; }
+    .ih-score { color: var(--linen); font-family: 'Geist Mono', 'SF Mono', monospace; }
+    .ih-action { color: var(--subtle); font-size: 11px; }
+
+    .complaints-list { margin-top: 8px; }
+    .complaint-row { font-size: 11px; color: var(--muted); margin-bottom: 3px; display: flex; gap: 6px; }
+    .complaint-date { color: var(--subtle); flex-shrink: 0; }
+
+    .summary-box { font-size: 13px; color: rgba(244,241,234,.74); line-height: 1.85; background: rgba(200,122,83,.06); border-radius: 2px; padding: 14px 18px; border: 1px solid rgba(200,122,83,.16); border-left: 3px solid rgba(200,122,83,.65); }
+
+    .legend { background: var(--soft); border-radius: 2px; padding: 16px 20px; margin: 8px 0 24px; border: 1px solid var(--border); }
+    .legend-title { font-size: 12px; font-weight: 700; color: var(--linen); margin-bottom: 8px; }
+    .legend-text { font-size: 12px; color: var(--muted); line-height: 1.8; margin-bottom: 12px; }
+    .legend-codes { display: flex; gap: 16px; flex-wrap: wrap; }
+    .legend-item { display: flex; gap: 7px; align-items: center; }
+    .legend-lbl { font-size: 11px; color: var(--muted); }
+
+    .phone-link { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 700; color: var(--rust); text-decoration: none; margin-top: 6px; background: rgba(200,122,83,.10); border: 1px solid rgba(200,122,83,.25); border-radius: 2px; padding: 4px 10px; font-family: 'Geist Mono', 'SF Mono', monospace; }
+    .phone-link:hover { background: rgba(200,122,83,.18); }
+
+    .goog-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; background: var(--soft); border-radius: 2px; padding: 8px 12px; border: 1px solid var(--border); margin-bottom: 0; }
+    .goog-rating { font-size: 13px; font-weight: 700; color: var(--linen); font-family: 'Geist Mono', 'SF Mono', monospace; }
+    .goog-stars { color: #fbbf24; font-size: 12px; letter-spacing: .5px; }
+    .goog-count { font-size: 11px; color: var(--muted); }
+    .goog-hours { font-size: 11px; color: var(--muted); }
+    .goog-divider { color: var(--border-hi); }
+
+    .vh-wrap { margin-top: 20px; border-top: 1px solid var(--border); padding-top: 16px; }
+    details.vh summary { cursor: pointer; font-size: 10px; font-weight: 700; color: var(--rust); text-transform: uppercase; letter-spacing: .14em; list-style: none; display: flex; align-items: center; gap: 8px; user-select: none; font-family: 'Syne', sans-serif; }
+    details.vh summary::-webkit-details-marker { display: none; }
+    details.vh summary::before { content: '▶'; font-size: 8px; color: var(--taupe); transition: transform .15s; flex-shrink: 0; }
+    details.vh[open] summary::before { transform: rotate(90deg); }
+    details.vh summary .vh-counts { font-size: 10px; color: var(--muted); font-weight: 500; letter-spacing: 0; text-transform: none; margin-left: 4px; font-family: 'Geist Mono', 'SF Mono', monospace; }
+    .vh-inner { margin-top: 14px; }
+
+    .insp-group { margin-bottom: 14px; background: var(--soft); border-radius: 2px; overflow: hidden; border: 1px solid var(--border); }
+    .insp-header { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding: 8px 12px; background: rgba(244,241,234,.04); border-bottom: 1px solid var(--border); }
+    .insp-date { font-size: 12px; font-weight: 700; color: var(--linen); }
+    .insp-score { font-size: 11px; color: var(--muted); background: var(--panel); border-radius: 2px; padding: 1px 6px; font-weight: 600; font-family: 'Geist Mono', 'SF Mono', monospace; }
+    .insp-action { font-size: 11px; color: var(--subtle); flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .insp-viols { padding: 8px 12px 6px; }
+    .iv-row { display: flex; gap: 6px; align-items: flex-start; margin-bottom: 5px; }
+    .iv-code { display: inline-block; font-size: 10px; font-weight: 800; border-radius: 2px; padding: 2px 6px; flex-shrink: 0; margin-top: 1px; }
+    .iv-code.crit { background: rgba(239,68,68,.15); color: #f87171; }
+    .iv-code.nc   { background: var(--panel); color: var(--muted); }
+    .iv-flag { font-size: 9px; font-weight: 700; border-radius: 2px; padding: 1px 5px; flex-shrink: 0; margin-top: 2px; }
+    .iv-flag.crit { background: rgba(239,68,68,.15); color: #f87171; }
+    .iv-flag.nc { background: var(--panel); color: var(--subtle); }
+    .iv-desc { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+    .jump-nav { display: flex; gap: 6px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; background: var(--charcoal); padding: 12px 0 14px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+    .jump-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; color: var(--muted); background: var(--soft); border: 1px solid var(--border); border-radius: 2px; padding: 4px 10px; text-decoration: none; transition: color .12s, border-color .12s, background .12s; white-space: nowrap; }
+    .jump-pill:hover { color: var(--linen); background: var(--card); border-color: var(--border-hi); }
+    .jp-g { font-size: 9px; font-weight: 800; border-radius: 2px; padding: 1px 5px; }
+    .jp-g.red   { background: rgba(239,68,68,.18); color: #f87171; }
+    .jp-g.amber { background: rgba(245,158,11,.15); color: #fbbf24; }
+
+    .signal-strip { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 7px; }
+    .sig { font-size: 10px; font-weight: 700; border-radius: 2px; padding: 2px 7px; font-family: 'Geist Mono', 'SF Mono', monospace; white-space: nowrap; }
+    .sig-score  { background: var(--soft); color: var(--muted); border: 1px solid var(--border); }
+    .sig-red    { background: rgba(239,68,68,.13); color: #fca5a5; }
+    .sig-amber  { background: rgba(245,158,11,.11); color: #fcd34d; }
+    .sig-green  { background: rgba(34,197,94,.11); color: #86efac; }
+
+    details.card { transition: border-color .18s, box-shadow .18s; }
+    details.card:not([open]):hover { box-shadow: 0 4px 20px rgba(0,0,0,.30); }
+    details.card[open] { border-color: rgba(244,241,234,.20); }
+    .card-body { border-top: 1px solid var(--border); }
+    details.card[open] > .card-body { animation: bodyReveal .22s ease; }
+    @keyframes bodyReveal { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+    details.card > summary::after { content: '+'; font-size: 20px; font-weight: 300; line-height: 1; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--taupe); transition: transform .18s, color .18s; }
+    details.card[open] > summary::after { transform: translateY(-50%) rotate(45deg); color: var(--rust); }
+    details.card > summary:hover::after { color: var(--linen); }
+
+    .u-red   { border-top: 2px solid rgba(239,68,68,.55)  !important; }
+    .u-amber { border-top: 2px solid rgba(245,158,11,.50) !important; }
+
+    .sc-trdi { font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: .01em; color: #fff; text-transform: none; }
+
+    .footer { padding: 28px 0 48px; text-align: center; border-top: 1px solid var(--border); }
+    .footer-wordmark { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800; letter-spacing: .01em; color: #fff; line-height: 1; }
+
+    .past-notice { background: rgba(245,158,11,.08); border: 1px solid rgba(245,158,11,.22); border-radius: 2px; padding: 12px 16px; margin-bottom: 20px; font-size: 13px; color: #fbbf24; }
+    .past-notice a { color: var(--rust); font-weight: 700; }
+  
+    .borough-sep { font-size:10px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#4ade80; margin-bottom:12px; margin-top:32px; font-family:'Syne',sans-serif; padding-bottom:8px; border-bottom:1px solid var(--border); }
+  </style>
+</head>
+<body>
+
+<div class="hd">
+  <div class="hd-inner">
+    <div class="hd-eyebrow"><span class="sc-trdi">trdi</span> · lead intelligence brief</div>
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="hd-name">Fillmore Termite and Pest Control Inc</div>
+        <div class="hd-sub">
+          <span>449 Craig Ave, Staten Island, NY 10307</span>
+          <a href="https://www.pestcontrolsi.com/" target="_blank" rel="noopener">pestcontrolsi.com</a>
+          <a href="tel:7183079818">(718) 307-9818</a>
+        </div>
+      </div>
+      <div style="font-size:12px; color:var(--muted); text-align:right; flex-shrink:0;">
+        <div>Prepared Jun 12, 2026</div>
+        <div style="margin-top:4px; color:var(--linen); font-weight:600;">10 new leads</div>
+      </div>
+    </div>
+    <div class="hd-meta">
+      <span class="pill">DEC #14213</span>
+      <span class="pill">Structural &amp; Rodent Control</span>
+      <span class="pill">Expires Feb 2028</span>
+      <span class="pill">20 years in business</span>
+      <span class="pill">All 5 boroughs</span>
+    </div>
+  </div>
+  <div class="hd-bar">
+    <div class="hd-bar-inner">
+      <span class="src-label">Sources:</span>
+      <span class="src-tag">NYC DOH Inspection Records</span>
+      <span class="src-tag">HPD Violation Database</span>
+      <span class="src-tag">311 Complaint Feed</span>
+      <span class="src-tag">NYC PLUTO 24v1</span>
+    </div>
+  </div>
+  <div class="tab-nav">
+    <button class="tab-btn active">
+      🆕 New Leads <span class="tab-badge">10</span>
+    </button>
+  </div>
+</div>
+
+<div class="wrap">
+
+<div class="tab-panel active" id="panel-new">
+
+<nav class="jump-nav">
+  <a href="#n1" class="jump-pill"><span class="jp-g red">04N</span> Amar Bari</a>
+  <a href="#n2" class="jump-pill"><span class="jp-g amber">04L</span> Yaad Man Thing</a>
+  <a href="#n3" class="jump-pill"><span class="jp-g red">04M</span> Shashlik Uz N1</a>
+  <a href="#n4" class="jump-pill"><span class="jp-g red">04N</span> Papa John&rsquo;s</a>
+  <a href="#n5" class="jump-pill"><span class="jp-g amber">04K</span> Bou&rsquo;ote</a>
+  <a href="#n6" class="jump-pill"><span class="jp-g red">04K</span> Please Tell Me</a>
+  <a href="#n7" class="jump-pill"><span class="jp-g amber">04L</span> Tongdee Thai</a>
+  <a href="#n8" class="jump-pill"><span class="jp-g amber">04L</span> Strauss Bakery</a>
+  <a href="#n9" class="jump-pill"><span class="jp-g red">Grd N</span> Goodfellas</a>
+  <a href="#n10" class="jump-pill"><span class="jp-g red">Grd N</span> Nature&rsquo;s Grill</a>
+</nav>
+
+<div class="borough-sep">🟦 Brooklyn — Top 8 Leads</div>
+<div class="section-label">Ranked by TRDI Intelligence Score</div>
+
+<!-- ① Amar Bari -->
+<details class="card u-red" id="n1">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">79.3</div><div class="score-lbl">score</div></div>
+    <div style="flex:1;min-width:0;">
+      <div class="lead-meta"><span class="lead-name">1. Amar Bari</span><span class="cuisine">Bangladeshi · East New York, Brooklyn</span></div>
+      <div class="address"><a href="https://maps.google.com/?q=1075+Liberty+Avenue+Brooklyn+NY+11208" target="_blank" rel="noopener">1075 Liberty Avenue, 11208</a></div>
+      <div class="signal-strip">
+        <span class="sig sig-red">🪰 Flies (04N)</span>
+        <span class="sig sig-red">Grade Z · score 32</span>
+        <span class="sig sig-red">Recurring — 3rd cycle</span>
+        <span class="sig sig-amber">~38d reinspection</span>
+      </div>
+      <a href="tel:9172507577" class="phone-link" onclick="event.stopPropagation()">(917) 250-7577</a>
+    </div>
+    <div><span class="badge badge-red">4 days ago</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 8, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold red">32 — Grade Z posted</span></div>
+        <div class="row2"><span class="row2-lbl">Reinspection</span><span class="row2-val bold amber">~38 days remaining</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Google Places</div>
+        <div class="goog-row"><span class="goog-stars">★★★★</span><span class="goog-rating">3.8</span><span class="goog-count">113 reviews</span><span class="goog-divider">·</span><span class="goog-hours">Open 24 hrs daily</span></div>
+        <div class="sec-label" style="margin-top:10px;">Pest Violations (Jun 8)</div>
+        <div class="vrow"><span class="vcode">04N</span><span class="vdesc">Filth flies present in food or non-food area<span class="vdate"> Jun 8, 2026</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">08A</span><span class="vdesc" style="color:var(--muted);">Harborage conditions conducive to pests<span class="vdate"> Jun 8, 2026</span></span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pattern at a Glance</div>
+        <div class="row2"><span class="row2-lbl">04N recurring</span><span class="row2-val red">Grade C Aug 2025 → CLOSED Dec 2025 → Grade Z Jun 2026</span></div>
+        <div class="row2"><span class="row2-lbl">24-hr operation</span><span class="row2-val amber">No overnight window — food waste accumulates continuously</span></div>
+        <div class="row2"><span class="row2-lbl">DOHMH closure</span><span class="row2-val red">Closed Dec 11 — reopened Dec 15</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Building Context</div>
+        <div class="row2"><span class="row2-lbl">Location</span><span class="row2-val">Liberty Ave corridor, East New York</span></div>
+        <div class="row2"><span class="row2-lbl">Cycles w/ pest</span><span class="row2-val red">3 consecutive — Aug 2025, Dec 2025, Jun 2026</span></div>
+      </div>
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">Amar Bari is a 24-hour Bangladeshi restaurant in East New York that has failed three consecutive inspection cycles on filth flies. Grade C in August 2025, DOHMH closure in December, reopened December 15 — and flies are back on June 8 at score 32. A 24-hour operation never gets an overnight window to clear conditions: food, waste, and warmth run continuously. Whatever has been tried between inspections hasn&rsquo;t worked. With ~38 days before reinspection, there&rsquo;s a defined window to document a compliant programme before the grade is finalised.</div>
+      </div>
+    </div>
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>Full DOH Inspection History <span class="vh-counts">— 9 visits · 04N recurring · DOHMH closure Dec 2025</span></summary>
+        <div class="vh-inner">
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jun 8, 2026</span><span class="grade grade-n" style="font-size:10px;padding:1px 6px;">Grade Z</span><span class="insp-score">Score 32</span><span class="insp-action">Cycle / Initial · flies + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04N</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Filth flies or food/refuse/sewage-associated flies present in food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Establishment not free of harborage or conditions conducive to pests.</span></div>
+            </div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Mar 31, 2026</span><span class="insp-score">Score 19</span><span class="insp-action">Re-inspection · no pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Dec 15, 2025</span><span class="grade grade-n" style="font-size:10px;padding:1px 6px;">Grade Z</span><span class="insp-action">Reopening inspection — Grade Z pending</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Reopened after DOHMH closure.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Dec 11, 2025</span><span class="insp-score">Score 63</span><span class="insp-action">CLOSED by DOHMH — sanitation violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations. Closure for kitchen sanitation violations.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Aug 27, 2025</span><span class="grade grade-c" style="font-size:10px;padding:1px 6px;">Grade C</span><span class="insp-score">Score 55</span><span class="insp-action">Cycle / Initial · flies + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04N</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Filth flies or food/refuse/sewage-associated flies present in food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Harborage conditions present.</span></div>
+            </div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Apr 24, 2025</span><span class="insp-score">Score 16</span><span class="insp-action">Re-inspection · no pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Sep 4–17, 2024</span><span class="grade grade-b" style="font-size:10px;padding:1px 6px;">Grade P</span><span class="insp-score">Score 36–73</span><span class="insp-action">Initial + re-inspection · no pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations in either visit.</span></div></div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</details>
+
+<!-- ② Yaad Man Thing -->
+<details class="card u-amber" id="n2">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">72.4</div><div class="score-lbl">score</div></div>
+    <div style="flex:1;min-width:0;">
+      <div class="lead-meta"><span class="lead-name">2. Yaad Man Thing</span><span class="cuisine">Caribbean · Flatbush, Brooklyn</span></div>
+      <div class="address"><a href="https://maps.google.com/?q=3901+Church+Avenue+Brooklyn+NY+11203" target="_blank" rel="noopener">3901 Church Avenue, 11203</a></div>
+      <div class="signal-strip">
+        <span class="sig sig-red">🐭 Mice (04L) ×3 in 90d</span>
+        <span class="sig sig-red">Grade Z · score 21</span>
+        <span class="sig sig-red">Rats in Feb 2024</span>
+      </div>
+      <a href="tel:7189159239" class="phone-link" onclick="event.stopPropagation()">(718) 915-9239</a>
+    </div>
+    <div><span class="badge badge-amber">8 days ago</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 4, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold red">21 — Grade Z posted</span></div>
+        <div class="row2"><span class="row2-lbl">04L in 90 days</span><span class="row2-val bold red">3 inspections: May 13, May 14, Jun 4</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Google Places</div>
+        <div class="goog-row"><span class="goog-stars">★★★★</span><span class="goog-rating">3.8</span><span class="goog-count">132 reviews</span></div>
+        <div class="sec-label" style="margin-top:10px;">Pest Violations (Jun 4)</div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Evidence of mice or live mice in food or non-food area<span class="vdate"> Jun 4, 2026</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">08A</span><span class="vdesc" style="color:var(--muted);">Harborage conditions conducive to pests<span class="vdate"> Jun 4, 2026</span></span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pattern at a Glance</div>
+        <div class="row2"><span class="row2-lbl">04L ×3 in 90d</span><span class="row2-val red">Mice every inspection since May — chronic harborage</span></div>
+        <div class="row2"><span class="row2-lbl">04K in 2024</span><span class="row2-val red">Rats cited Feb 2024 — escalating rodent history</span></div>
+        <div class="row2"><span class="row2-lbl">Grade C 2024</span><span class="row2-val amber">Grade C May 2024, Grade Z now — no sustained clean cycle</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Building Context</div>
+        <div class="row2"><span class="row2-lbl">Location</span><span class="row2-val">Church Ave, Flatbush — dense mixed-use block</span></div>
+        <div class="row2"><span class="row2-lbl">Recurrence</span><span class="row2-val red">04L in 3 of last 3 inspections — harborage unresolved</span></div>
+      </div>
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">Yaad Man Thing has had live mice at three consecutive inspections — May 13, May 14, and June 4 — each with harborage cited alongside. Before that, rats were cited in February 2024. The pattern (rats → mice, 04L at every recent visit) suggests entry and harborage that surface treatment isn&rsquo;t touching. Score 21 with Grade Z means a reinspection is coming. Three documented cycles with the same code in 90 days is a strong opener.</div>
+      </div>
+    </div>
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>Full DOH Inspection History <span class="vh-counts">— 9 visits · 04L ×3 in 90d · rats 2024 · Grade C 2024</span></summary>
+        <div class="vh-inner">
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jun 4, 2026</span><span class="grade grade-n" style="font-size:10px;padding:1px 6px;">Grade Z</span><span class="insp-score">Score 21</span><span class="insp-action">Re-inspection · mice + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04L</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of mice or live mice in establishment's food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Establishment not free of harborage or conditions conducive to pests.</span></div>
+            </div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">May 14, 2026</span><span class="insp-score">Score 74</span><span class="insp-action">Cycle / Initial · mice + harborage — Grade Z posted</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04L</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of mice or live mice in establishment's food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Harborage conditions present.</span></div>
+            </div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jan 22, 2025</span><span class="insp-score">Score 93</span><span class="insp-action">Cycle / Initial · mice + flies + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04L</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of mice or live mice in establishment's food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code crit">04N</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Filth flies present in food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Harborage conditions present.</span></div>
+            </div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">May 20, 2024</span><span class="grade grade-c" style="font-size:10px;padding:1px 6px;">Grade C</span><span class="insp-score">Score 2</span><span class="insp-action">Re-inspection</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Grade C posted from initial cycle score. No pest violations at reinspection.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Feb 5, 2024</span><span class="insp-score">Score 73</span><span class="insp-action">Cycle / Initial · rats + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04K</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of rats or live rats in establishment's food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Harborage conditions present.</span></div>
+            </div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jul 6, 2023</span><span class="grade grade-b" style="font-size:10px;padding:1px 6px;">Grade B</span><span class="insp-score">Score 19</span><span class="insp-action">Re-inspection · harborage only</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Harborage conditions present.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jun 20, 2023</span><span class="insp-score">Score 46</span><span class="insp-action">Cycle / Initial · flies + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04N</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Filth flies present in food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Harborage conditions present.</span></div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</details>
+
+<!-- ③ Shashlik Uz N1 -->
+<details class="card u-red" id="n3">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">67.7</div><div class="score-lbl">score</div></div>
+    <div style="flex:1;min-width:0;">
+      <div class="lead-meta"><span class="lead-name">3. Shashlik Uz N1</span><span class="cuisine">Uzbek · Kensington, Brooklyn</span></div>
+      <div class="address"><a href="https://maps.google.com/?q=115+Ditmas+Avenue+Brooklyn+NY+11218" target="_blank" rel="noopener">115 Ditmas Avenue, 11218</a></div>
+      <div class="signal-strip">
+        <span class="sig sig-red">🪳 Roaches (04M)</span>
+        <span class="sig sig-red">🐭 Mice (04L)</span>
+        <span class="sig sig-red">Score 57 — first pest violation</span>
+        <span class="sig sig-amber">Grade A Dec 2024</span>
+      </div>
+      <a href="tel:9299440009" class="phone-link" onclick="event.stopPropagation()">(929) 944-0009</a>
+    </div>
+    <div><span class="badge badge-red">4 days ago</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 8, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold red">57 — Grade Z, reinspection pending</span></div>
+        <div class="row2"><span class="row2-lbl">Last Grade A</span><span class="row2-val">Dec 9, 2024</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Google Places</div>
+        <div class="goog-row"><span class="goog-stars">★★★★★</span><span class="goog-rating">4.4</span><span class="goog-count">297 reviews</span></div>
+        <div class="sec-label" style="margin-top:10px;">Pest Violations (Jun 8)</div>
+        <div class="vrow"><span class="vcode">04M</span><span class="vdesc">Live roaches in food or non-food area<span class="vdate"> Jun 8, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Evidence of mice or live mice in food or non-food area<span class="vdate"> Jun 8, 2026</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">08A</span><span class="vdesc" style="color:var(--muted);">Harborage conditions conducive to pests<span class="vdate"> Jun 8, 2026</span></span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pattern at a Glance</div>
+        <div class="row2"><span class="row2-lbl">Grade A → score 57</span><span class="row2-val red">Clean Dec 2024 — roaches + mice appear Jun 2026</span></div>
+        <div class="row2"><span class="row2-lbl">04M first time</span><span class="row2-val red">Roaches — new pest type emerging alongside mice</span></div>
+        <div class="row2"><span class="row2-lbl">Oct 2024</span><span class="row2-val amber">04N + 08A before the A — structural harborage persisted</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Building Context</div>
+        <div class="row2"><span class="row2-lbl">Location</span><span class="row2-val">Ditmas Ave, Kensington</span></div>
+        <div class="row2"><span class="row2-lbl">Google</span><span class="row2-val">4.4★ / 297 reviews — established reputation</span></div>
+      </div>
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">Shashlik Uz N1 earned a Grade A in December 2024, then on June 8 came in with live roaches (04M), mice (04L), and harborage at score 57 — three pest violations across two pest types simultaneously. The October 2024 inspection had already flagged flies and harborage before the Grade A was awarded; the harborage cited then is the same structural condition that now harbours both roaches and mice. A 4.4-star Uzbek restaurant with 297 reviews can't absorb a public Grade Z. First roach occurrence is the conversation opener: structural harborage is the driver, not a one-off.</div>
+      </div>
+    </div>
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>Full DOH Inspection History <span class="vh-counts">— 3 visits · Grade A Dec 2024 → roaches + mice Jun 2026</span></summary>
+        <div class="vh-inner">
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jun 8, 2026</span><span class="insp-score">Score 57</span><span class="insp-action">Cycle / Initial · roaches + mice + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04M</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Live roaches in food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code crit">04L</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of mice or live mice in establishment's food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Establishment not free of harborage or conditions conducive to pests.</span></div>
+            </div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Dec 9, 2024</span><span class="grade grade-a" style="font-size:10px;padding:1px 6px;">Grade A</span><span class="insp-score">Score 13</span><span class="insp-action">Re-inspection · no pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Oct 16, 2024</span><span class="insp-score">Score 36</span><span class="insp-action">Cycle / Initial · flies + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04N</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Filth flies present in food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Harborage conditions present.</span></div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</details>
+
+<!-- ④ Papa John's Pizza -->
+<details class="card u-red" id="n4">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">65.0</div><div class="score-lbl">score</div></div>
+    <div style="flex:1;min-width:0;">
+      <div class="lead-meta"><span class="lead-name">4. Papa John's Pizza</span><span class="cuisine">Pizza · Brownsville, Brooklyn</span></div>
+      <div class="address"><a href="https://maps.google.com/?q=12+Sutter+Avenue+Brooklyn+NY+11212" target="_blank" rel="noopener">12 Sutter Avenue, 11212</a></div>
+      <div class="signal-strip">
+        <span class="sig sig-red">🪰 Flies (04N)</span>
+        <span class="sig sig-red">Score 38 — Grade Z</span>
+        <span class="sig sig-amber">3× Grade A prior — sudden drop</span>
+      </div>
+      <a href="tel:7188047272" class="phone-link" onclick="event.stopPropagation()">(718) 804-7272</a>
+    </div>
+    <div><span class="badge badge-red">4 days ago</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 8, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold red">38 — Grade Z pending reinspection</span></div>
+        <div class="row2"><span class="row2-lbl">Prior grades</span><span class="row2-val">Grade A in 2023, 2024, and 2025</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Google Places</div>
+        <div class="goog-row"><span class="goog-stars">★★★</span><span class="goog-rating">2.8</span><span class="goog-count">381 reviews</span></div>
+        <div class="sec-label" style="margin-top:10px;">Pest Violations (Jun 8)</div>
+        <div class="vrow"><span class="vcode">04N</span><span class="vdesc">Filth flies present in food or non-food area<span class="vdate"> Jun 8, 2026</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">08A</span><span class="vdesc" style="color:var(--muted);">Harborage conditions conducive to pests<span class="vdate"> Jun 8, 2026</span></span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pattern at a Glance</div>
+        <div class="row2"><span class="row2-lbl">Grade A × 3</span><span class="row2-val">2023, 2024, 2025 — previously compliant</span></div>
+        <div class="row2"><span class="row2-lbl">First pest violation</span><span class="row2-val red">Flies + harborage Jun 2026 — no pest history prior</span></div>
+        <div class="row2"><span class="row2-lbl">Google 2.8★</span><span class="row2-val amber">Low rating — franchise under dual pressure</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Building Context</div>
+        <div class="row2"><span class="row2-lbl">Location</span><span class="row2-val">Sutter Ave, Brownsville</span></div>
+        <div class="row2"><span class="row2-lbl">Format</span><span class="row2-val">Franchise — brand compliance + DOH pressure</span></div>
+      </div>
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">Papa John's Brownsville ran clean for three straight inspection cycles — Grade A in 2023, 2024, and 2025. On June 8, flies (04N) and harborage appeared at score 38. Franchise operators react fast when DOH flags appear because brand protocols require it. Score 38 means they need a reinspection; they'll want a documented pest management programme before that happens. First violation after a clean run is the easiest conversation — they've never had to manage this before.</div>
+      </div>
+    </div>
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>Full DOH Inspection History <span class="vh-counts">— 5 visits · Grade A × 3 · first pest violation Jun 2026</span></summary>
+        <div class="vh-inner">
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jun 8, 2026</span><span class="insp-score">Score 38</span><span class="insp-action">Cycle / Initial · flies + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04N</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Filth flies or food/refuse/sewage-associated flies present in food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Harborage conditions present.</span></div>
+            </div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">May 14, 2025</span><span class="grade grade-a" style="font-size:10px;padding:1px 6px;">Grade A</span><span class="insp-score">Score 12</span><span class="insp-action">No pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Apr 16, 2024</span><span class="grade grade-a" style="font-size:10px;padding:1px 6px;">Grade A</span><span class="insp-score">Score 11</span><span class="insp-action">No pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Oct 23, 2023</span><span class="grade grade-a" style="font-size:10px;padding:1px 6px;">Grade A</span><span class="insp-score">Score 13</span><span class="insp-action">No pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Mar 13, 2023</span><span class="insp-score">Score 22</span><span class="insp-action">No pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</details>
+
+<!-- ⑤ Bou'ote -->
+<details class="card u-amber" id="n5">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">64.7</div><div class="score-lbl">score</div></div>
+    <div style="flex:1;min-width:0;">
+      <div class="lead-meta"><span class="lead-name">5. Bou&rsquo;ote</span><span class="cuisine">Jewish/Kosher · Crown Heights, Brooklyn</span></div>
+      <div class="address"><a href="https://maps.google.com/?q=302+Troy+Avenue+Brooklyn+NY+11213" target="_blank" rel="noopener">302 Troy Avenue, 11213</a></div>
+      <div class="signal-strip">
+        <span class="sig sig-red">🐀 Rats (04K)</span>
+        <span class="sig sig-red">🐭 Mice (04L)</span>
+        <span class="sig sig-amber">04L recurring — 2024 too</span>
+        <span class="sig sig-score">No Google listing</span>
+      </div>
+      <a href="tel:3473656359" class="phone-link" onclick="event.stopPropagation()">(347) 365-6359</a>
+    </div>
+    <div><span class="badge badge-amber">8 days ago</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 4, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold red">18 — Grade Z, reinspection pending</span></div>
+        <div class="row2"><span class="row2-lbl">Pest codes</span><span class="row2-val bold red">04K (rats) + 04L (mice) + 08A</span></div>
+        <div class="row2"><span class="row2-lbl">Prior</span><span class="row2-val">Grade C Mar 2024 (mice), Grade A Jan 2025</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pest Violations (Jun 4)</div>
+        <div class="vrow"><span class="vcode">04K</span><span class="vdesc">Evidence of rats or live rats in food or non-food area<span class="vdate"> Jun 4, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Evidence of mice or live mice in food or non-food area<span class="vdate"> Jun 4, 2026</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">08A</span><span class="vdesc" style="color:var(--muted);">Harborage conditions conducive to pests<span class="vdate"> Jun 4, 2026</span></span></div>
+        <div style="font-size:11px;color:var(--muted);margin-top:8px;">No Google Places listing found.</div>
+      </div>
+      <div>
+        <div class="sec-label">Pattern at a Glance</div>
+        <div class="row2"><span class="row2-lbl">04L recurring</span><span class="row2-val red">Mice in Mar 2024 (Grade C) and Jun 2026 — harborage unresolved</span></div>
+        <div class="row2"><span class="row2-lbl">04K escalation</span><span class="row2-val red">Rats new in 2026 — rodent pressure escalating</span></div>
+        <div class="row2"><span class="row2-lbl">Kosher kitchen</span><span class="row2-val amber">DOH + rabbinical compliance pressure combined</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Building Context</div>
+        <div class="row2"><span class="row2-lbl">Location</span><span class="row2-val">Troy Ave, Crown Heights</span></div>
+        <div class="row2"><span class="row2-lbl">Category</span><span class="row2-val">Kosher — dual compliance obligation</span></div>
+      </div>
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">Bou&rsquo;ote had mice (04L) and a Grade C in March 2024, earned back Grade A in January 2025, and on June 4 returned with both rats (04K) and mice (04L) simultaneously — an escalation. Harborage cited alongside both pest types confirms structural entry points that weren&rsquo;t closed. For a kosher establishment, pest citations create dual compliance pressure: DOH violation plus rabbinical concern. Rats appearing for the first time after a mice-only prior cycle is the signal: the harborage that attracted mice has now drawn rats too.</div>
+      </div>
+    </div>
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>Full DOH Inspection History <span class="vh-counts">— 6 visits · Grade C 2024 (mice) · rats + mice Jun 2026</span></summary>
+        <div class="vh-inner">
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jun 4, 2026</span><span class="insp-score">Score 18</span><span class="insp-action">Cycle / Initial · rats + mice + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04K</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of rats or live rats in establishment's food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code crit">04L</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of mice or live mice in establishment's food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Harborage conditions present.</span></div>
+            </div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jan 7, 2025</span><span class="grade grade-a" style="font-size:10px;padding:1px 6px;">Grade A</span><span class="insp-score">Score 12</span><span class="insp-action">No pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Mar 12, 2024</span><span class="grade grade-c" style="font-size:10px;padding:1px 6px;">Grade C</span><span class="insp-score">Score 40</span><span class="insp-action">Cycle / Initial · mice + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04L</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of mice or live mice in establishment's food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Harborage conditions present.</span></div>
+            </div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">May 12, 2023</span><span class="insp-score">Score 19</span><span class="insp-action">No pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Apr 25, 2022</span><span class="grade grade-a" style="font-size:10px;padding:1px 6px;">Grade A</span><span class="insp-score">Score 12</span><span class="insp-action">No pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</details>
+
+<!-- ⑥ Please Tell Me -->
+<details class="card u-red" id="n6">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">64.3</div><div class="score-lbl">score</div></div>
+    <div style="flex:1;min-width:0;">
+      <div class="lead-meta"><span class="lead-name">6. Please Tell Me</span><span class="cuisine">Brazilian · Williamsburg, Brooklyn</span></div>
+      <div class="address"><a href="https://maps.google.com/?q=749+Metropolitan+Avenue+Brooklyn+NY+11211" target="_blank" rel="noopener">749 Metropolitan Avenue, 11211</a></div>
+      <div class="signal-strip">
+        <span class="sig sig-red">🐀 Rats (04K)</span>
+        <span class="sig sig-red">Score 64 — first violation ever</span>
+        <span class="sig sig-amber">Grade A Dec 2024</span>
+      </div>
+      <a href="tel:4156843293" class="phone-link" onclick="event.stopPropagation()">(415) 684-3293</a>
+    </div>
+    <div><span class="badge badge-red">7 days ago</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 5, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold red">64 — Grade Z pending reinspection</span></div>
+        <div class="row2"><span class="row2-lbl">First pest violation</span><span class="row2-val red">04K (rats) — never cited before</span></div>
+        <div class="row2"><span class="row2-lbl">Prior</span><span class="row2-val">Grade A · Dec 11, 2024</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Google Places</div>
+        <div class="goog-row"><span class="goog-stars">★★★★★</span><span class="goog-rating">4.6</span><span class="goog-count">103 reviews</span></div>
+        <div class="sec-label" style="margin-top:10px;">Pest Violations (Jun 5)</div>
+        <div class="vrow"><span class="vcode">04K</span><span class="vdesc">Evidence of rats or live rats in food or non-food area<span class="vdate"> Jun 5, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">04N</span><span class="vdesc">Filth flies present in food or non-food area<span class="vdate"> Jun 5, 2026</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">08A</span><span class="vdesc" style="color:var(--muted);">Harborage conditions conducive to pests<span class="vdate"> Jun 5, 2026</span></span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pattern at a Glance</div>
+        <div class="row2"><span class="row2-lbl">2 inspections total</span><span class="row2-val">Grade A Dec 2024 → rats + flies Jun 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Score 64</span><span class="row2-val red">High — significant violations, not marginal</span></div>
+        <div class="row2"><span class="row2-lbl">4.6★ Google</span><span class="row2-val amber">Well-rated Williamsburg spot — reputation exposure real</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Building Context</div>
+        <div class="row2"><span class="row2-lbl">Location</span><span class="row2-val">Metropolitan Ave, Williamsburg — high-traffic dining corridor</span></div>
+      </div>
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">Please Tell Me is a 4.6-star Williamsburg restaurant that passed its first-ever DOH inspection with Grade A in December 2024. Six months later, June 5 brings rats (04K), flies (04N), and harborage at score 64 — all three violations at once, their first-ever pest citation. An operator who passed cleanly in December and now faces rats in June is exactly the motivated buyer: no programme in place, they know they need one, the reinspection window is defined. Williamsburg diners actively check grades.</div>
+      </div>
+    </div>
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>Full DOH Inspection History <span class="vh-counts">— 2 visits · Grade A Dec 2024 · rats + flies Jun 2026</span></summary>
+        <div class="vh-inner">
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jun 5, 2026</span><span class="insp-score">Score 64</span><span class="insp-action">Cycle / Initial · rats + flies + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04K</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of rats or live rats in establishment's food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code crit">04N</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Filth flies or food/refuse/sewage-associated flies present in food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Establishment not free of harborage or conditions conducive to pests.</span></div>
+            </div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Dec 11, 2024</span><span class="grade grade-a" style="font-size:10px;padding:1px 6px;">Grade A</span><span class="insp-score">Score 12</span><span class="insp-action">No pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</details>
+
+<!-- ⑦ Tongdee Thai -->
+<details class="card u-amber" id="n7">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">63.1</div><div class="score-lbl">score</div></div>
+    <div style="flex:1;min-width:0;">
+      <div class="lead-meta"><span class="lead-name">7. Tongdee Thai</span><span class="cuisine">Thai · Park Slope, Brooklyn</span></div>
+      <div class="address"><a href="https://maps.google.com/?q=180+5th+Avenue+Brooklyn+NY+11217" target="_blank" rel="noopener">180 5th Avenue, 11217</a></div>
+      <div class="signal-strip">
+        <span class="sig sig-red">🐭 Mice (04L)</span>
+        <span class="sig sig-amber">Grade N — first inspection ever</span>
+        <span class="sig sig-amber">Score 48</span>
+      </div>
+      <a href="tel:7182308280" class="phone-link" onclick="event.stopPropagation()">(718) 230-8280</a>
+    </div>
+    <div><span class="badge badge-amber">8 days ago</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 4, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Grade</span><span class="row2-val bold red">Grade N — first inspection in DOH records</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold red">48 — Grade Z pending reinspection</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Google Places</div>
+        <div class="goog-row"><span class="goog-stars">★★★★★</span><span class="goog-rating">4.6</span><span class="goog-count">145 reviews</span></div>
+        <div class="sec-label" style="margin-top:10px;">Pest Violations (Jun 4)</div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Evidence of mice or live mice in food or non-food area<span class="vdate"> Jun 4, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">04N</span><span class="vdesc">Filth flies present in food or non-food area<span class="vdate"> Jun 4, 2026</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">08A</span><span class="vdesc" style="color:var(--muted);">Harborage conditions conducive to pests<span class="vdate"> Jun 4, 2026</span></span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pattern at a Glance</div>
+        <div class="row2"><span class="row2-lbl">Grade N</span><span class="row2-val">First inspection in DOH records</span></div>
+        <div class="row2"><span class="row2-lbl">Score 48</span><span class="row2-val red">Multiple violations at first inspection — structural from day one</span></div>
+        <div class="row2"><span class="row2-lbl">4.6★ Google</span><span class="row2-val amber">145 reviews — established neighbourhood spot</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Building Context</div>
+        <div class="row2"><span class="row2-lbl">Location</span><span class="row2-val">5th Ave, Park Slope — competitive dining corridor</span></div>
+        <div class="row2"><span class="row2-lbl">Cuisine</span><span class="row2-val">Thai — warm kitchen, high ingredient turnover</span></div>
+      </div>
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">Tongdee Thai on Park Slope's 5th Avenue has a 4.6-star Google rating with 145 reviews. The June 4 inspection is their first in DOH records (Grade N), and it found mice, flies, and harborage at score 48 — three violations at the very first inspection. An operator who has never managed a pest programme and is suddenly facing Grade Z at their inaugural DOH inspection is highly motivated. Park Slope diners actively check grades; a Grade Z or Grade C would hit them immediately.</div>
+      </div>
+    </div>
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>Full DOH Inspection History <span class="vh-counts">— 1 visit · Grade N · first DOH inspection · mice + flies</span></summary>
+        <div class="vh-inner">
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jun 4, 2026</span><span class="grade grade-n" style="font-size:10px;padding:1px 6px;">Grade N</span><span class="insp-score">Score 48</span><span class="insp-action">First inspection · mice + flies + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04L</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of mice or live mice in establishment's food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code crit">04N</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Filth flies or food/refuse/sewage-associated flies present in food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Establishment not free of harborage or conditions conducive to pests.</span></div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</details>
+
+<!-- ⑧ Strauss Bakery -->
+<details class="card u-amber" id="n8">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">63.0</div><div class="score-lbl">score</div></div>
+    <div style="flex:1;min-width:0;">
+      <div class="lead-meta"><span class="lead-name">8. Strauss Bakery</span><span class="cuisine">Jewish/Kosher Bakery · Borough Park, Brooklyn</span></div>
+      <div class="address"><a href="https://maps.google.com/?q=5115+13th+Avenue+Brooklyn+NY+11219" target="_blank" rel="noopener">5115 13th Avenue, 11219</a></div>
+      <div class="signal-strip">
+        <span class="sig sig-red">🐭 Mice (04L)</span>
+        <span class="sig sig-amber">Recurring — 2022 + 2026</span>
+        <span class="sig sig-amber">Grade A Feb 2025 then mice again</span>
+      </div>
+      <a href="tel:7188517728" class="phone-link" onclick="event.stopPropagation()">(718) 851-7728</a>
+    </div>
+    <div><span class="badge badge-amber">8 days ago</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 4, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold red">43 — Grade Z pending reinspection</span></div>
+        <div class="row2"><span class="row2-lbl">04L recurrence</span><span class="row2-val red">Mice in Dec 2022 — and again Jun 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Last Grade A</span><span class="row2-val">Feb 12, 2025</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Google Places</div>
+        <div class="goog-row"><span class="goog-stars">★★★★★</span><span class="goog-rating">4.7</span><span class="goog-count">150 reviews</span></div>
+        <div class="sec-label" style="margin-top:10px;">Pest Violations (Jun 4)</div>
+        <div class="vrow"><span class="vcode">04L</span><span class="vdesc">Evidence of mice or live mice in food or non-food area<span class="vdate"> Jun 4, 2026</span></span></div>
+        <div class="vrow"><span class="vcode">04N</span><span class="vdesc">Filth flies present in food or non-food area<span class="vdate"> Jun 4, 2026</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">08A</span><span class="vdesc" style="color:var(--muted);">Harborage conditions conducive to pests<span class="vdate"> Jun 4, 2026</span></span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pattern at a Glance</div>
+        <div class="row2"><span class="row2-lbl">04L cycle</span><span class="row2-val red">Mice 2022 → clear 2023–25 → mice again 2026 — harborage unresolved</span></div>
+        <div class="row2"><span class="row2-lbl">Bakery format</span><span class="row2-val amber">Flour storage, warmth, early hours — structural fly + mouse conditions</span></div>
+        <div class="row2"><span class="row2-lbl">4.7★ Google</span><span class="row2-val amber">Neighbourhood staple — reputational exposure on Grade Z</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Building Context</div>
+        <div class="row2"><span class="row2-lbl">Location</span><span class="row2-val">13th Ave, Borough Park — dense Orthodox neighbourhood</span></div>
+        <div class="row2"><span class="row2-lbl">Community</span><span class="row2-val">Word-of-mouth market — pest citation travels fast locally</span></div>
+      </div>
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">Strauss Bakery is a 4.7-star kosher bakery on Borough Park's 13th Avenue. Mice were cited in December 2022 alongside harborage, then the bakery ran clean through 2023, 2024, and earned Grade A in February 2025. Now June 4 brings mice back alongside flies and harborage at score 43. Bakery environments are structurally difficult: flour storage, early-morning production, and continuous warmth create chronic attractant conditions that surface treatment can't resolve. The 2022→clean→2026 pattern shows the harborage was never properly addressed — it just went quiet. A 4.7-star neighbourhood bakery on Borough Park's main commercial street can't afford a Grade Z.</div>
+      </div>
+    </div>
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>Full DOH Inspection History <span class="vh-counts">— 5 visits · mice 2022 + 2026 · Grade A Feb 2025</span></summary>
+        <div class="vh-inner">
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jun 4, 2026</span><span class="insp-score">Score 43</span><span class="insp-action">Cycle / Initial · mice + flies + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04L</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of mice or live mice in establishment's food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code crit">04N</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Filth flies or food/refuse/sewage-associated flies present in food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Harborage conditions present.</span></div>
+            </div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Feb 12, 2025</span><span class="grade grade-a" style="font-size:10px;padding:1px 6px;">Grade A</span><span class="insp-score">Score 4</span><span class="insp-action">No pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Aug 22, 2024</span><span class="insp-score">Score 23</span><span class="insp-action">No pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Sep 21, 2023</span><span class="grade grade-a" style="font-size:10px;padding:1px 6px;">Grade A</span><span class="insp-score">Score 2</span><span class="insp-action">No pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Dec 5, 2022</span><span class="insp-score">Score 24</span><span class="insp-action">Cycle / Initial · mice + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04L</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Evidence of mice or live mice in establishment's food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Harborage conditions present.</span></div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</details>
+
+<div class="borough-sep">🟩 Staten Island — Top 2 Leads</div>
+
+<!-- ⑨ Goodfellas Brick Oven Pizza -->
+<details class="card u-red" id="n9">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">50.8</div><div class="score-lbl">score</div></div>
+    <div style="flex:1;min-width:0;">
+      <div class="lead-meta"><span class="lead-name">9. Goodfellas Brick Oven Pizza</span><span class="cuisine">Italian · Great Kills, Staten Island</span></div>
+      <div class="address"><a href="https://maps.google.com/?q=4029+Hylan+Boulevard+Staten+Island+NY+10308" target="_blank" rel="noopener">4029 Hylan Boulevard, 10308</a></div>
+      <div class="signal-strip">
+        <span class="sig sig-amber">Grade N · score 20</span>
+        <span class="sig sig-red">04N + 08A in Oct 2024</span>
+        <span class="sig sig-score">4.6★ · 1,366 reviews</span>
+      </div>
+      <a href="tel:7189872422" class="phone-link" onclick="event.stopPropagation()">(718) 987-2422</a>
+    </div>
+    <div><span class="badge badge-red">6 days ago</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 6, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Grade</span><span class="row2-val bold amber">Grade N — not yet graded</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold amber">20 — reinspection pending</span></div>
+        <div class="row2"><span class="row2-lbl">Oct 2024</span><span class="row2-val red">04N + 08A · Grade N · score 21</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Google Places</div>
+        <div class="goog-row"><span class="goog-stars">★★★★★</span><span class="goog-rating">4.6</span><span class="goog-count">1,366 reviews</span></div>
+        <div class="sec-label" style="margin-top:10px;">Current Violations (Jun 6)</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px;">No pest violations cited at Jun 6. Non-pest violations only. Grade N pending reinspection.</div>
+      </div>
+      <div>
+        <div class="sec-label">Pattern at a Glance</div>
+        <div class="row2"><span class="row2-lbl">Oct 2024</span><span class="row2-val red">Flies (04N) + harborage — Grade N score 21</span></div>
+        <div class="row2"><span class="row2-lbl">Jun 2026</span><span class="row2-val amber">No pest violations but Grade N again — reinspection coming</span></div>
+        <div class="row2"><span class="row2-lbl">1,366 reviews</span><span class="row2-val amber">High-volume SI destination — DOH grade very visible</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Building Context</div>
+        <div class="row2"><span class="row2-lbl">Location</span><span class="row2-val">Hylan Blvd, Great Kills — high-traffic SI commercial strip</span></div>
+        <div class="row2"><span class="row2-lbl">Format</span><span class="row2-val">Brick oven pizza — high volume, continuous kitchen heat</span></div>
+      </div>
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">Goodfellas is one of Staten Island&rsquo;s most reviewed restaurants — 1,366 Google reviews at 4.6 stars. October 2024 brought flies (04N) and harborage at Grade N; now June 6 is again Grade N with reinspection pending. No pest violations at the June visit, but the harborage from 2024 likely hasn&rsquo;t been structurally resolved. High-volume brick oven operations have continuous exposure: pizza production, delivery traffic, and commercial kitchen drainage create fly and pest conditions. A proactive conversation before reinspection is easier than one after a Grade C appears on Hylan Boulevard.</div>
+      </div>
+    </div>
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>Full DOH Inspection History <span class="vh-counts">— 3 visits · 04N Oct 2024 · Grade N Jun 2026</span></summary>
+        <div class="vh-inner">
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jun 6, 2026</span><span class="grade grade-n" style="font-size:10px;padding:1px 6px;">Grade N</span><span class="insp-score">Score 20</span><span class="insp-action">Cycle / Initial · no pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited. Grade N pending reinspection.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Oct 18, 2024</span><span class="grade grade-n" style="font-size:10px;padding:1px 6px;">Grade N</span><span class="insp-score">Score 21</span><span class="insp-action">Cycle / Initial · flies + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04N</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Filth flies or food/refuse/sewage-associated flies present in food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Harborage conditions present.</span></div>
+            </div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Oct 3, 2022</span><span class="insp-score">Score 14</span><span class="insp-action">Cycle / Initial · no pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</details>
+
+<!-- ⑩ Nature's Grill Cafe -->
+<details class="card u-red" id="n10">
+  <summary class="card-head">
+    <div class="score-badge"><div class="score-num">50.3</div><div class="score-lbl">score</div></div>
+    <div style="flex:1;min-width:0;">
+      <div class="lead-meta"><span class="lead-name">10. Nature&rsquo;s Grill Cafe</span><span class="cuisine">American · Great Kills, Staten Island</span></div>
+      <div class="address"><a href="https://maps.google.com/?q=4115+Hylan+Boulevard+Staten+Island+NY+10308" target="_blank" rel="noopener">4115 Hylan Boulevard, 10308</a></div>
+      <div class="signal-strip">
+        <span class="sig sig-amber">Grade N · score 20</span>
+        <span class="sig sig-red">🪳 Roaches (04M) — Jun 2024</span>
+        <span class="sig sig-score">4.4★ · 68 reviews</span>
+      </div>
+      <a href="tel:7189486600" class="phone-link" onclick="event.stopPropagation()">(718) 948-6600</a>
+    </div>
+    <div><span class="badge badge-red">6 days ago</span></div>
+  </summary>
+  <div class="card-body">
+    <div class="grid2">
+      <div>
+        <div class="sec-label">DOH Inspection</div>
+        <div class="row2"><span class="row2-lbl">Last inspected</span><span class="row2-val">Jun 6, 2026</span></div>
+        <div class="row2"><span class="row2-lbl">Grade</span><span class="row2-val bold amber">Grade N — not yet graded</span></div>
+        <div class="row2"><span class="row2-lbl">Score</span><span class="row2-val bold amber">20 — reinspection pending</span></div>
+        <div class="row2"><span class="row2-lbl">Jun 2024</span><span class="row2-val red">04M (roaches) + 08A · score 31</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Google Places</div>
+        <div class="goog-row"><span class="goog-stars">★★★★★</span><span class="goog-rating">4.4</span><span class="goog-count">68 reviews</span></div>
+        <div class="sec-label" style="margin-top:10px;">Current Violations (Jun 6)</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px;">No pest violations cited at Jun 6. Grade N pending reinspection.</div>
+        <div class="sec-label" style="margin-top:10px;">Prior Pest Violations (Jun 2024)</div>
+        <div class="vrow"><span class="vcode">04M</span><span class="vdesc">Live roaches in food or non-food area<span class="vdate"> Jun 2024</span></span></div>
+        <div class="vrow"><span class="vcode vcode-nc">08A</span><span class="vdesc" style="color:var(--muted);">Harborage conditions conducive to pests<span class="vdate"> Jun 2024</span></span></div>
+      </div>
+      <div>
+        <div class="sec-label">Pattern at a Glance</div>
+        <div class="row2"><span class="row2-lbl">04M in 2024</span><span class="row2-val red">Roaches Jun 2024 — harborage likely still present</span></div>
+        <div class="row2"><span class="row2-lbl">Grade N again</span><span class="row2-val amber">Two consecutive Grade N cycles — reinspection each time</span></div>
+        <div class="row2"><span class="row2-lbl">Same block</span><span class="row2-val">86m from Goodfellas — both inspected same day, same Grade N</span></div>
+      </div>
+      <div>
+        <div class="sec-label">Building Context</div>
+        <div class="row2"><span class="row2-lbl">Location</span><span class="row2-val">Hylan Blvd, Great Kills — older commercial strip</span></div>
+        <div class="row2"><span class="row2-lbl">Block</span><span class="row2-val">Shared-wall retail block — roach pressure travels through shared infrastructure</span></div>
+      </div>
+      <div class="span2">
+        <div class="sec-label">Signal Summary</div>
+        <div class="summary-box">Nature&rsquo;s Grill had live roaches (04M) and harborage in June 2024, and is now back with Grade N in June 2026. No pest violations at the latest visit, but the Grade N means reinspection is pending — and the harborage that drove the 2024 roach citation is structural. A café on an older Hylan Blvd commercial strip shares walls, drainage, and utility runs with neighbours; roach pressure doesn&rsquo;t resolve without addressing those pathways. Notably, Goodfellas — 86 metres up the same block — was also inspected the same day with the same Grade N. Block-level conditions are worth the conversation.</div>
+      </div>
+    </div>
+    <div class="vh-wrap">
+      <details class="vh">
+        <summary>Full DOH Inspection History <span class="vh-counts">— 4 visits · roaches Jun 2024 · Grade N Jun 2026</span></summary>
+        <div class="vh-inner">
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jun 6, 2026</span><span class="grade grade-n" style="font-size:10px;padding:1px 6px;">Grade N</span><span class="insp-score">Score 20</span><span class="insp-action">Cycle / Initial · no pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited. Grade N pending reinspection.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jun 20, 2024</span><span class="insp-score">Score 31</span><span class="insp-action">Cycle / Initial · roaches + harborage</span></div>
+            <div class="insp-viols">
+              <div class="iv-row"><span class="iv-code crit">04M</span><span class="iv-flag crit">Critical</span><span class="iv-desc">Live roaches in food or non-food area.</span></div>
+              <div class="iv-row"><span class="iv-code nc">08A</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">Harborage conditions present.</span></div>
+            </div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Jan 12, 2023</span><span class="grade grade-a" style="font-size:10px;padding:1px 6px;">Grade A</span><span class="insp-score">Score 12</span><span class="insp-action">No pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+          <div class="insp-group">
+            <div class="insp-header"><span class="insp-date">Mar 30, 2022</span><span class="insp-score">Score 31</span><span class="insp-action">Cycle / Initial · no pest violations</span></div>
+            <div class="insp-viols"><div class="iv-row"><span class="iv-code nc">—</span><span class="iv-flag nc">Non-Critical</span><span class="iv-desc">No pest violations cited.</span></div></div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</details>
+
+</div><!-- /panel-new -->
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="legend-title">How to read these leads</div>
+  <div class="legend-text">Every lead is a hypothesis built from public data — not a guarantee. We watch a pattern emerge across DOH inspections, 311 rodent complaints, HPD violations, and building history, then draw a conclusion about what it probably means and why it&rsquo;s worth a call.</div>
+  <div class="legend-codes">
+    <div class="legend-item"><span class="vcode">04K</span><span class="legend-lbl">Evidence of rats or live rats</span></div>
+    <div class="legend-item"><span class="vcode">04L</span><span class="legend-lbl">Live mice on premises</span></div>
+    <div class="legend-item"><span class="vcode">04M</span><span class="legend-lbl">Live roaches in food or non-food area</span></div>
+    <div class="legend-item"><span class="vcode">04N</span><span class="legend-lbl">Filth flies present</span></div>
+    <div class="legend-item"><span class="vcode vcode-nc">08A</span><span class="legend-lbl">Harborage conditions</span></div>
+    <div class="legend-item"><span class="vcode vcode-nc">08C</span><span class="legend-lbl">Unlicensed pest treatment</span></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div style="margin-bottom:10px;"><div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#fff;">trdi</div></div>
+  <div style="font-size:11px;color:rgba(244,241,234,.35);line-height:1.9;">
+    Data sourced from NYC DOH, HPD, and 311 public records. Prepared Jun 12, 2026.<br>
+    This brief was generated specifically for Fillmore Termite and Pest Control Inc.
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+</body>
+</html>
